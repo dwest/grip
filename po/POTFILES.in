@@ -1,0 +1,13 @@
+src/main.c
+src/grip.c
+src/gripcfg.c
+src/cddev.c
+src/cdplay.c
+src/dialog.c
+src/discdb.c
+src/discedit.c
+src/id3.c
+src/launch.c
+src/parsecfg.c
+src/rip.c
+

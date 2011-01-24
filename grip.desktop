@@ -1,0 +1,24 @@
+[Desktop Entry]
+Name=Grip
+Name[ca]=Grip
+Name[es]=Grip
+Name[de]=Grip
+Name[fi]=Grip
+Name[zh_CN]=Grip MP3 å<88>¶ä½<9C>ç¨<8B>åº<8F>
+Name[zh_CN.GB2312]=Grip MP3 å<88>¶ä½<9C>ç¨<8B>åº<8F>
+Name[zh_TW]=Grip MP3 è£½ä½<9C>ç¨<8B>å¼<8F>
+Name[zh_TW.Big5]=Grip MP3 è£½ä½<9C>ç¨<8B>å¼<8F>
+Comment=CD player/ripper
+Comment[ca]=Reproductor/extractor de CD d'audio
+Comment[es]=Reproductor/extractor de CDs de audio
+Comment[de]=Audio-CDs rippen und MP3s/OGGs kodieren
+Comment[fr]=Lecteur/extracteur de CD audio
+Comment[fi]=CD-audion soitto- ja kopiointiohjelma
+Comment[zh_CN]=Grip è®©æ<82>¨è½»æ<9D>¾å<88>¶ä½<9C> MP3 æ<96><87>ä»¶
+Comment[zh_CN.GB2312]=Grip è®©æ<82>¨è½»æ<9D>¾å<88>¶ä½<9C> MP3 æ<96><87>ä»¶
+Comment[zh_TW]=Grip è®<93>æ<82>¨è¼<95>é¬<86>è£½ä½<9C> MP3 æª<94>
+Comment[zh_TW.Big5]=Grip è®<93>æ<82>¨è¼<95>é¬<86>è£½ä½<9C> MP3 æª<94>
+Exec=grip
+Icon=gripicon.png
+Type=Application
+Categories=Application;AudioVideo;

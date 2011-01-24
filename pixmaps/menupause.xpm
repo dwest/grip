@@ -1,0 +1,25 @@
+/* XPM */
+static char *menupause_xpm[] = {
+/* columns rows colors chars-per-pixel */
+"16 16 3 1",
+"  c black",
+". c gray100",
+"X c None",
+/* pixels */
+"XXXXXXXXXXXXXXXX",
+"XXXXXXXXXXXXXXXX",
+"XXXX   XX   XXXX",
+"XXXX   XX   XXXX",
+"XXXX   XX   XXXX",
+"XXXX   XX   XXXX",
+"XXXX   XX   XXXX",
+"XXXX   XX   XXXX",
+"XXXX   XX   XXXX",
+"XXXX   XX   XXXX",
+"XXXX   XX   XXXX",
+"XXXX   XX   XXXX",
+"XXXX   XX   XXXX",
+"XXXX   XX   XXXX",
+"XXXXXXXXXXXXXXXX",
+"XXXXXXXXXXXXXXXX"
+};

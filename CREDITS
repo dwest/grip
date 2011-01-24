@@ -1,0 +1,54 @@
+If you submit a patch to Grip, submit an entry in this file. Additional
+credits can be found in the ChangeLog file.
+-----------------------------------------------------------------------
+
+2000-04-10 - Michael Bedy <mjbedy@mtu.edu>
+    + Fix a seg fault I encountered in the CDDB code.
+
+Sat 00/04/08 - Steven Kehlet
+    + mods to compile under FreeBSD
+
+1999-08-25 Friedemann Baitinger
+    + Added support to automatically write a 'm3u' playlist
+      file after finishing ripping
+
+Wed 99/02/06 - christian <eleet@altern.org>
+    + Added email field to Misc config tab and altered SubmitEntry() and 
+      SubmitBugReport() to generate a file we pipe to sendmail -t.
+    + Added automatic DBScan when CDDB lookup is successful if selected
+      in CD config tab. _experimental_?
+
+Mon 99/04/05 - craig nellist <crn@ozemail.com.au>
+    + Added option to reshuffle everytime playback is started (=> added
+      config/playback check button
+
+Mon 99/04/05 - craig nellist <crn@ozemail.com.au>
+    + Added option to perform CDDB lookups automatically for new discs
+      (=> added config/cddb check button)
+    + Fixed CDDB indicator not being cleared after failed query
+
+Fri 99/04/02 - craig nellist <crn@ozemail.com.au>
+    + Added option to not interrupt playback during startup
+      shutdown and CDDB lookups. (=> added config/misc check
+      button)
+    + Added option to rewind to first track when playback
+      is stopped. (=> added config/misc check button)
+    + Added option to default to track 1 if no CD is playing.
+      (=> added config/misc check button)
+    + Added a '-' to time display when displaying time remaining.
+
+
+Wed 99/03/10 - David Decotigny <David.Decotigny@irisa.fr>
+    + Added basic support for play lists (prog_tracks[]).
+    + Added support for random / loop play modes (=> added
+      appropriate toggle buttons).
+
+ID3 tagging code contributed by Ian Campbell <ijc25@cam.ac.uk>
+
+
+David Walluck, for helping to fix my RPM .spec file
+
+Dima Barsky, for giving me a workaround for a freezing problem that ocurred
+when running bladeenc
+
+Greg Grensteiner, for suggesting a nice way to implement multi-track ripping

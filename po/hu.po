@@ -1,0 +1,1261 @@
+# translation of hu_HU.po to Hungarian
+# translation of grip_hu_HU.po to Hungarian
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Ferenc Veres <lion@netngine.hu>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: hu_HU\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-06-25 11:23-0700\n"
+"PO-Revision-Date: 2004-06-06 23:58+0200\n"
+"Last-Translator: Ferenc Veres <lion@netngine.hu>\n"
+"Language-Team: Hungarian <hu@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.3\n"
+
+#: src/main.c:56
+msgid "Specify the geometry of the main window"
+msgstr "A főablak geometriája"
+
+#: src/main.c:57
+msgid "GEOMETRY"
+msgstr "GEOMETRIA"
+
+#: src/main.c:65
+msgid "Specify the config file to use (in your home dir)"
+msgstr "Beállításfájl (a sajátkönyvtárban)"
+
+#: src/main.c:66
+msgid "CONFIG"
+msgstr "BEÁLLÍTÁS"
+
+#: src/main.c:74
+msgid "Specify the cdrom device to use"
+msgstr "A használni kívánt CDROM eszköz"
+
+#: src/main.c:75 src/main.c:84
+msgid "DEVICE"
+msgstr "ESZKÖZ"
+
+#: src/main.c:83
+msgid "Specify the generic scsi device to use"
+msgstr "A használni kívánt általnos SCSI eszköz"
+
+#: src/main.c:92
+msgid "Launch in \"small\" (cd-only) mode"
+msgstr "Indítás \"apró\" (csak CD) módban"
+
+#: src/main.c:101
+msgid "\"Local\" mode -- do not look up disc info on the net"
+msgstr "\"Helyi\" mód -- nincs zenei információ-letöltés az internetről"
+
+#: src/main.c:110
+msgid "Do not do I/O redirection"
+msgstr "Ne legyen I/O átirányítás"
+
+#: src/main.c:119
+msgid "Run in verbose (debug) mode"
+msgstr "Futtatás bőbeszédű (hibakereső) módban"
+
+#: src/grip.c:181
+msgid "Grip"
+msgstr "Grip"
+
+#: src/grip.c:238
+#, c-format
+msgid "Error: Unable to initialize [%s]\n"
+msgstr "Hiba: A %s eszköz inicializáslása sikertelen\n"
+
+#: src/grip.c:324
+msgid ""
+"This is a development version of Grip. If you encounter problems, you are "
+"encouraged to revert to the latest stable version."
+msgstr ""
+
+#: src/grip.c:330
+msgid "Grip started successfully\n"
+msgstr ""
+
+#: src/grip.c:344
+msgid ""
+"Work is in progress.\n"
+"Really shut down?"
+msgstr ""
+"Feldolgozás folyamatban.\n"
+"Biztos, hogy megállítja?"
+
+#: src/grip.c:395
+msgid "Status"
+msgstr "Állapot"
+
+#: src/grip.c:410
+msgid "General"
+msgstr "Általános"
+
+#: src/grip.c:425 src/gripcfg.c:362 src/cdplay.c:251 src/cdplay.c:345
+#: src/rip.c:95
+msgid "Rip"
+msgstr "Beolvasás"
+
+#: src/grip.c:440 src/gripcfg.c:496
+msgid "Encode"
+msgstr "Tömörítés"
+
+#: src/grip.c:485
+msgid "Help"
+msgstr "Súgó"
+
+#: src/grip.c:490
+msgid "Table Of Contents"
+msgstr "Tartalomjegyzék"
+
+#: src/grip.c:496
+msgid "Playing CDs"
+msgstr "CD lejátszás"
+
+#: src/grip.c:502
+msgid "Ripping CDs"
+msgstr "CD tömörítés"
+
+#: src/grip.c:508
+msgid "Configuring Grip"
+msgstr "A Grip beállítása"
+
+#: src/grip.c:514
+msgid "FAQ"
+msgstr "Gyakori Kérdések"
+
+#: src/grip.c:520
+msgid "Getting More Help"
+msgstr "További segítség"
+
+#: src/grip.c:526
+msgid "Reporting Bugs"
+msgstr "Hibák bejelentése"
+
+#: src/grip.c:546
+msgid "About"
+msgstr "Névjegy"
+
+#: src/grip.c:565
+#, c-format
+msgid "Version %s"
+msgstr ""
+
+#: src/grip.c:905
+msgid "Created by Grip"
+msgstr ""
+
+#: src/grip.c:922
+msgid ""
+"Your config file is out of date -- resetting to defaults.\n"
+"You will need to re-configure Grip.\n"
+"Your old config file has been saved with -old appended."
+msgstr ""
+"A beállításfájl elavult -- alapbeállítások használata.\n"
+"A Grip-et újbóli beállítása szükséges.\n"
+"Az elavult beállításfájl \"-old\" hozzáadásával elmentve."
+
+#: src/grip.c:995
+#, c-format
+msgid "server is %s, port %d\n"
+msgstr "a kiszolgáló: %s, kapu: %d\n"
+
+#: src/grip.c:1016
+#, fuzzy
+msgid "Error: Unable to save config file."
+msgstr "Hiba: A beállításfájl mentése sikertelen"
+
+#: src/gripcfg.c:105
+msgid "Config"
+msgstr "Beállítások"
+
+#: src/gripcfg.c:113
+msgid "CDRom device"
+msgstr "CDROM eszköz"
+
+#: src/gripcfg.c:118
+msgid "Don't interrupt playback on exit/startup"
+msgstr "Lejátszás folytatása kilépéskor és indításkor"
+
+#: src/gripcfg.c:122
+msgid "Rewind when stopped"
+msgstr "Visszatekerés megállításkor"
+
+#: src/gripcfg.c:127
+msgid "Startup with first track if not playing"
+msgstr "Inditás az első sávval ha nincs lejátszás"
+
+#: src/gripcfg.c:132
+msgid "Auto-play on disc insert"
+msgstr "Automatikus lejátszás CD behelyezésekor"
+
+#: src/gripcfg.c:137
+msgid "Reshuffle before each playback"
+msgstr "Újrakeverés minden visszajátszás előtt"
+
+#: src/gripcfg.c:142
+msgid "Work around faulty eject"
+msgstr "Hibás kidobás kikerülése"
+
+#: src/gripcfg.c:147
+msgid "Poll disc drive for new disc"
+msgstr "Meghajtó lekérdezése új lemezekért"
+
+#: src/gripcfg.c:151
+msgid "Poll interval (seconds)"
+msgstr "Lekérzdezési időköz (másodperc)"
+
+#: src/gripcfg.c:159
+msgid "CD"
+msgstr "CD"
+
+#: src/gripcfg.c:175
+msgid "Ripper:"
+msgstr "Beolvasó:"
+
+#: src/gripcfg.c:220
+msgid "Ripping executable"
+msgstr "Beolvasó futtatható program"
+
+#: src/gripcfg.c:225
+msgid "Rip command-line"
+msgstr "Beolvasás parancssora"
+
+#: src/gripcfg.c:236
+msgid "Disable paranoia"
+msgstr "Paranoia mód kikapcsolása"
+
+#: src/gripcfg.c:241
+msgid "Disable extra paranoia"
+msgstr "Extra paranoia mód kikapcsolása"
+
+#: src/gripcfg.c:247
+msgid "Disable scratch"
+msgstr "Karcolás mód kikapcsolása"
+
+#: src/gripcfg.c:251
+msgid "detection"
+msgstr "detektálás"
+
+#: src/gripcfg.c:255
+msgid "repair"
+msgstr "javítás"
+
+#: src/gripcfg.c:263
+msgid "Calculate gain adjustment"
+msgstr "Jelszint igazítás kiszámítása"
+
+#: src/gripcfg.c:271
+msgid "Rip file format"
+msgstr "Beolvasás fájlformátuma"
+
+#: src/gripcfg.c:275
+msgid "Generic SCSI device"
+msgstr "Általános SCSI eszköz"
+
+#: src/gripcfg.c:283
+msgid "Ripper"
+msgstr "Beolvasó"
+
+#: src/gripcfg.c:292
+msgid "Rip 'nice' value"
+msgstr "Beolvasás \"nice\" értéke"
+
+#: src/gripcfg.c:296
+msgid "Max non-encoded .wav's"
+msgstr "Tömörítetlen .WAV fájlok max. száma"
+
+#: src/gripcfg.c:302
+msgid "Auto-rip on insert"
+msgstr "Automatikus beolvasás lemez behelyezésekor"
+
+#: src/gripcfg.c:306
+msgid "Beep after rip"
+msgstr "Csipogás a beolvasás befejezésekor"
+
+#: src/gripcfg.c:316
+msgid "Auto-eject after rip"
+msgstr "Lemez automatkis kidobása"
+
+#: src/gripcfg.c:320
+msgid "Auto-eject delay"
+msgstr "Automatikus kidobás késleltetése"
+
+#: src/gripcfg.c:328
+msgid "Delay before ripping"
+msgstr "Beolvasás késleltetése"
+
+#: src/gripcfg.c:333
+msgid "Delay encoding until disc is ripped"
+msgstr "Tömörítés a beolvasás befejezése után"
+
+#: src/gripcfg.c:338
+msgid "Stop cdrom drive between tracks"
+msgstr "CDROM megállítása a sávok között"
+
+#: src/gripcfg.c:342
+msgid "Wav filter command"
+msgstr "WAV szűrő parancs"
+
+#: src/gripcfg.c:347
+msgid "Disc filter command"
+msgstr "Lemez szűrő parancs"
+
+#: src/gripcfg.c:355 src/gripcfg.c:489
+msgid "Options"
+msgstr "Beállítások"
+
+#: src/gripcfg.c:377
+msgid "Encoder:"
+msgstr "Tömörítő:"
+
+#: src/gripcfg.c:412
+msgid "Encoder executable"
+msgstr "Tömörítő futtatható program"
+
+#: src/gripcfg.c:417
+msgid "Encoder command-line"
+msgstr "Tömörítés parancssora"
+
+#: src/gripcfg.c:423
+#, fuzzy
+msgid "Encode file extension"
+msgstr "Freedb kiterjesztések használata"
+
+#: src/gripcfg.c:428
+msgid "Encode file format"
+msgstr "Tömörítés fájlformátuma"
+
+#: src/gripcfg.c:436
+msgid "Encoder"
+msgstr "Tömörítő"
+
+#: src/gripcfg.c:446
+msgid "Delete .wav after encoding"
+msgstr "WAV fájlok törlése tömörítés után"
+
+#: src/gripcfg.c:451
+msgid "Insert info into SQL database"
+msgstr "Tárolás SQL adatbázisban"
+
+#: src/gripcfg.c:455
+msgid "Create .m3u files"
+msgstr "M3U fájlok létrehozása"
+
+#: src/gripcfg.c:460
+msgid "Use relative paths in .m3u files"
+msgstr "Relatív útvonalak az M3U fájlokban"
+
+#: src/gripcfg.c:464
+msgid "M3U file format"
+msgstr "M3U fájlformátum"
+
+#: src/gripcfg.c:469
+msgid "Encoding bitrate (kbits/sec)"
+msgstr "Tömörítés mértéke (kbit/sec)"
+
+#: src/gripcfg.c:473
+msgid "Number of CPUs to use"
+msgstr "Felhasznált processzorok"
+
+#: src/gripcfg.c:477
+msgid "Encode 'nice' value"
+msgstr "Tömörítés \"nice\" értéke"
+
+#: src/gripcfg.c:481
+msgid "Encode filter command"
+msgstr "Tömörítés szűrő parancs"
+
+#: src/gripcfg.c:505
+msgid "Add ID3 tags to encoded files"
+msgstr "ID3 információk hozzáadása"
+
+#: src/gripcfg.c:511
+msgid "Add ID3v2 tags to encoded files"
+msgstr "ID3v2 információk hozzáadása"
+
+#: src/gripcfg.c:517
+msgid "Only tag files ending in '.mp3'"
+msgstr "Csak .MP3 fájlokhoz"
+
+#: src/gripcfg.c:521
+msgid "ID3 comment field"
+msgstr "ID megjegyzés mező"
+
+#: src/gripcfg.c:526
+msgid "ID3v1 Character set encoding"
+msgstr "ID3v1 karakterkódolás"
+
+#: src/gripcfg.c:532
+#, fuzzy
+msgid "ID3v2 Character set encoding"
+msgstr "ID3v1 karakterkódolás"
+
+#: src/gripcfg.c:540
+msgid "ID3"
+msgstr "ID3"
+
+#: src/gripcfg.c:557 src/gripcfg.c:577
+msgid "DB server"
+msgstr "Adatbázis-kiszolgáló"
+
+#: src/gripcfg.c:561 src/gripcfg.c:581
+msgid "CGI path"
+msgstr "CGI útvonal"
+
+#: src/gripcfg.c:568
+msgid "Primary Server"
+msgstr "Elsődleges kiszolgáló"
+
+#: src/gripcfg.c:588
+msgid "Secondary Server"
+msgstr "Másodlagos kiszolgáló"
+
+#: src/gripcfg.c:598
+msgid "DB Submit email"
+msgstr "Adatbázis hozzáadási e-mail"
+
+#: src/gripcfg.c:603
+msgid "DB Character set encoding"
+msgstr "Adatbázis karakterkódolás"
+
+#: src/gripcfg.c:608
+msgid "Use freedb extensions"
+msgstr "Freedb kiterjesztések használata"
+
+#: src/gripcfg.c:613
+msgid "Perform disc lookups automatically"
+msgstr "Automatikus lemezkeresés"
+
+#: src/gripcfg.c:621
+msgid "DiscDB"
+msgstr "DiscDB"
+
+#: src/gripcfg.c:630
+msgid "Use proxy server"
+msgstr "Proxy kiszolgáló használata"
+
+#: src/gripcfg.c:637
+msgid "Get server from 'http_proxy' env. var"
+msgstr "Beállítás a 'http_proxy' környezeti változóból"
+
+#: src/gripcfg.c:641
+msgid "Proxy server"
+msgstr "Proxy kiszolgáló"
+
+#: src/gripcfg.c:645
+msgid "Proxy port"
+msgstr "Proxy kapu"
+
+#: src/gripcfg.c:649
+msgid "Proxy username"
+msgstr "Proxy felhasználónév"
+
+#: src/gripcfg.c:655
+msgid "Proxy password"
+msgstr "Proxy jelszó"
+
+#: src/gripcfg.c:663
+msgid "Proxy"
+msgstr "Proxy"
+
+#: src/gripcfg.c:672
+msgid "Email address"
+msgstr "E-mail cím"
+
+#: src/gripcfg.c:676
+msgid "CD update program"
+msgstr "CD frissítő program"
+
+#: src/gripcfg.c:681
+msgid "Do not lowercase filenames"
+msgstr "Ne alakítsa kisbetűssé a fájlneveket"
+
+#: src/gripcfg.c:686
+msgid "Allow high bits in filenames"
+msgstr "ASCII 128 feletti karakterek engedélyezése"
+
+#: src/gripcfg.c:691
+msgid "Replace incompatible characters by hexadecimal numbers"
+msgstr ""
+
+#: src/gripcfg.c:696
+msgid "Do not change spaces to underscores"
+msgstr "Ne alakítsa a szóközöket aláhúzás karakterré"
+
+#: src/gripcfg.c:701
+msgid ""
+"Characters to not strip\n"
+"in filenames"
+msgstr ""
+"Fájlnevekből nem kivágandó\n"
+"karakterek"
+
+#: src/gripcfg.c:706
+msgid "Show tray icon"
+msgstr ""
+
+#: src/gripcfg.c:713
+msgid "Misc"
+msgstr "Egyéb"
+
+#: src/gripcfg.c:819
+#, fuzzy
+msgid "Error: Unable to save ripper config."
+msgstr "Hiba: A beállításfájl mentése sikertelen"
+
+#: src/gripcfg.c:890
+#, fuzzy
+msgid "Error: Unable to save encoder config."
+msgstr "Hiba: A beállításfájl mentése sikertelen"
+
+#: src/cddev.c:174 src/cddev.c:601
+#, c-format
+msgid "Drive status is %d\n"
+msgstr "Meghajtó állapotbájt: %d\n"
+
+#: src/cddev.c:176
+msgid "Drive doesn't support drive status check (assume CDS_NO_INFO)\n"
+msgstr ""
+"A meghajtó nem támogatja az állapotlekérdezést (CDS_NO_INFO feltételezése)\n"
+
+#: src/cddev.c:179
+msgid "No disc\n"
+msgstr "Nincs lemez\n"
+
+#: src/cddev.c:281 src/cddev.c:290 src/cddev.c:307 src/cddev.c:334
+msgid "Error: Failed to read disc contents\n"
+msgstr "Hiba: a lemez tartalmának beolvasásáa közben\n"
+
+#: src/cddev.c:604
+msgid "Drive doesn't support drive status check\n"
+msgstr "A meghajtó nem támogatja az állapotlekérdezést\n"
+
+#: src/cddev.c:625 src/cddev.c:629
+#, c-format
+msgid "Unlock failed: %d"
+msgstr "Kinyitás sikertelen: %d"
+
+#: src/cddev.c:633
+msgid "CDIOCEJECT"
+msgstr "CDIOEJECT"
+
+#: src/cdplay.c:83
+#, fuzzy
+msgid "Cannot do lookup while ripping."
+msgstr "Beolvasás közben nem lehet lekérdezést végezni"
+
+#. "misc"
+#: src/cdplay.c:120
+msgid "Unknown Disc"
+msgstr "Ismeretlen lemez"
+
+#: src/cdplay.c:124
+#, c-format
+msgid "Track %02d"
+msgstr "Sáv %02d"
+
+#: src/cdplay.c:184
+#, c-format
+msgid "Querying %s (through %s) for disc %02x.\n"
+msgstr "%s lekérdezés (%s szerveren keresztül) a %02x lemezhez.\n"
+
+#: src/cdplay.c:189
+#, c-format
+msgid "Querying %s for disc %02x.\n"
+msgstr "%s lekérdezés a %02x lemezhez.\n"
+
+#: src/cdplay.c:206
+#, c-format
+msgid ""
+"Match for \"%s / %s\"\n"
+"Downloading data...\n"
+msgstr ""
+"Egyezés: \"%s / %s\"\n"
+"Adatok letöltése...\n"
+
+#: src/cdplay.c:214
+msgid "Done\n"
+msgstr "Kész\n"
+
+#: src/cdplay.c:218
+msgid "Error saving disc data\n"
+msgstr "Hiba a lemezadatok mentése közben\n"
+
+#: src/cdplay.c:224
+msgid "No match\n"
+msgstr "Nincs egyezés\n"
+
+#: src/cdplay.c:242 src/cdplay.c:334
+#, fuzzy
+msgid "Length"
+msgstr "Hossz "
+
+#: src/cdplay.c:299
+msgid "Tracks"
+msgstr "Sávok"
+
+#: src/cdplay.c:323
+msgid "Track"
+msgstr "Sáv"
+
+#: src/cdplay.c:633 src/discedit.c:390
+#, fuzzy
+msgid "Error saving disc data."
+msgstr "Hiba a lemezadatok mentése közben"
+
+#: src/cdplay.c:704
+msgid "Rotate play mode"
+msgstr "Lejátszási mód váltása"
+
+#: src/cdplay.c:724
+msgid "Toggle loop play"
+msgstr "Ismétlés ki/be"
+
+#: src/cdplay.c:802 src/rip.c:230
+msgid "Rip status"
+msgstr "Beolvasás állapota"
+
+#: src/cdplay.c:869
+msgid "Play track / Pause play"
+msgstr "Sáv lejátszása / Szünet"
+
+#: src/cdplay.c:880
+msgid "Rewind"
+msgstr "Visszatekerés"
+
+#: src/cdplay.c:891
+msgid "FastForward"
+msgstr "Gyors Előre"
+
+#: src/cdplay.c:901
+msgid "Go to previous track"
+msgstr "Előző sáv"
+
+#: src/cdplay.c:910
+msgid "Go to next track"
+msgstr "Következő sáv"
+
+#: src/cdplay.c:919
+msgid "Toggle play mode options"
+msgstr "Lejátszási mód váltási lehetőségek"
+
+#: src/cdplay.c:929
+msgid "Next Disc"
+msgstr "Követlező lemez"
+
+#: src/cdplay.c:943
+msgid "Stop play"
+msgstr "Megállítás"
+
+#: src/cdplay.c:953
+msgid "Eject disc"
+msgstr "Lemez kidobása"
+
+#: src/cdplay.c:962
+msgid "Scan Disc Contents"
+msgstr "Lemeztartalom vizsgálata"
+
+#: src/cdplay.c:970
+msgid "Toggle Volume Control"
+msgstr "Hangerőszabályzó ki/be"
+
+#: src/cdplay.c:979
+msgid "Toggle disc editor"
+msgstr "Lemezszerkesztő ki/be"
+
+#: src/cdplay.c:989
+msgid "Initiate/abort DiscDB lookup"
+msgstr "DiskDB lekérdezés indítás/megszakítás"
+
+#: src/cdplay.c:999
+msgid "Toggle track display"
+msgstr "Sávlista ki/be"
+
+#: src/cdplay.c:1006
+msgid "Exit Grip"
+msgstr "Kilépés"
+
+#: src/cdplay.c:1173
+#, fuzzy
+msgid "Cannot fast forward while ripping."
+msgstr "Beolvasás közben nem lehet léptetni"
+
+#: src/cdplay.c:1204
+#, fuzzy
+msgid "Cannot rewind while ripping."
+msgstr "Beolvasás közben nem lehet léptetni"
+
+#: src/cdplay.c:1235
+#, fuzzy
+msgid "Cannot switch discs while ripping."
+msgstr "Beolvasás közben nem lehet lemezt váltani"
+
+#: src/cdplay.c:1253
+msgid "Eject disc\n"
+msgstr "Lemezkidobás\n"
+
+#: src/cdplay.c:1257
+#, fuzzy
+msgid "Cannot eject while ripping."
+msgstr "Beolvasás közben nem lehet lemezt kidobni"
+
+#: src/cdplay.c:1267
+msgid "Have disc -- ejecting\n"
+msgstr "Van lemez -- kidobás\n"
+
+#: src/cdplay.c:1334
+#, fuzzy
+msgid "Cannot play while ripping."
+msgstr "Beolvasás közben nem lehet lejátszani"
+
+#: src/cdplay.c:1402 src/cdplay.c:1433
+#, fuzzy
+msgid "Cannot switch tracks while ripping."
+msgstr "Beolvasás közben nem lehet sávot váltani"
+
+#: src/cdplay.c:1524
+msgid "Checking for a new disc\n"
+msgstr "Új lemez keresése\n"
+
+#: src/cdplay.c:1529
+msgid "CDStat found a disc, checking tracks\n"
+msgstr "CDStat új lemezt talált, sávok vizsgálata\n"
+
+#: src/cdplay.c:1532
+msgid "We have a valid disc!\n"
+msgstr "Van lemez a meghajtóban!\n"
+
+#: src/cdplay.c:1559
+msgid "No non-zero length tracks\n"
+msgstr "Nem nemnulla hosszúságú sávok MIVAN\n"
+
+#: src/cdplay.c:1568
+msgid "CDStat said no disc\n"
+msgstr "CDStat nem érzékel lemezt\n"
+
+#: src/cdplay.c:1717 src/cdplay.c:1739
+#, c-format
+msgid "Current sector: %6d"
+msgstr "Aktuális szektor: %6d"
+
+#: src/cdplay.c:1840
+msgid "No Disc"
+msgstr "Nincs lemez"
+
+#: src/cdplay.c:1892
+msgid ""
+"This disc has been found on your secondary server,\n"
+"but not on your primary server.\n"
+"\n"
+"Do you wish to submit this disc information?"
+msgstr ""
+"A lemezinformációk megtalálhatók a másodlagos szerveren,\n"
+"de nincsenek meg az elsődlegesen.\n"
+"\n"
+"Kívánja beküldeni a lemezinformációkat?"
+
+#: src/cdplay.c:1920 src/cdplay.c:1929
+#, fuzzy
+msgid "Error: Unable to create temporary file."
+msgstr "Hiba: Átmeneti fájl létrehozása sikertelen"
+
+#: src/cdplay.c:1947
+#, fuzzy
+msgid "Error: Unable to write disc data."
+msgstr "Hiba: Lemezadatok írása sikertelen"
+
+#: src/cdplay.c:1956
+#, c-format
+msgid "Mailing entry to %s\n"
+msgstr "Bejegyzés elküldés: %s\n"
+
+#: src/dialog.c:44
+msgid "System Message"
+msgstr "Rendszerüzenet"
+
+#: src/discdb.c:207
+#, c-format
+msgid "URI is %s\n"
+msgstr "URI: %s\n"
+
+#: src/discdb.c:287
+#, c-format
+msgid "Query is [%s]\n"
+msgstr "Lekérdezés: [%s]\n"
+
+#: src/discdb.c:788
+#, c-format
+msgid "Stat error %d on %s\n"
+msgstr "%d lekérdezési hiba: %s\n"
+
+#: src/discdb.c:792
+#, c-format
+msgid "Creating directory %s\n"
+msgstr "Könyvtár létrehozása: %s\n"
+
+#: src/discdb.c:797
+#, c-format
+msgid "Error: %s exists, but is a file\n"
+msgstr "Hiba: %s létezik, de fájl\n"
+
+#: src/discdb.c:804
+#, c-format
+msgid "Error: Unable to open %s for writing\n"
+msgstr "Hiba: %s megnyitása írásra sikertelen\n"
+
+#: src/discedit.c:67
+msgid "Disc title"
+msgstr "Lemez címe"
+
+#: src/discedit.c:74 src/discedit.c:176
+msgid "Track name"
+msgstr "Sáv címe"
+
+#: src/discedit.c:84
+msgid "W"
+msgstr "W"
+
+#: src/discedit.c:110
+msgid "Disc artist"
+msgstr "Előadó"
+
+#: src/discedit.c:127
+msgid "ID3 genre:"
+msgstr "ID3 stílus:"
+
+#: src/discedit.c:158
+msgid "Disc year"
+msgstr "Kiadási év"
+
+#: src/discedit.c:196
+msgid "Track artist"
+msgstr "Sáv előadója"
+
+#: src/discedit.c:213
+msgid "Split:"
+msgstr "Darabolás:"
+
+#: src/discedit.c:217
+msgid "Title/Artist"
+msgstr "Cím/Szerző"
+
+#: src/discedit.c:224
+msgid "Artist/Title"
+msgstr "Szerző/Cím"
+
+#: src/discedit.c:232
+msgid "Split chars"
+msgstr "Daraboló karakterek"
+
+#: src/discedit.c:254
+msgid "Multi-artist"
+msgstr "Többszerzős"
+
+#: src/discedit.c:265
+msgid "Save disc info"
+msgstr "Mentés"
+
+#: src/discedit.c:274
+msgid "Submit disc info"
+msgstr "Beküldés"
+
+#: src/discedit.c:393
+#, fuzzy
+msgid "No disc present."
+msgstr "Nincs lemez"
+
+#: src/discedit.c:543
+#, fuzzy
+msgid "Cannot submit. No disc is present."
+msgstr ""
+"Sikertelen beküldés\n"
+"Nincs lemez a meghajtóban"
+
+#: src/discedit.c:558
+#, fuzzy
+msgid "You must enter a disc title."
+msgstr "A lemez cím megadása kötelező"
+
+#: src/discedit.c:565
+#, fuzzy
+msgid "You must enter a disc artist."
+msgstr "Az előadó megadása kötelező"
+
+#: src/discedit.c:575
+msgid ""
+"You are about to submit this disc information\n"
+"to a commercial CDDB server, which will then\n"
+"own the data that you submit. These servers make\n"
+"a profit out of your effort. We suggest that you\n"
+"support free servers instead.\n"
+"\n"
+"Continue?"
+msgstr ""
+"Az lemezinformációk beküldésére készül\n"
+"egy üzleti CDDB szerverre, amely ezután az\n"
+"adatok felett rendelkezhet. Az üzemeltető a beküldött\n"
+"adatokból anyagi hasznot nyer. Javasoljuk, hogy inkább egy szabad szerverre "
+"küldje be az adatokat.\n"
+"\n"
+"Folytatás?"
+
+#: src/discedit.c:584
+msgid ""
+"You are about to submit this\n"
+"disc information via email.\n"
+"\n"
+"Continue?"
+msgstr ""
+"A lemezinformációkat e-mailben\n"
+"fogja továbbítani.\n"
+"\n"
+"Folytatás?"
+
+#: src/discedit.c:601
+msgid "Genre selection"
+msgstr "Stílus választás"
+
+#: src/discedit.c:605
+msgid ""
+"Submission requires a genre other than 'unknown'\n"
+"Please select a DiscDB genre below"
+msgstr ""
+"A beküldéshez egy az 'ismeretlen'-től eltérő stílus\n"
+"kiválasztása szükséges, az alábbi listából"
+
+#: src/discedit.c:615
+msgid "DiscDB genre"
+msgstr "DiscDB stílus"
+
+#: src/discedit.c:635
+msgid "Submit"
+msgstr "Beküldés"
+
+#: src/discedit.c:646
+msgid "Cancel"
+msgstr "Mégsem"
+
+#. Doh!
+#: src/id3.c:291
+msgid "unknown ID3 field\n"
+msgstr "ismeretlen ID3 mező\n"
+
+#: src/launch.c:121
+#, c-format
+msgid "Error: unable to translate filename. No such user as %s\n"
+msgstr "Hiba: fájlnév átalakítása sikertelen. Ismeretlen felhasználó: %s\n"
+
+#: src/launch.c:315 src/rip.c:1535
+msgid "Exec failed\n"
+msgstr "Futtatás sikertelen\n"
+
+#: src/parsecfg.c:58
+msgid "Error: Bad entry type\n"
+msgstr "Hiba: Hibás bejegyzés típus\n"
+
+#: src/parsecfg.c:84
+msgid "Error: Invalid config file\n"
+msgstr "Hiba: Hibás beállításfájl\n"
+
+#: src/rip.c:104
+msgid "Rip+Encode"
+msgstr "Beolvasás+Tömörítés"
+
+#: src/rip.c:106
+msgid "Rip and encode selected tracks"
+msgstr "A kiválasztott sávok beolvasása és tömörítése"
+
+#: src/rip.c:112
+msgid "Rip Only"
+msgstr "Csak beolvasás"
+
+#: src/rip.c:114
+msgid "Rip but do not encode selected tracks"
+msgstr "A kiválasztott sávok beolvasása, nincs tömörítés"
+
+#: src/rip.c:120
+msgid "Abort Rip and Encode"
+msgstr "Megszakítás"
+
+#: src/rip.c:122
+msgid "Kill all active rip and encode processes"
+msgstr "Minden aktuális olvasási és tömörítési folyamat megszakítása"
+
+#: src/rip.c:130
+msgid "Abort Ripping Only"
+msgstr "Beolvasás megszakítása"
+
+#: src/rip.c:132
+msgid "Kill rip process"
+msgstr "A beolvasó folyamat megszakítása"
+
+#: src/rip.c:138
+msgid "DDJ Scan"
+msgstr "DDJ Lekérdezés"
+
+#: src/rip.c:140
+msgid "Insert disc information into the DigitalDJ database"
+msgstr "Lemezinformációk hozzáadása a DigitalDJ adatbázishoz"
+
+#: src/rip.c:155
+msgid "Rip partial track"
+msgstr "Sávtöredék beolvasása"
+
+#: src/rip.c:166
+msgid "Play"
+msgstr "Lejátszás"
+
+#: src/rip.c:173
+msgid "Current sector:      0"
+msgstr "Aktuális szektor:      0"
+
+#: src/rip.c:204 src/rip.c:221 src/rip.c:269 src/rip.c:862 src/rip.c:915
+#: src/rip.c:917 src/rip.c:1065 src/rip.c:1066
+msgid "Rip: Idle"
+msgstr "Olvasás: Vár"
+
+#: src/rip.c:209
+msgid "Enc: Trk 99 (99.9x)"
+msgstr "Tömörítés: Sáv 99 (99.9x)"
+
+#: src/rip.c:240 src/rip.c:282 src/rip.c:1036 src/rip.c:1050
+msgid "Enc: Idle"
+msgstr "Tömörítés: Vár"
+
+#: src/rip.c:264
+msgid "Overall indicators:"
+msgstr "Teljes feldolgozás:"
+
+#: src/rip.c:327
+msgid "Start sector"
+msgstr "Kezdeti szektor"
+
+#: src/rip.c:332
+msgid "End sector"
+msgstr "Végső szektor"
+
+#: src/rip.c:380
+#, fuzzy, c-format
+msgid "Inserting track %d into the ddj database\n"
+msgstr "Tárolás SQL adatbázisban"
+
+#: src/rip.c:602
+#, fuzzy
+msgid "Error: can't open m3u file."
+msgstr "Hiba: m3u fájl megnyitása sikertelen\n"
+
+#: src/rip.c:644
+msgid "In KillRip\n"
+msgstr "A KillRip-ben\n"
+
+#: src/rip.c:670
+#, c-format
+msgid "Now total enc size is: %d\n"
+msgstr "Új teljes tömörítési méret: %d\n"
+
+#: src/rip.c:825
+#, c-format
+msgid "Rip: Trk %d (%3.1fx)"
+msgstr "Olvasás: Sáv %d (%3.1fx)"
+
+#: src/rip.c:858
+#, c-format
+msgid "Rip: %6.2f%%"
+msgstr "Olvasás: %6.2f%%"
+
+#: src/rip.c:878
+msgid "Rip finished\n"
+msgstr "Olvasás befejeződött\n"
+
+#: src/rip.c:904
+#, c-format
+msgid "Rip partial %d  num wavs %d\n"
+msgstr "Részlet olvasása %d wavok száma %d\n"
+
+#: src/rip.c:907
+#, c-format
+msgid "Next track is %d, total is %d\n"
+msgstr "Következő sáv: %d, összes: %d\n"
+
+#: src/rip.c:913
+msgid "Check if we need to rip another track\n"
+msgstr "Következő sáv olvasás szükéségességének ellenőrzése\n"
+
+#: src/rip.c:955
+#, c-format
+msgid "Enc: Trk %d (%3.1fx)"
+msgstr "Tömörít: Sáv %d (%3.1fx)"
+
+#: src/rip.c:973
+#, c-format
+msgid "Enc: %6.2f%%"
+msgstr "Tömörít: %6.2f%%"
+
+#: src/rip.c:983
+#, c-format
+msgid "Finished encoding on cpu %d\n"
+msgstr "A %d. CPU-n a tömörítés befejezve\n"
+
+#: src/rip.c:1001
+#, c-format
+msgid "Deleting [%s]\n"
+msgstr "Törlés: [%s]\n"
+
+#: src/rip.c:1058
+msgid "Ripping is finished\n"
+msgstr "Beolvasás befejezve\n"
+
+#: src/rip.c:1169 src/rip.c:1175
+msgid "NoArtist"
+msgstr "NincsSzerző"
+
+#: src/rip.c:1180
+msgid "NoTitle"
+msgstr "NincsCím"
+
+#: src/rip.c:1270
+msgid ""
+"No disc was detected in the drive. If you have a disc in your drive, please "
+"check your CDRom device setting under Config->CD."
+msgstr ""
+
+#: src/rip.c:1279
+msgid ""
+"Invalid rip executable.\n"
+"Check your rip config, and ensure it specifies the full path to the ripper "
+"executable."
+msgstr ""
+
+#: src/rip.c:1287
+#, fuzzy
+msgid ""
+"Invalid encoder executable.\n"
+"Check your encoder config, and ensure it specifies the full path to the "
+"encoder executable."
+msgstr ""
+"Érvénytelen tömörítő program\n"
+"Ellenőrizze a beállításokat"
+
+#: src/rip.c:1323
+msgid ""
+"No tracks selected.\n"
+"Rip whole CD?\n"
+msgstr ""
+"Nincsnek sávok kiválasztva.\n"
+"Teljes CD beolvasása?\n"
+
+#: src/rip.c:1346
+msgid "Ripping whole CD\n"
+msgstr "Teljes CD beolvasása\n"
+
+#: src/rip.c:1385
+msgid "In RipNextTrack\n"
+msgstr "RipNextTrack-ban\n"
+
+#: src/rip.c:1392
+#, c-format
+msgid "First checked track is %d\n"
+msgstr "Első bejelölt sáv: %d\n"
+
+#: src/rip.c:1402
+msgid "Ripping away!\n"
+msgstr "Beolvasás!\n"
+
+#: src/rip.c:1449
+msgid "No write access to write wav file"
+msgstr "Nincs írásjog a wav fájl mentéséhez"
+
+#: src/rip.c:1463
+#, c-format
+msgid "Ripping track %d to %s\n"
+msgstr "Sáv olvasás: %d: %s\n"
+
+#: src/rip.c:1467
+#, c-format
+msgid "Rip: Trk %d (0.0x)"
+msgstr "Olvasás: Sáv %d (0.0x)"
+
+#: src/rip.c:1472
+#, c-format
+msgid "File %s has already been ripped. Skipping...\n"
+msgstr "A %s fájl már előzőleg beolvasva. Kihagyás...\n"
+
+#: src/rip.c:1493 src/rip.c:1745
+msgid "Out of space in output directory"
+msgstr "Elfogyott a lemezterület a célkönyvtárban"
+
+#: src/rip.c:1569
+msgid "Calling CDPRip\n"
+msgstr "CDPRip hívása\n"
+
+#: src/rip.c:1655
+#, c-format
+msgid "Added track %d to %s list\n"
+msgstr "A %d sáv hozzáadva a %s listához\n"
+
+#: src/rip.c:1681
+msgid "No free cpus\n"
+msgstr "Nincs szabad CPU\n"
+
+#: src/rip.c:1697
+#, c-format
+msgid "Enc track %d\n"
+msgstr "Tömörített sáv: %d\n"
+
+#: src/rip.c:1719
+#, fuzzy
+msgid "No write access to write encoded file."
+msgstr "Nincs írásjog a tömörített fájl mentéséhez"
+
+#: src/rip.c:1730
+#, c-format
+msgid "%i: Encoding to %s\n"
+msgstr "%i: Tömörítés: %s\n"
+
+#: src/rip.c:1734
+#, c-format
+msgid "Enc: Trk %d (0.0x)"
+msgstr "Tömörít: Sáv %d (0.0x)"
+
+#: src/rip.c:1800
+msgid "In CalculateAll\n"
+msgstr "CalculateAll-ban\n"
+
+#: src/rip.c:1806
+msgid "We aren't ripping now, so let's zero encoding values\n"
+msgstr "Jelenleg nincs olvasás, tömörítési értékek nullázása\n"
+
+#: src/rip.c:1822
+#, c-format
+msgid "Total rip size is: %d\n"
+msgstr "Teljes olvasási méret: %d\n"
+
+#: src/rip.c:1823
+#, c-format
+msgid "Total enc size is: %d\n"
+msgstr "Teljes tömörített méret: %d\n"
+
+#~ msgid "Write tags in unicode"
+#~ msgstr "Unicode formátumban"
+
+#~ msgid "File System Character set encoding"
+#~ msgstr "Fájlrendszer karakterkódolás"
+
+#~ msgid "Keep application minimum size"
+#~ msgstr "Minimális memóriahasználat"
+
+#~ msgid "Reply is [%s]\n"
+#~ msgstr "Válasz: [%s]\n"
+
+#~ msgid ""
+#~ "Invalid rip executable\n"
+#~ "Check your rip config"
+#~ msgstr ""
+#~ "Érvénytelen beolvasó program\n"
+#~ "Ellenőrizze a beállításokat"

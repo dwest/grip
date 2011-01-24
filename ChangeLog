@@ -1,0 +1,1117 @@
+2005-06-25  Mike Oliphant  <grip@nostatic.org>
+
+	* de.po: updated (Götz Waschk)
+	* it.po: updated (Ceoldo Costantino)
+	* fr.po: updated (Eric Lassauge)
+	* pl_PL.po: added (Piotr Adamocha)
+	* id3.c: put a zero byte before the id3v1 track number (Vladimir
+	  Petrov)
+	* discdb.c: string parsing fixes to support i18n (Vladimir Petrov)
+	* discdb.c: better handling of non-UTF-8 local discdb files
+	  (Vladimir Petrov) 
+	* various: tweaks to filesystem-safe character escaping (Vladimir
+	  Petrov)
+	* cdplay.c: allow retrieving of non-UTF-8 discdb entries (Vladimir
+	  Petrov)
+	* discdb.c: fixed a possible buffer overflow crash (Dean Brettle)
+	* grip.spec.in: added some missing BuildRequires (Stephen
+	  E. Dudek)
+	* configure.in: upped version to 3.3.1
+		
+	
+2005-01-29  Mike Oliphant  <grip@nostatic.org>
+
+	* nl.po: added (Sander Brabander)
+	* hu.po: added (Ferenc Veres)
+	* various: notification area support added
+	  (Christian Kirbach, Eoin Coffey)
+	* grip.spec: fixed email address
+	* rip.c: better error message if ripping is done with no disc in
+	  the drive (Markus Kaufhold)
+	* rip.c/cdplay.c/discedit.c/grip.c/gripcfg.c: converted some
+	  warnings to use gnome_app_warning
+	* various: notification area support added (Eoin Coffey)
+	* discdb.c: fixed a problem keeping proxy support from working
+	  (Skip Slugger, lucabon)
+	* discedit.c: do not show the multi-artist UI when no disc is
+	  present (Vladimir Petrov)
+	* discedit.c: removed stray debugging when editing disc titile
+	  (Julian C. Dunn)
+	* rip.c: fixed track number being off by one when auto-naming
+	  empty tracks (Vladimir Petrov)
+	* configure.in: upped version to 3.3.0
+
+
+2004-04-26  Mike Oliphant  <grip@nostatic.org>
+
+	* cdplay.c: fixed crash when clicking on rip column without a disc
+	  inserted (thanks to Michael Mauch for catching this)
+	* configure.in: upped version to 3.2.0
+
+2004-04-20  Mike Oliphant  <grip@nostatic.org>
+
+	* ja.po: updated (Takeshi Aihana)
+	* ca.po: updated (Jordi Mallach)
+	* de.po: updated (Götz Waschk)
+	* fi.po: updated (Flammie Pirinen)
+	* it.po: updated (Ceoldo Costantino)
+	* grip.c/rip.c: additional i18n strings
+	* status_window.c: made vte terminal accept UTF-8
+	* various: copyright updates
+	* configure.in: upped version to 3.1.10
+	
+2004-04-02  Mike Oliphant  <grip@nostatic.org>
+
+	* it.po: updated (Ceoldo Costantino)
+	* ja.po: updated (Takeshi Aihana)
+	* fi.po: updated (Flammie Pirinen)
+	* cdplay.c: make length and rip columns size appropriately in
+	  different languages
+	* cdplay.c: fixed bug in playlist support (Markus Kaufhold)
+	* discdb.c: fixed a string length calculation (Thomas Zajic)
+	* discdb.c: removed redundant curl calls (Markus Kaufhold)
+	* status_window.c: fixed a crash problem in certain locales
+	  (Markus Kaufhold)
+	* rip.c/launch.c: translate args of launched programs to locale
+	* grip.c/grip.h/discdb.c/cdplay.c: fixed resizing issues, and now
+	  window sizes and edit/volume/prog status are remembered
+	* grip.c/gripcfg.c/gripcfg.h/parsecfg.c: save ripper/encoder
+	  configurations individually
+	* grip.c: added i18n for a few more strings (Jordi Mallach)
+	* configure.in: upped version to 3.1.9
+	
+2004-03-27  Mike Oliphant  <grip@nostatic.org>
+
+	* de.po: updated (Götz Waschk)
+	* discdb.c: fixed a problem causing crashes on disc lookup
+	* configure.in: upped version to 3.1.8
+
+2004-03-22  Mike Oliphant  <grip@nostatic.org>
+
+	* de.po: updated (Götz Waschk)
+	* bg.po: added (Vladimir "Kaladan" Petkov)
+	* it.po: updated (Ceoldo Costantino)
+	* gripcfg.c: added date switch to oggenc config	
+	* main.c: fixed an i18n issue withe --help (thanks to Laurent
+	  Martelli for catching this)
+	* grip.c: default disc db encoding to UTF-8 instead of locale
+	* configure.in: upped version to 3.1.7
+	
+2004-03-11  Mike Oliphant  <grip@nostatic.org>
+
+	* de.po: updated (Götz Waschk)
+	* it.po: updated (Ceoldo Costantino)
+	* various: fixed handling of UTF-8	
+	* cdplay.c: fixed handling of clicks on the tracklist
+	* grip.c: display an error window if the cd device cannot be opened
+	* gripcfg.c: added track number and genre switches to oggenc config
+	* id3.c: added JPop, Anime, and SynthPop genres
+	* discdb.c/h: don't truncate artist/title to 64 characters
+	* discdb.c/configure.in: switched from ghttp to libcurl
+	* configure.in: upped version to 3.1.6
+	
+2004-03-01  Mike Oliphant  <grip@nostatic.org>
+
+	* de.po: updated (Götz Waschk)
+	* it.po: updated (Ceoldo Costantino)
+	* fi.po: updated (Flammie Pirinen)
+	* fr.po: updated (Eric Lassauge)
+	* gripcfg.c/gripcfg.h/rip.c/rip.h/grip.c/grip.h: extension is now
+	  determined by the encode preset
+	* cdplay.c/discdb.c: support for UTF-8 when talking to discdb
+	  servers (thanks to Kevin Dalley for pioneering this)
+	* grip.c/grip.h: display a warning message when people run a dev
+	  version for the first time
+	* grip.h/rip.c/cdpar.c/cdpar.h/configure.in: check for cdparanoia
+	  includes in both the root include and the cdda subdir	
+	* configure.in: upped version to 3.1.5
+	
+2003-12-21  Mike Oliphant  <grip@nostatic.org>
+
+	* ja.po: updated (Takeshi Aihana)
+	* it.po: updated (Ceoldo Costantino)
+	* grip.h/grip.c/rip.c/cddev.c: NetBSD support
+	* cdpar.c: changed cdparanoia include location
+	* rip.c/cddev.c/cddev.h: close cdrom device before ripping to
+	  avoid conflicts (thanks to John Thacker for tracking this down)
+	* id3.c/id3.h/gripcfg.c/grip.c/grip.h: made unicode in ID3 tags
+	  optional (it doesn't seem to work properly for id3v2)
+	* configure.in: upped version to 3.1.4
+	
+2003-11-03  Mike Oliphant  <oliphant@gtk.org>
+
+	* de.po: updated (Götz Waschk)
+	* po/it.po: updated (Ceoldo Costantino)
+	* po/fi.po: added (Flammie Pirinen)
+	* grip.c/cdplay.c: minimized mode works again
+	* various: more UTF8 fixes (Michael Shigorin)
+	* configure.in: upped version to 3.1.3
+	
+2003-10-01  Mike Oliphant  <oliphant@gtk.org>
+
+	* various: support for alternate character encodings (Sergey Pinaev)
+	* po/ru.po: fixes (Michael Shigorin)
+	* rip.c: fixed a bug with ripping more than one disc (Florian Streck)
+	* discedit.c: year info now saves correctly (Michael Shigorin)
+	* grip.c/grip.h/gripcfg.c/rip.c: added delayed encoding option
+	  (Jeff Mahoney)
+	* configure.in: upped version to 3.1.2
+	
+2003-07-04  Mike Oliphant  <oliphant@gtk.org>
+
+        * rip.c: commented out left-over status window code
+	* be.po: added (Vital Khilko)
+	* configure.in: upped version to 3.1.1
+
+2003-05-30  Mike Oliphant  <oliphant@gtk.org>
+
+	* configure.in: cleaned up
+	* macros: removed
+	* status_window.c/h: added new status window code (currently
+	  disabled)
+	* configure.in/grip.spec.in/Makefile.am: build grip.spec from
+	  grip.spec.in
+	* various: lots of gnome2 changes (thanks to Jean Charles for
+	  doing an intial port)
+	* po/it.po: added (Ceoldo Costantino)
+	* configure.in: upped version to 3.1.0
+
+2003-04-22  Mike Oliphant  <oliphant@gtk.org>
+
+	* fr.po: updated (Eric Lassauge)
+	* cdplay.c: make cddb lookups not abortable until it is fixed so
+	  that it works properly
+	* configure.in/grip.spec: upped version to 3.0.7
+	* grip.c: enabled general status window
+	
+2003-02-09  Mike Oliphant  <oliphant@gtk.org>
+
+        * discdb.c: include <locale.h> (Ed Goforth)
+        * ja.po: updated (Takeshi AIHANA)
+        * doc/C/Makefile.am: install images properly (Todd)
+        * configure.in/grip.spec: upped version to 3.0.6
+
+2003-01-12  Mike Oliphant  <oliphant@gtk.org>
+
+        * de.po: updated (Goetz Waschk)
+        * ja.po: updated (Takeshi AIHANA)
+        * ru.po: updated (Michael Shigorin)
+        * discdb.c: work around for bug in libghttp that sends "HTTP/1,1"
+          instead of "HTTP/1.1" on some systems (Michael Mauch)
+        * rip.c/grip.c/cdplay.c: use 'ripping_a_disc' instead of 'ripping'
+          to check if a rip is in progress
+        * doc/C: updated screenshots
+        * grip.sgml: updated
+        * rip.c: only increment num_wavs if we are encoding
+        * rip.c: don't delete wav file on aborted encode
+        * configure.in/grip.spec: upped version to 3.0.5
+
+2002-12-25  Mike Oliphant  <oliphant@gtk.org>
+
+	* zh_CN.po: updated (Merlin Ma)
+	* fr.po/grip.spec: updated (Eric Lassauge)
+	* ca.po: updated (Jordi Mallach)
+	* ru.po: updated (Mishell Baranov)
+	* rip.c/grip.c/grip.h/gripcfg.c: made stopping the cdrom drive
+	  between ripping tracks optional, and default to not (zongo)
+	* es.po: got rid of duplicate entries
+	* grip.c/grip.h/rip.c: added overall progress indicators
+	  (Przemyslaw Kryger)
+	* grip.c/grip.h/rip.c: added tolerance to avoid getting false
+	  "no disc" readings whe drive is spinngin down from a rip
+	* cdplay.c: fixed bug preventing auto-rip on a disc that had been
+	  previously inserted
+	* cdplay.c: scroll mouse no longer selects/unselects track rip
+	  check
+	* cdplay.c: reset to first track when disc ends
+	* rip.c: rip entire cd now obeys Rip+Encode vs Rip Only
+	* configure.in/grip.spec: upped version to 3.0.4	
+		
+2002-09-21  Mike Oliphant  <oliphant@gtk.org>
+
+	* id3.c: added some #includes
+	* de.po: updated (Goetz Waschk)
+	* grip.sgml: MP3->Encoder, and added new config options
+	* doc/C: created new screenshots
+	* README: added pointers to get more help
+	* configure.in/grip.spec: upped version to 3.0.3	
+	
+2002-09-18  Mike Oliphant  <oliphant@gtk.org>
+
+	* ca.po: added (Jordi Mallach)
+	* ja.po: updated (Takeshi AIHANA)
+	* README: some additional notes about the configure process
+	* rip.c: changed '%i' tranlation from %02x to %08x (thanks to Alan
+	  Eldridge for this)
+	* id3.c: reset files to obey the user's umask after v2 tagging
+	  munges them (thanks to David J. MacKenzie for this)
+	* grip.c: set poll interval to 15 on freebsd and moved force_scsi
+	  out of the cdparanoia-specific config section (thanks to Alan
+	  Eldridge for this)
+	* grip.h/grip.c/rip.c/gripcfg.c: added option do delay before
+	  ripping (thanks to Jeremiah Stanley for suggesting this)
+	* grip.spec: Requires/BuildRequires entries (thanks to Thomas
+	  Vander Stichele for this)
+	* grip.c/grip.h/main.c: added --config option allowing you to
+	  specify a configuration file to allow for multiple
+	  configurations (thanks to Thomas Vander Stichele for this)
+	* gripcfg.c/rip.c: changed "mp3" to "encode" to placate ogg
+	  fanatics :-)  (thanks to Steve Fox for guilt tripping me by
+	  actually submitting a patch)
+	* configure.in/grip.spec: upped version to 3.0.2
+	
+2002-06-17  Mike Oliphant  <oliphant@gtk.org>
+
+	* pt_BR.po: added (thanks to Wellington Terumi Uemura for this)
+	* ru.po: added (thanks to Mishell Baranov for this)
+	* es.po: added (thanks to Noe Misael Nieto Arroyo for this)
+	* zh_HK.po, zh_TW.po: added (thanks to Anthony Fok for this)
+	* doc/C/Makefile.am: made DESTDIR safe (thanks to Alan Eldridge
+	  for this)
+	* grip.c: fixed an initialization problem (thanks to Alan Eldridge
+	  for this)
+	* grip.c: improved handling of user/host env variables (thanks to
+	  Charles G Waldman for this)
+	* grip.c/cdplay.c: added manual disc scan button
+	* cddev.c: set disc_present in a place where it wasn't
+	* cdplay.c: better handling of disc present/absent status
+	* grip.c/gripcfg.c/cdplay.c: make polling for new disc optional
+	* configure.in/grip.spec: upped version to 3.0.1
+	* pixmaps/Makefile.am: include all xpms	
+	
+2002-04-13  Mike Oliphant  <oliphant@gtk.org>
+
+	* rip.c: some fixes to better follow user's id3 tagging
+	  preferences (thanks to Michael Teague for this)
+	* id3.c: fix to keep id3lib from writing v1 tags
+	* configure.in/grip.spec: upped version to 3.0.0
+	
+2002-04-11  Mike Oliphant  <oliphant@gtk.org>
+
+	* ja.po: added (thanks to Takeshi AIHANA for this)
+	* de.po: updated (thanks to Goetz Waschk for this)
+	* zh_CN.po: updated (thanks to Merlin Ma for this)
+	* grip.spec: structural changes an zh_CN translation (thanks to
+	  Merlin Ma for this)
+	* doc: updated some of the screenshots
+	* README: some additional info on dependencies
+	* configure.in/grip.spec: upped version to 2.99.3
+	
+2002-04-02  Mike Oliphant  <oliphant@gtk.org>
+
+	* rip.c: fixed a bug causing access checks to fail
+	* rip.c: don't throw up "rip whole disc" dialog if ripping fails
+	* configure.in/grip.spec: upped version to 2.99.2
+	
+2002-04-01  Mike Oliphant  <oliphant@gtk.org>
+
+	* de.po: updated (thanks to Goetz Waschk for this)
+	* zn_CH.po: added (thanks to Merlin Ma for this)
+	* configure.in: fail if ghttp is not found
+	* cdpar.c: removed misleading cdparanoia error message
+	* rip.c: check if we can write wav/mp3/m3u files before proceeding
+	* rip.c: put a 'nice' call in ThreadRip so that ripping using
+	  internal cdparanoia can be niced.
+	* gripcfg.c: updated flac commandline
+	* configure.in/grip.spec: upped version to 2.99.1
+
+2002-03-10  Mike Oliphant  <oliphant@gtk.org>
+
+	* de.po: updated (thanks to Goetz Waschk for this)
+	* doc/C/Makefile.am: now obeys DESTDIR (thanks to Alan Eldridge
+	  for this)
+	* grip.c/parsecfg.c: throw up a dialog and backup the old grip
+	  config if we are forcing a reconfig
+	* discdb.c: fixed order of title/artist in TTITLE (thanks to
+	  Martin Michlmayr for catching this)
+	* configure.in/cppmain.cc/main.c/Makefile.am: make sure we
+	  initialize c++ datastructures (thanks to Alan Eldridge for this)
+	* discdb.c: changed from "secs" to "seconds" in cddb format
+	* discdb.c: send DYEAR even if it is blank
+	* gripcfg.c: added "-b %b" to default ogg cmdline (thanks to Taku
+	  Yasui for this)
+	* rip.c: fixed floating point exception on alpha systems (thanks
+	  to Taku Yasui for this)
+	* rip.c: make sure num_wavs cannot go below zero (thanks to
+	  Przemyslaw Kryger for this)
+	* grip.c/grip.h/cdplay.c: added auto play on insert
+	* discdb.c: fixed wrapping of DTITLE and TTITLE
+	* gripcfg.c: fixed a problem that screwed up the ripper config if
+	  cdparanoia was not linked in
+	* launch.c/launch.h/rip.c/cdplay.c: made munging of strings the
+	  default only when we know a filename is being constructed. added
+	  '!' switch modifier to force munging (thanks to Devin Carraway
+	  for pointing out the problem)
+	* cddev.c/cddev.h: freebsd compatibility fixes (thanks to Alan
+	  Eldridge for this)
+	* gripcfg.c: do not reset ripper config if the same ripper is
+	  re-selected (thanks to Alan Eldridge for this)
+	* main.c/grip.c/grip.h: added 'scsi-device' parameter
+	* gripcfg.c: move generic scsi config out of the builtin paranoia
+	  section
+	* rip.c: added the 'C' switch for passing the generic scsi device
+	* README: updated usage
+	* grip.sgml: added docs for the new 'C' switch
+	* gripcfg.c: changed cdda2wav to use 'C', removed unnecessary
+	  '*'s, and got rid of \" escaping in oggenc commandline
+	* fr.po: updated (thanks to Eric Lassauge for this)
+	* configure.in: added '-lm' to LIBS to try to work around a
+	  cdparanoi link problem on some platforms
+	* contrib: added contrib directory
+	* contrib/write-gronk-discid: added (thanks to Alan Eldridge for
+	  this)
+	* gripcfg.c/gripcfg.h: use PATH to find executables (thanks to
+	  Alan Eldridge for this)
+	* configure.in/grip.spec: upped version to 2.99.0
+
+2002-02-19  Mike Oliphant  <oliphant@gtk.org>
+
+	* various: solaris compile fixes (thanks to Jim Crumley for
+	  pointing out the SOLARIS->__sun__ change)
+	* rip.c: switched order of statvs vs vfs check (thanks to Jim
+	  Crumley for this)
+	* grip.sgml: added documentation for the "Proxy" and "Misc" config
+	  tabs
+	* rip.c: ask if we should rip all tracks if none are selected
+	  (thanks to Przemyslaw Kryger for this)
+	* main.c: unbuffered debugging (thanks to Alan Eldridge for this)
+	* grip.spec: added '%defattr(-, root, root)' to make installed
+	  files have the proper ownership (thanks to Thomas Schultz for
+	  this)
+	* de.po: added (thanks to Goetz Waschk for this)
+	* configure.in/grip.spec: upped version to 2.98.7
+	
+2002-02-10  Mike Oliphant  <oliphant@gtk.org>
+
+	* gripcfg.c: fixed a bug keeping rip config options from
+	  reflecting whether builin cdparanoia was being used or not
+	  (thanks to Marc Williams for pointing the problem out)
+	* configure.in: added an option to disable compiling with id3lib
+	  (thanks to Thierry Vignaud for this)
+	* fr.po: added (thanks to Eric Lassauge for the translation)
+	* rip.c: move where disc filter was being called (cosmetic, not
+	  functional change)
+	* parsecfg.c: cast boolean values as gboolean instead of int
+	  (thanks to Didier Malenfant for this)
+	* configure.in: use '.' instead of 'source' in id3 compile check
+	  for portability (thanks to Alan Eldridge for this)
+	* cddev.c: fix to data track detection when using cdio.h (thanks
+	  to Alan Eldridge for this)
+	* rip.c: includes for freebsd to compile (thanks to Alan Eldridge
+	  for this)
+	* configure.in/grip.spec: upped version to 2.98.6
+
+2002-01-26  Mike Oliphant  <oliphant@gtk.org>
+
+	* rip.c: fixed a nasty crashing bug related to the disc filter
+	  command (thanks to Goetz Waschk for finding it)
+	* configure.in/grip.spec: upped version to 2.98.5
+	
+2002-01-23  Mike Oliphant  <oliphant@gtk.org>
+
+	* rip.c/rip.h/gripcfg.c: don't include gain analysis stuff if
+	  cdparanoia is not built in
+	* configure.in: added an option to disable cdparanoia
+	* configure.in/grip.spec: upped version to 2.98.4
+	
+2002-01-22  Mike Oliphant  <oliphant@gtk.org>
+
+	* grip.sgml: added more documentation
+	* various: added replay gain calcultion (thanks to David Robinson
+	  for the algorithm and Glen Sawyer for the code)
+	* gripcfg.c/grip.c/grip.h/rip.c: added mp3 filter command
+	* gripcfg.c/grip.c/grip.h/rip.c: added disc filter command and
+	  album replay gain
+	* README: updated to reflect the new version
+	* configure.in/grip.spec: upped version to 2.98.3
+	
+2002-01-17  Mike Oliphant  <oliphant@gtk.org>
+
+	* grip.sgml/grip.c: added some more documentation
+	* configure.in/grip.spec: upped version to 2.98.2
+
+2002-01-16  Mike Oliphant  <oliphant@gtk.org>
+
+	* grip.spec: added Epoch: 1 to allow upgrading from redhat rpms
+	  (thanks to Tim Powers for this)
+	* grip.spec: put the Icon back
+	* configure.in/grip.spec: upped version to 2.98.1
+	
+2002-01-13  Mike Oliphant  <oliphant@gtk.org>
+
+	* discdb.c: don't overwrite with blank genre on lookup
+	* configure.in: added option to link id3lib statically
+	* gripcfg.c: gettextized
+	* cddev.c: gettextized
+	* cdplay.c: gettextized
+	* dialog.c: gettextized
+	* discdb.c: gettextized
+	* discedit.c: gettextized
+	* grip.c: gettextized
+	* id3.c: gettextized
+	* launch.c: gettextized
+	* parsecfg.c: gettextized
+	* rip.c: gettextized
+	* launch.c: fixed TranslateAndLaunch (cd update program now works)
+	* launch.c/rip.c/cdplay.c/grip.c: changed how IO redirect works
+	* rip.c: Added option to kill just the rip process
+	* configure.in/grip.spec: upped version to 2.98.0 (not 2.9.8 -- to
+	  make it sequence after 2.96 in rpms/debs)
+	
+2002-01-08  Mike Oliphant  <oliphant@gtk.org>
+
+	* discedit.c: fixed a crashing problem on track edit focus out
+	* cdplay.c: reset year, id3, and track title/artist on eject
+	* rip.c: increased number of args to rip/enc commandlines to 100
+	  (thanks to David J. MacKenzie for pointing this out)
+	* discdb.c: changed wrap trigger to 70 chars on submissions
+	* discedit.c/cdplay.c/rip.c: only do CheckDupNames just before
+	  starting to rip
+	* grip.h: added '-i' to sendmail commandline
+	* grip.c/grip.h/gripcfg.c/rip.c/rip.h/cdpar.c: generic SCSI device
+	  is now overridable when using builtin cdparanoia
+	* grip.c: use gripicon.png as window icon
+	* configure.in: adding config check for id3lib (thanks to Goetz
+	  Waschk for this)
+	* various: renamed id3.h grip_id3.h
+	* grip.c/grip.h/gripcfg.c/rip.c: made id3v2 tagging optional if
+	  id3lib is installed
+	* discdb.c: added support for multiple exact matches
+	* discdb.c: changed protocol level to 5
+	* discdb.c/id3.c: added grabbing id3 genre from DGENRE
+	* configure.in: added configure switch for linking static
+	  cdparanoia libs
+	* doc/C: added some more docs
+	
+2002-01-04  Mike Oliphant  <oliphant@gtk.org>
+
+	* discdb.c: fixed a bug that made lookups always genre misc
+	* cddev.c/h: added IsDataTrack
+	* cddev.c/rip.c: compensate for gap before data track
+	* rip.c: don't try to rip data tracks
+	* rip.c: use 'long long' for filesystem space check
+	* gripcfg.c: added preset for FLAC
+	* cdplay.c: fixed a sync problem with multi-artist checkbox
+	  (thanks to Yves Kurz for this)
+	* discdb.c/h: support discdb revision correctly
+	* discedit.c: on submission, ask for a DiscDB genre if it is set
+	  to 'unknown'
+	* cdpar.c: fixed a problem with rip smiles being one off
+	* rip.c: have 'Disable paranoia' override 'Disable extra paranoia'
+	* grip.c: switch to %A in defaults
+	* launch.c: fixed problem with munge carrying over in translate
+	  (thanks to Goetz Waschk for pointing this out)
+	
+2001-12-30  Mike Oliphant  <oliphant@gtk.org>
+
+	* rip.c: Made rip/encode progress labels font-sensitive
+	* grip.c: Made cdrom device configurable in the gui
+	* rip.c: num_wavs no longer reset when new rip starts
+	
+2001-05-19  Mike Oliphant  <oliphant@gtk.org>
+
+	* cdplay.c: left clicking when in the "Rip" column toggles rip
+	  checkmark * cdplay.c/rip.c: got the CD update program working
+	  again
+	
+2001-04-20  Mike Oliphant  <oliphant@gtk.org>
+
+	* various: now compiles with/without builtin cdparanoia support
+	  based on the result of the configure checks
+	* rip.c: converted wav filter cmd to new translation mechanism
+	* various: switched to gnome input dialogs
+	* cdplay.c: fixed crash when discdb lookup fails
+	* various: id3 genres now sorted
+	* discdb.c: save id3 genre in local discdb entries
+	* gripcfg.c/grip.c: made proxy user/pswd editable
+	* rip.c: do not rip or encode unless there is at least 1.5 times
+	  as much space free as is required
+	* id3.c: added id3v2 support via id3lib (thanks to Waider for
+	  this) -- still need configure code for it, though
+	* grip.c/discdb.c: changed mkdir mask to 0777
+	* discdb.c: increased string data size to 256
+	* cdplay.c: zero-pad "Track xx" trackname defaults
+	
+2001-03-18  Mike Oliphant  <oliphant@gkt.org>
+
+	* discedit.c/discedit.h: moved disc editing code to new codebase
+
+2001-03-11  Mike Oliphant  <oliphant@gtk.org>
+
+	* rip.c: converted ripping/encoding to new structure
+	* rip.c/discdb.c: detatched threads (thanks to James LewisMoss for
+	  this) I think this fixes the strange problems with auto-eject
+	  not working when using builtin cdparanoia
+	* rip.c/gripcfg.c: added configurable id3 comment
+
+2000-10-18  Mike Oliphant  <oliphant@gtk.org>
+
+	* discdb.c/discdb.h: new version of cddb.c
+	* discdb.c/discdb.h: limit all title/artist info to 80 characters
+	* cddev.c: reorganized for efficiency. should be fewer stats now
+	* grip.c: now a gnome app
+	* main.c: added
+	* Makefile: removed. now using GNU configure
+	* discdb.c: now uses libghttp for http requests
+	* discdb.c: added proxy user authentication support
+	* grip.c: switched to gnome-moz-remote for opening the Grip
+	  homepage in the user's web browers
+	
+v2.96 -- July 15th, 2001
+------------------------
+
+ o detach threads (thanks to James LewisMoss for the patch)
+ o fixed a crashing problem with relative paths (thanks to Antti Siipola)
+ o fixed problem causing ripping to hang waiting on encoding (thanks to Alan
+   Eldridge for this)
+ o fixed problem with mp3 filenames being limited to 80 characters
+ o fixed crash on failed disc lookup
+ o changed the cddb revision number to '0' until revisions get implemented
+   properly
+ o write multi-artist tracks in artist / title format
+ o added '.gz' to man entries in the spec file so newer versions of RPM
+   don't get confused (thanks to John Aldrich for this)
+
+v2.95 -- October 18th, 2000
+---------------------------
+
+ o now only one failure dialog if CDDB query fails on both primary and
+   secondary serverss
+ o use "../" in relative paths where appropriate (thanks to Jim Crumley for
+   this)
+ o switch max path length from 1024 to PATH_MAX
+ o fixed a typo in passing '%i' on the encode commandline (thanks for Steven
+   Czerwinski for this)
+ o added an option to allow 8bit characters in filenames (patch submitted
+   anonymously)
+ o added an commandline option to prevent I/O redirection (thanks to an
+   anonymous patch)
+ o added additional id3 genres (thanks to Götz Waschk for this)
+ o added speed indicators to rip/encode status (thanks to Steinar Gunderson
+   for this)
+ o fixed a segfault problem with certain cdrom drives (thanks to
+   M.E. O'Neill for this)
+ o added preliminary ogg support. lots of people submitted patches. the
+   one I applied was from Fredrik Vraalsen
+
+v2.94 -- April 18th, 2000
+-------------------------
+
+ o made cddb lookups more stable (thanks to Michael Bedy for the patch)
+ o put ID3v1.1 support back in (it got mysteriously dropped from v2.93)
+ o more freebsd compatibility fixes (thanks to Steven Kehlet and Robert Ray)
+
+v2.93 -- April 8th, 2000
+------------------------
+
+ o added ID3v1.1 support
+ o added FreeBSD support (thanks to Steven Kehlet and Robert Ray)
+ o Eject after rip should be more reliable now
+
+v2.92 -- March 4th, 2000
+------------------------
+
+ o ID3 tagging now done internally
+ o now one .spec file is used to build both Grip and GCD (thanks to
+   Christian Holtje for sending this in)
+ o added gtk_set_locale() for non-english users
+ o added option to have relative paths in .m3u files
+ o tracks are now only added to the .m3u file if selected for ripping
+ o cleaned up filename permissions in distribution
+
+v2.91 -- December 19th, 1999
+----------------------------
+
+ o now compiled with cdparanoia 9.7
+ o big memory bug in paranoia library fixed (yay! thanks, monty!)
+ o switched Makefile to link with paranoia library using the new "libxxx"
+   library names
+ o playback mode now saved between sessions
+ o if playlist mode is selected and there are no tracks in the playlist, the
+   mode switches to normal mode
+ o track artist is now properly quote-escaped in the ID3 command-line
+   (thanks to a *bunch* of people for sending this one in)
+ o added an option to disable underscoring of spaces
+ o the %i switch now works properly on the encoder commandline
+ o loop mode now saved
+ o volume level is now saved
+ o when editing track titles, hitting return now goes on to the next track
+ o increased the size of the start/end sector text entry fields
+ o fixed a minor problem with the installation of the gcd manpage (thanks to
+   Ryan Cleary for this)
+ o ripping no longer stops permanently after it gets shut down my max
+   non-encoded .wavs
+
+v2.9 -- November 13th, 1999
+---------------------------
+
+ o fixed keep-alive handling in cddb lookups (no really, this time!)
+ o disc no longer auto-ejects when it shouldn't
+ o added an option to disable lowercasing of filenames
+ o added an option to keep certain characters from being stripped in
+   filenames
+ o updated the README file
+ o Grip is now silent in non-debug mode
+
+v2.8 -- November 7th, 1999
+--------------------------
+
+ o rewinding past the beginning of a track is now more sensible (thanks to
+   Daniel Venkitachalam for the patch)
+ o the UI is now brought up without waiting for the cdrom drive to spin up
+ o filenames are now always converted to lowercase, with all
+   non-alphanumeric characters deleted and spaces converted to underscores
+ o added support for the gogo encoder (asm-accelerated version of LAME)
+ o overhauled the way input widgets work (lots of effort for no difference
+   to the end-user, but it was the right thing to do...)
+ o compiled with cdparanoia 9.6
+ o added writing of .m3u files (thanks to Friedemann Baitinger for this)
+ o got rid of title/time display from rip page
+ o got rid of outputdir -- rip and mp3 file formats are now fully specified
+ o keep-alive now skipped somewhat more intelligently
+ o got rid of grip's .rc file. the current implementation of themes makes it
+   all but impossible to have application-specific .rc files handled
+   intelligently
+ o moved ID3 genre selection
+ o check mark now shows up on white
+ o changed all snprintf calls to g_snprintf
+
+v2.7 -- September 9th, 1999
+---------------------------
+
+ o fixed a problem that would cause a crash if '-d' was used on the
+   command-line but no drive was given (thanks to Glenn Golden for pointing
+   this out)
+ o added numerous changes to compile under solaris (thanks to David Meleedy
+   for this)
+ o added the ability to lowercase % switch fields (thanks to Dan Girellini
+   for this)
+ o added "Fast Fusion" ID3 genre (thanks to Jarda Benkovsky and Dima Barsky
+   for letting me know it was missing
+ o "keep-alive" line now assumed not to exist when going through a proxy
+   (hope this is the right thing to do...)
+ o fixed the default id3 commandline
+
+v2.6 -- August 27th, 1999
+-------------------------
+
+ o fixed a problem that was keeping uninterrupted play from working when
+   Grip was exited/reloaded (thanks to Jeremy Buhler for pointing this out)
+ o added preset for xing encoder (thanks to Aubin Paul and red@chipmusic.nu
+   for this)
+ o added a "Host:" bit in the cddb http request (thanks to
+   casey@seattle.gii.net for this)
+ o added "faulty eject" option for people with nasty drives (thanks to
+   Steven James for this suggestion)
+ o num_wavs no longer set to zero when ripping starts (thanks to Steven
+   James for this)
+ o if the file to rip already exists, and is the right size, ripping is
+   skipped (thanks to Sergio Mones, A.R. Henry and Steven James for all
+   submitting this) 
+ o fixed a problem that would keep auto-eject from working sometimes (thanks
+   to Steven James for this)
+ o added the ability to auto-eject after a delay to make sure it happens on
+   drives that don't reliably eject while spinning down (thanks to Steven
+   James for this)
+ o added %i (cddb discid) switch in id3 commandline (thanks to Sean
+   Reifschneider for this)
+ o cddb discid should now work on 64bit systems
+ o added a Grip man page (thanks to Aaron Sherman for this)
+ o the builtin cdparanoia no longer enforces user access. if you run Grip as
+   root, the builtin cdparanoia will now be able to access root-only files
+ o the loop mode toggle now uses two different bitmaps
+ o fixed reading of EXTT cddb field (thanks to Michel Verdier for this)
+ o fixed a problem that was keeping the '-l' option from working (thanks to
+   Dima Barsky for this)
+ o http 1.1 is now used for cddb lookups (virtual hosts now supported)
+
+v2.5 -- July 1st, 1999
+----------------------
+
+ o fixed a problem that was keeping ripping a new disc while encoding the
+   previous one from working (thanks to Jonathan Stockley for pointing out
+   that this wasn't working)
+ o fixed *another* bug that was preventing ripping a new disc
+ o partial rip info now insensitive if partial rip not selected
+ o switched "rip only" and "rip+encode" -- rip+encode is the most used
+ o bumped the maximum number of CPUs up to 16 to satisfy people who are
+   ripping CDs on systems they should probably be using for work...
+ o added option to automatically rip when a disc is inserted and to
+   automatically eject when ripping finishes (thanks to Sean Reifschneider
+   for suggesting this and sending in some code)
+ o added ':' to list of default underscore characters
+ o removed "save configuration" button -- save is now automatic at exit
+ o multi-artist splitting can now be done Artist/Title in addition to
+   Title/Artist
+ o added an option to "beep" at end of rip
+ o artist fields are now no longer carried over to an unidentified disc
+
+v2.4 -- June 21st, 1999
+-----------------------
+
+ o the window now moves if it gets resized off of the screen
+ o Grip now attempts to unlock the door before ejecting (thanks to Sean
+   Reifschneider for the patch)
+ o Grip should now open the tray when you hit eject with no disc in the
+   drive if you have a decent drive. I don't :-(
+ o encoding of already ripped tracks now no longer requires the disc to be
+   in the drive
+ o error messages now pop up if you try to access the cd while ripping
+ o program and version names are now correct in GCD's cddb lookup
+ o got rid of genre directories for local cddb storage (but it will still
+   search them for backward compatibility
+ o fixed a bug that could truncate the %A switch in ID3 tagging
+ o playback now cleanly stopped when ripping starts
+ o fixed a bug that was causing the %a switch to be wrong in ID3 tagging
+ o fixed a problem that would set a check after doing a partial rip
+ o fixed a compile compatibility problem with toggle buttons under older
+   versions of gtk+
+ o fixed problems that would cause ripping and encoding to fail on some
+   systems (thanks to Ian Soboroff for helping to track this down)
+ o modified the cdda2wav config and added mp3encode (thanks to Avi Alkalay
+   for this)
+ o fixed a problem with the disc not updating when it is switched with
+   ripping (but not encoding) finished
+ o critical colors now done internally rather than through a gtkrc
+   file. this was necessary because themes (brokenly) override application
+   rc files
+ o title no longer duplicated as the artist if a song has no artist in multi
+ o user is now prompted if they try to shut down while ripping/encoding
+
+v2.3 -- June 14th, 1999
+-----------------------
+
+ o large cddb EXTD and EXTT entries now wrapped properly
+ o cddb submission not sent if disc or artist field is blank
+ o fixed '%A' switch
+ o added a .wav "filter" command that can be run after ripping
+ o grip and gcd no longer install setuid root. this will make things more
+   difficult for some users, but is "the right thing to do"
+ o config file is now ~/.grip instead of /usr/lib/grip/grip.cfg
+ o added an informative message if the cd device is inaccessible
+ o fixed up the volume slider so it doesn't encroach on the buttons
+ o fixed a bug with the artist for the cdupdate program
+ o added '*' option to skip underscoring of % arguments in file formats
+
+v2.2 -- June 3rd, 1999
+----------------------
+
+ o made the progress bars a bit slimmer
+ o added defaults for common rippers/encoders
+ o changed track clist selection mode from single to browse
+ o grip now uses Paranoia directly -- no more running cdparanoia separately!
+ o added cdparanoia-like "smilies" to indicate rip status
+ o added builtin paranoia config options
+ o reorganized the makefile to allow inclusion of cdparanoia to be optional
+ o reply email address is now configurable (thanks to christian
+   <eleet@altern.org> for the patch)
+
+v2.1 -- May 31st, 1999
+----------------------
+
+ o the %a switch in the ID3 command-line now uses the track artist on a
+   multi-artist cd
+ o added a %y (year) switch to the ID3 command-line
+ o cddb genre combo now will not allow the user to entry a genre that isn't
+   in the list
+ o cddb submission is now blocked if genre is 'unknown'
+ o changing the number of cpus now finally works (honest!) -- thanks to Jeff
+   Dairiki for pointing out that it *still* didn't work in 2.0
+ o ~ now supported in filenames
+ o %g and %G fields now available in file format
+ o added option to configure encode bitrate and %b switch for mp3 cmdline
+ o encode progress bar is now 100% accurate if kbit/sec is properly set
+ o %% now translates as % in switch translation
+ o added %A switch. this is just like %a, but it stays as the disc artist
+   even on multi-artist cds
+
+v2.0 -- May 26th, 1999
+----------------------
+
+ o fixed a problem with the number of cpu's not getting updated properly
+ o the cdupdate program is now only called when there is a disc present
+   (thanks to Simon Rumble for pointing this bug out)
+ o fixed a problem with the secondary server proxy not being set properly
+   (thanks to Philippe Raoult for pointing this out)
+ o added support for multi-artist discs
+ o added 1 to the track number in the id3 command-line
+ o clicking on the LCD display now give "super-condensed" mode
+ o fixed a problem that would keep .wav files from being deleted if the file
+   was not accessible by root
+ o year field added to disc information
+ o extra songs no longer carry over to the next disc
+ o grip no longer shrinks when volume/track edit are toggled when not
+   minimized (thanks to Philippe Raoult for the patch)
+ o proxy yes/no now updated properly (thanks to Alain Schroeder for pointing
+   the problem out)
+ o made shrink inhibition when toggling volume/track edit optional
+
+v1.9 -- April 27th, 1999
+------------------------
+
+ o added SMP support (thanks to Philippe Raoult for the code)
+ o play information is now shown in the icon window title (thanks to Martin
+   Pool for this)
+ o underscoring of filenames no longer changes the source variables
+ o disc/track extended information now cleared between discs
+ o added a config.h option to specify the mail program (thanks to Greg Ward
+   for this)
+ o the rip/mp3 file formats can now have path information in them
+ o added user-agent field to HTTP requests
+ o switched default ID3 tagger to mp3info
+ o removed unnecessary malloc-ing in UpdateTracks()
+ o track length column is now right-justified
+ o duplicate tracks names now modified to guarantee unique rip names
+ o fixed a problem looking up discs with a large number of tracks
+ o added -D_REENTRANT switch to CFLAGS -- this fixes problems with libc5
+ o converted the .cfg file to a key-based scheme
+ o added ability to store song info in an SQL database (currently disabled)
+
+v1.8 -- April 6th, 1999
+-----------------------
+
+ o the playlist is now updated when the entry loses focus
+ o switched to a "busy" cursor while play is initiating
+ o reset playing flag when a disc is ejected
+ o added a debugging mode
+ o manual CDDB lookup now prevented if no disc is in the drive
+   (thanks to Craig Nellist for pointing this out)
+ o added CREDITS file
+ o added an options for managing non-interrupted playback when Grip quits,
+   and a '-' in front of the playback time for "time left" modes
+   (thanks to Creg Nellist for this code)
+ o .wav files are now not deleted if the user aborts the rip
+   (thanks to Sergio Monesi for this)
+ o clicking on the 'Rip' column title now deselects all tracks if more than
+   half of them are selected, and selects them all otherwise
+ o fixed a bug that was causing a cd-detection failure on some systems
+ o CDDB indicator now updates correctly on a failed query, a flag to
+   select whether CDDB lookup should happen automatically has been added,
+   and there is now an option to reshuffle every time playback is started
+   (thanks to Creg Nellist for these)
+ o CD-play related options moved to their own tab in the config notebook
+ o the existence of rip/mp3 programs is now checked before proceeding
+ o the maximum length of output filenames and rip/mp3/id3 command-lines is
+   now strictly enforced
+
+v1.7 -- March 31st, 1999
+------------------------
+
+ o moved the proxy config options to a separate tab
+ o underscoring now not done in ID3 command-line
+ o added a warning when entries are submitted to a commercial server
+ o added a gtk+ version compatibility warning
+ o added secondary CDDB server
+ o the user is now asked if they want to submit when a disc is found on the
+   secondary server, but not the primary one
+ o switched the freecddb cgi-path to ~cddb
+ o made detection of no disc even more reliable
+ o Makefile now uses install (thanks to Eduard Dulich)
+ o fixed a nasty bug that could cause Grip to expand to the whole screen
+   (thanks to Shaw Terwilliger for this)
+ o fixed a security hole (thanks go to Jonathan Pickard)
+ o added labels to the disc edit entries, and switched the order of
+   title/artist 
+ o fixed a problem that was resulting in an unnecessary horizontal scrollbar
+   in the track list widget in GCD
+ o added the ability to select CDDB genres
+ o track transitions are now smooth when in normal play mode
+ o added a help tab and a bug report submission form
+
+v1.6 -- March 26th, 1999
+------------------------
+
+ o removed the leading '/' from the default CDDB cgi path
+ o removed the submission of user name and host information to the CDDB
+   server -- I feel that this information is private, and should not be
+   submitted without the user's consent. anyway, the server has no
+   (non-marketing) use for it
+ o added CDDB submission
+ o added editing of disc title/artist
+ o low-level cd control now done by Grip instead of libcdaudio
+ o all libcdauio dependencies now removed
+ o added "save disc info" button
+ o the GUI is now more responsive while a song is playing
+ o fixed a nasty bug that was causing disc title/artist to be switched
+ o fixed a problem with CDDB entries sometimes being saved as root
+ o volume control is now set properly on startup
+ o encoding no longer hangs if the MP3 file format is set improperly
+ o fixed a problem with not stopping in non-loop play
+ o fixed a problem that was causing play to stop at the end of a track if
+   play had been paused (this is a low-level driver bug, I think)
+
+v1.5 -- March 24th, 1999
+------------------------
+
+ o added a popup message if the use selects rip/encode with no tracks
+   selected 
+ o added another fix that *might* fix the X i/o problems some people are
+   having
+ o fixed a bug with start/end sector info in command-line/filename parsing
+   (thanks go to Jonathan Aseltine for pointing this out to me)
+ o fixed a bug that was keeping the '-d' command-line option from working
+   (thanks to Alan Wild for sending this in)
+ o added yet *another* fix to try to get rid of X i/o problems
+ o added loop and shuffle play modes (courtesy of David Decotigny)
+ o made the cgi path of the CDDB server configurable
+ o switched the default CDDB server to freecddb.freecddb.org
+ o fixed up shuffle play, and added playlist support
+ o CDDB entry reading/writing is now done by Grip rather than libcdaudio
+
+v1.4 -- March 8th, 1999
+-----------------------
+
+ o added '"' to the default list of underscored characters
+ o added %i option to pass the discid as a command-line argument
+ o added Grip URL to about page (clicking loads page in netscape)
+ o fixed a problem with GCD accessing a Grip-only label
+ o the track/time indicator is now displayed properly while looking up a
+   disc through CDDB
+ o set the volume widget to the correct scale (it was too quiet)
+ o CDDB lookup can now be aborted and initiated at any time
+ o clicking on the time display now toggles the mode between time played in
+   track, time played in disc, time left in track, and time left in disc
+ o initial support for cd-changers added, but not tested (I don't have one)
+ o Track names are now editable
+ o fixed a bug with handling CDDB entries with long disc/track names
+ o added '-l' command-line option to disable CDDB lookup
+ o fixed (I hope!) a bug with CDDB lookup of discs with many tracks
+ o added a popup message when user's try to edit root-only config options
+
+v1.3 -- March 2nd, 1999
+-----------------------
+
+ o pixmaps are now compiled into the executable
+ o added a fix that *might* fix the Xlib async errors some people are getting
+ o Grip can now read proxy server/port from the "http_proxy" env. variable
+ o made the text entry widgets take up as much space as they can
+ o the text in entry widgets is now initially set to display from the
+   beginning (it looked odd before)
+ o introduced GCD, a cd-player only version of Grip
+
+v1.2 -- February 23rd, 1999
+---------------------------
+
+ o added error message when a pixmap fails to load
+ o added an option to call an external program to add ID3 tags to the
+   encoded files. Contributed by Ian Campbell <ijc25@cam.ac.uk>
+ o cleaned up the look of the config section a bit
+ o added option to limit the number of tracks to have waiting to be encoded
+ o rip/encode processes that are active when Grip is shut down are now
+   terminated
+
+v1.1 -- February 17th, 1999
+---------------------------
+
+ o underscoring of spaces filenames is now optional
+ o added a configurable set of characters to underscore in filenames
+ o the '%t' (track) switch is now zero-padded to 2 characters
+ o CDDB lookup is now done by Grip, rather than using libcdaudio
+ o better handling of self-titled albums
+ o 'nice' values are now supported for the rip/encode processes
+ o fixed a bug that could make Grip encode when you didn't want it to
+ o the time display now stops flashing if the disc is stopped while paused
+ o now only options that impact the rip program/filename need root access to
+   be able to configure them
+
+v1.0 -- February 2nd, 1999
+--------------------------
+
+ o added a "CD update" program to run whenever a new disc is loaded
+ o removed the extra "output directory" option in the CDDB config section
+ o fixed freezing problem with bladeenc
+ o new icons to show rip/encode progress and CDDB lookup in LCD panel
+ o tooltips color selection now down through .rc file
+ o ripping and encoding now run simultaneously for multi-track rips
+
+v0.9 -- January 18th, 1999
+--------------------------
+
+ o track times are now displayed while looking up a disc in the CDDB
+ o Grip now uses the new http-based libcdaudio interface
+ o added support for proxy servers for CDDB lookup
+ o added '%c' switch to specify cdrom device
+ o the '%' switches can now be used in the output directory path
+ o output files are no longer written as root
+
+v0.8 -- January 11th, 1999
+--------------------------
+
+ o fixed a bug that kept the "previous track" button from working properly
+   when audio was playing
+ o fixed a bug that made the display keep updating after play hit the end
+   of a disc
+ o clicking on the "Rip" column heading will now select all tracks
+ o added scrolled window for track display in gtk+ 1.1.x versions
+ o selection of tracks to rip with right mouse should now work for
+   gtk+ 1.1.x
+ o selecting a track to rip no longer interacts with whether the track is
+   selected
+
+v0.7 -- January 5th, 1999
+-------------------------
+
+ o added a volume control
+ o the eject button will now close the drive if it is open
+ o gtk_clist_set_policy() not used if compiling with gtk 1.1.x
+ o added support for ripping multiple tracks
+ o re-organized the config page into multiple sub-pages
+ o re-organized the rip page
+ o added a button to toggle partial track ripping
+ o added rip/encode status to the LCD display
+ o added options to configure the format of ripped and encoded files
+ o added option to configure output directory
+ o added option to delete .wav files after MP3-encoding them
+
+v0.6 -- December 22nd, 1998
+---------------------------
+
+ o made next/prev track buttons work a bit more sensibly
+ o standard play now continues to subsequent tracks
+ o Rip page track info now recognizes when no disc is present
+ o added track number to track info display
+ o cd status is no longer checked when idle with a disc in the drive
+ o track names with a '/' can now be ripped
+ o the track display now only has scrollbars if they are needed
+ o fastfwd and rewind now continue if the button is held down
+
+v0.5 -- December 18th, 1998
+---------------------------
+
+ o compressed the controls a bit
+ o added support for MP3-encoding
+ o added cute rounding effect on the "LCD" display
+
+v0.4 -- December 16th, 1998
+---------------------------
+
+ o the play time indicator now resets to zero when a disc is ejected
+ o changed the look of the CD controls
+ o added "cd-only" mode
+ o added "-s" command-line option to force cd-only mode
+ o the main window now pops up all at once
+ o added current track indicator in cd panel display
+ o added fastforward and rewind (kind of)
+
+v0.3 -- December 14th, 1998
+---------------------------
+
+ o fixed a bug that would cause a crash if no disc was present on startup
+ o fixed a bug that would cause discs to be looked up in the CDDB even
+   if a record was already stored locally
+ o the display now reflects the situation when no disc is present
+ o updating data when discs are changed is now much better
+ o added a CDDB access indicator
+
+v0.2 -- December 10th, 1998
+---------------------------
+
+ o ripping is now disabled if you are already ripping
+ o fixed a memory allocation bug in the track list clist
+ o CDDB lookup is now threaded
+
+v0.1 -- December 8th, 1998
+--------------------------
+
+ o first public release
+

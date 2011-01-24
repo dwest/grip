@@ -1,0 +1,25 @@
+/* XPM */
+static char *menunext_xpm[] = {
+/* columns rows colors chars-per-pixel */
+"16 16 3 1",
+"  c black",
+". c gray100",
+"X c None",
+/* pixels */
+"XXXXXXXXXXXXXXXX",
+"XXXXXXXXXXXXXXXX",
+"XXX XXXXXX   XXX",
+"XXX  XXXXX   XXX",
+"XXX   XXXX   XXX",
+"XXX    XXX   XXX",
+"XXX     XX   XXX",
+"XXX      X   XXX",
+"XXX      X   XXX",
+"XXX     XX   XXX",
+"XXX    XXX   XXX",
+"XXX   XXXX   XXX",
+"XXX  XXXXX   XXX",
+"XXX XXXXXX   XXX",
+"XXXXXXXXXXXXXXXX",
+"XXXXXXXXXXXXXXXX"
+};

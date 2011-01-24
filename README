@@ -1,0 +1,117 @@
+Grip
+====
+
+Grip is a cd-player and cd-ripper for the Gnome desktop.. It has the ripping
+capabilities of cdparanoia builtin, but can also use external rippers (such
+as cdda2wav). It also provides an automated frontend for MP3 encoders,
+letting you take a disc and transform it easily straight into MP3s. Internet
+disc lookups are supported for retrieving track information from disc
+database servers. Grip works with DigitalDJ to provide a unified
+"computerized" version of your music collection.
+
+
+Requirements
+============
+
+To use Grip, you must have:
+
+ o The Gnome desktop
+ o POSIX thread support (http://pauillac.inria.fr/~xleroy/linuxthreads)
+ o a net connection (if you want to use disc database lookup)
+ o a CD player (surprise, surprise)
+
+Grip requires that you have at least a basic version of the Gnome desktop
+installed on your computer. In particular, make sure that you have libghttp
+installed. If you can't find it, I have mirrored a copy here:
+
+  http://www.nostatic.org/grip/libghttp-1.0.9.tar.gz
+
+If you wish to have builtin cdparanoia support, or id3v2 support, you must
+have the appropriate packages on your system. You can find them here:
+
+ cdparanoia: http://xiph.org/paranoia/index.html
+ id3v2: http://id3lib.sourceforge.net/
+
+Grip is designed to work closely with DigitalDJ, my SQL-based mp3 jukebox
+system (although it does not require it). DigitalDJ can be obtained from:
+
+  http://www.nostatic.org/ddj
+
+
+Installation
+============
+
+If you obtained Grip from the RPM distribution then they are already
+installed. If you have the source distribution, you need to compile it.
+
+To install Grip, simply go through the following steps:
+
+ o after unpacking Grip, cd to the extracted directory
+ o './configure'
+ o 'make'
+ o become root if you are installing in a non-user directory
+ o 'make install'
+
+For information on options to the configure process, run:
+
+  ./configure --help
+
+Grip adds the following options that can be specified to configure:
+
+  --disable-shared-cdpar  -- This will force Grip to link statically, rather
+                             than dynamically with cdparanoia
+
+  --disable-cdpar         -- This disable linking with cdparanoia entirely
+
+  --disable-shared-id3    -- This will force Grip to link statically, rather
+                             than dynamically with id3lib
+
+Note that if Gnome is installed in a non-standard place (such as /opt), you
+may need to use the '--with-gnome' configure option for all libraries to be
+found correctly.
+
+
+Running Grip
+============
+
+Grip's usage is:
+
+  grip [options]
+
+  where the available options are:
+
+    --config=CONFIG             Specify the configuration file to use
+                                (defaults to .grip, relative to home dir)
+    --device=DEVICE             Specify the cdrom device to use
+    --scsi-device=DEVICE        Specify the generic scsi device to use
+    --small                     Launch in "small" (cd-only) mode
+    --local                     "Local" mode -- do not look up disc info on
+                                the net
+    --no-redirect               Do not do I/O redirection
+    --verbose                   Run in verbose (debug) mode
+
+
+Getting Mor Help
+================
+
+For more information, see the online documentation within Grip. It can also
+be accessed locally in the source distribution. Load doc/C/grip/grip.html
+into an html viewer.
+
+If you need more help with Grip, your best resource is the Grip mailing
+list. You will find it at:
+
+  http://lists.sourceforge.net/mailman/listinfo/grip-users
+
+Be sure to check the mailing list archives for answers to any questions you
+may have.
+
+To report a bug with Grip, or to submit a patch. Please do so at the Grip
+section on sourceforge.net:
+
+  http://sourceforge.net/projects/grip
+
+---
+Mike Oliphant (oliphant@gtk.org)
+
+http://www.nostatic.org/grip

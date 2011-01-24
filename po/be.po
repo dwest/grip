@@ -1,0 +1,1276 @@
+# translation of grip.be.po to Belarusian
+# translation of be.po to Belarusian
+# translation of grip.po to Belarusian
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Vital Khilko <dojlid@mova.org>, 2003
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: grip.be\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-06-25 11:23-0700\n"
+"PO-Revision-Date: 2003-06-29 14:38+0300\n"
+"Last-Translator: Vital Khilko <dojlid@mova.org>\n"
+"Language-Team: Belarusian <i18n@mova.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0\n"
+
+#: src/main.c:56
+msgid "Specify the geometry of the main window"
+msgstr "Пазначце геамэтрыю асноўнага акна"
+
+#: src/main.c:57
+msgid "GEOMETRY"
+msgstr "ГЭАМЭТРЫЯ"
+
+#: src/main.c:65
+msgid "Specify the config file to use (in your home dir)"
+msgstr "Пазначце файл канфігурацыі для выкарыстаньня (у вашай хатняй тэчцы)"
+
+#: src/main.c:66
+msgid "CONFIG"
+msgstr "КАНФІГУРАЦЫЯ"
+
+#: src/main.c:74
+msgid "Specify the cdrom device to use"
+msgstr "Пазначце прыладу cdrom"
+
+#: src/main.c:75 src/main.c:84
+msgid "DEVICE"
+msgstr "ПРЫЛАДА"
+
+#: src/main.c:83
+msgid "Specify the generic scsi device to use"
+msgstr "Пазначце прыладу scsi"
+
+#: src/main.c:92
+msgid "Launch in \"small\" (cd-only) mode"
+msgstr "Загружаць у \"паменшаным\" рэжыме (толькі прайгравальнік)"
+
+#: src/main.c:101
+msgid "\"Local\" mode -- do not look up disc info on the net"
+msgstr "\"Мясцовы\" рэжым - не праглядаць інфармацыю аб дыске ў сеціве"
+
+#: src/main.c:110
+msgid "Do not do I/O redirection"
+msgstr ""
+
+#: src/main.c:119
+msgid "Run in verbose (debug) mode"
+msgstr "Запусьціць у рэжыме адладкі"
+
+#: src/grip.c:181
+msgid "Grip"
+msgstr "Grip"
+
+#: src/grip.c:238
+#, c-format
+msgid "Error: Unable to initialize [%s]\n"
+msgstr "Памылка: Немагчыма ініцыялізаваць [%s]\n"
+
+#: src/grip.c:324
+msgid ""
+"This is a development version of Grip. If you encounter problems, you are "
+"encouraged to revert to the latest stable version."
+msgstr ""
+
+#: src/grip.c:330
+msgid "Grip started successfully\n"
+msgstr ""
+
+#: src/grip.c:344
+msgid ""
+"Work is in progress.\n"
+"Really shut down?"
+msgstr ""
+"Праца ў прагрэсе.\n"
+"Сапраўды выйсьці?"
+
+#: src/grip.c:395
+#, fuzzy
+msgid "Status"
+msgstr "Стан запісу"
+
+#: src/grip.c:410
+msgid "General"
+msgstr ""
+
+#: src/grip.c:425 src/gripcfg.c:362 src/cdplay.c:251 src/cdplay.c:345
+#: src/rip.c:95
+msgid "Rip"
+msgstr "Запіс"
+
+#: src/grip.c:440 src/gripcfg.c:496
+msgid "Encode"
+msgstr "Кадаваньне"
+
+#: src/grip.c:485
+msgid "Help"
+msgstr "Дапамога"
+
+#: src/grip.c:490
+msgid "Table Of Contents"
+msgstr "Зьмест"
+
+#: src/grip.c:496
+msgid "Playing CDs"
+msgstr "Прайграваньне дыскаў"
+
+#: src/grip.c:502
+msgid "Ripping CDs"
+msgstr "Запіс з дыскаў"
+
+#: src/grip.c:508
+msgid "Configuring Grip"
+msgstr "Канфігураваньне Grip"
+
+#: src/grip.c:514
+msgid "FAQ"
+msgstr "FAQ"
+
+#: src/grip.c:520
+msgid "Getting More Help"
+msgstr "Атрыманьне дадатковых зьвестак"
+
+#: src/grip.c:526
+msgid "Reporting Bugs"
+msgstr "Дасланьне паведамленьняў аб памылках"
+
+#: src/grip.c:546
+msgid "About"
+msgstr "Пра праграму"
+
+#: src/grip.c:565
+#, c-format
+msgid "Version %s"
+msgstr ""
+
+#: src/grip.c:905
+msgid "Created by Grip"
+msgstr ""
+
+#: src/grip.c:922
+msgid ""
+"Your config file is out of date -- resetting to defaults.\n"
+"You will need to re-configure Grip.\n"
+"Your old config file has been saved with -old appended."
+msgstr ""
+"Ваш файл канфігурацыі мае памылковую дату - скіданьне да адпомнага.\n"
+"Вы мусіце пераканфігураваць Grip.\n"
+"Ваш стары файл канфігурацыі будзе захаваны з канчаткам -old."
+
+#: src/grip.c:995
+#, c-format
+msgid "server is %s, port %d\n"
+msgstr "паслужнік %s, порт %d\n"
+
+#: src/grip.c:1016
+#, fuzzy
+msgid "Error: Unable to save config file."
+msgstr "Памылка: Немагчыма захаваць файл канфігурацыі"
+
+#: src/gripcfg.c:105
+msgid "Config"
+msgstr "Канфігурацыя"
+
+#: src/gripcfg.c:113
+msgid "CDRom device"
+msgstr "Прылада CDRom"
+
+#: src/gripcfg.c:118
+msgid "Don't interrupt playback on exit/startup"
+msgstr "Не перарываць прайграваньне падчас выхаду/запуску"
+
+#: src/gripcfg.c:122
+msgid "Rewind when stopped"
+msgstr "Пераматаць назад пасьля спыненьня"
+
+#: src/gripcfg.c:127
+msgid "Startup with first track if not playing"
+msgstr ""
+
+#: src/gripcfg.c:132
+msgid "Auto-play on disc insert"
+msgstr "Аўтапрайграваньне новага дыска"
+
+#: src/gripcfg.c:137
+msgid "Reshuffle before each playback"
+msgstr "Шуфляваць перад кожным прайграваньнем"
+
+#: src/gripcfg.c:142
+msgid "Work around faulty eject"
+msgstr ""
+
+#: src/gripcfg.c:147
+msgid "Poll disc drive for new disc"
+msgstr ""
+
+#: src/gripcfg.c:151
+msgid "Poll interval (seconds)"
+msgstr ""
+
+#: src/gripcfg.c:159
+msgid "CD"
+msgstr "CD"
+
+#: src/gripcfg.c:175
+msgid "Ripper:"
+msgstr "Праграма запісу:"
+
+#: src/gripcfg.c:220
+msgid "Ripping executable"
+msgstr "Каманда запісу"
+
+#: src/gripcfg.c:225
+msgid "Rip command-line"
+msgstr "Радок запісу"
+
+#: src/gripcfg.c:236
+msgid "Disable paranoia"
+msgstr "Выключыць paranoia"
+
+#: src/gripcfg.c:241
+msgid "Disable extra paranoia"
+msgstr "Выключыць extra paranoia"
+
+#: src/gripcfg.c:247
+msgid "Disable scratch"
+msgstr "Выключыць scratch"
+
+#: src/gripcfg.c:251
+msgid "detection"
+msgstr "дэтэктаваньне"
+
+#: src/gripcfg.c:255
+msgid "repair"
+msgstr "аднавіць"
+
+#: src/gripcfg.c:263
+msgid "Calculate gain adjustment"
+msgstr ""
+
+#: src/gripcfg.c:271
+msgid "Rip file format"
+msgstr "Фармат файла запіса"
+
+#: src/gripcfg.c:275
+msgid "Generic SCSI device"
+msgstr "Прылада SCSI"
+
+#: src/gripcfg.c:283
+msgid "Ripper"
+msgstr "Праграма запісу"
+
+#: src/gripcfg.c:292
+msgid "Rip 'nice' value"
+msgstr "Дакладнае значэньне запісу"
+
+#: src/gripcfg.c:296
+msgid "Max non-encoded .wav's"
+msgstr "Максымум незакадаваных файлаў .wav"
+
+#: src/gripcfg.c:302
+msgid "Auto-rip on insert"
+msgstr "Аўтазапіс з новага дыска"
+
+#: src/gripcfg.c:306
+msgid "Beep after rip"
+msgstr "Сыгнал пасьля запісу"
+
+#: src/gripcfg.c:316
+msgid "Auto-eject after rip"
+msgstr ""
+"Вызваленьне дыска\n"
+"пасьля запісу"
+
+#: src/gripcfg.c:320
+msgid "Auto-eject delay"
+msgstr ""
+"Затрымка перад\n"
+"вызваленьнем"
+
+#: src/gripcfg.c:328
+msgid "Delay before ripping"
+msgstr "Затрымка перад запісам"
+
+#: src/gripcfg.c:333
+msgid "Delay encoding until disc is ripped"
+msgstr ""
+
+#: src/gripcfg.c:338
+msgid "Stop cdrom drive between tracks"
+msgstr "Спыняць прыладу cdrom між трэкамі"
+
+#: src/gripcfg.c:342
+msgid "Wav filter command"
+msgstr "Каманда фільтрацыі для *.wav"
+
+#: src/gripcfg.c:347
+msgid "Disc filter command"
+msgstr "Каманда фільтрацыі дыска"
+
+#: src/gripcfg.c:355 src/gripcfg.c:489
+msgid "Options"
+msgstr "Выбары"
+
+#: src/gripcfg.c:377
+msgid "Encoder:"
+msgstr "Кодэр:"
+
+#: src/gripcfg.c:412
+msgid "Encoder executable"
+msgstr "Каманда кадаваньня"
+
+#: src/gripcfg.c:417
+msgid "Encoder command-line"
+msgstr "Радок кадаваньня"
+
+#: src/gripcfg.c:423
+#, fuzzy
+msgid "Encode file extension"
+msgstr "Фармат файла кадаваньня"
+
+#: src/gripcfg.c:428
+msgid "Encode file format"
+msgstr "Фармат файла кадаваньня"
+
+#: src/gripcfg.c:436
+msgid "Encoder"
+msgstr "Кодэр"
+
+#: src/gripcfg.c:446
+msgid "Delete .wav after encoding"
+msgstr "Выдаляць файл .wav пасьля кадаваньня"
+
+#: src/gripcfg.c:451
+msgid "Insert info into SQL database"
+msgstr "Унесьці зьвесткі у базу даньняў SQL"
+
+#: src/gripcfg.c:455
+msgid "Create .m3u files"
+msgstr "Ствараць файлы .m3u"
+
+#: src/gripcfg.c:460
+msgid "Use relative paths in .m3u files"
+msgstr "Выкарыстоўваць адносны шлях ў файлах .m3u"
+
+#: src/gripcfg.c:464
+msgid "M3U file format"
+msgstr "Фармат файла M3U"
+
+#: src/gripcfg.c:469
+msgid "Encoding bitrate (kbits/sec)"
+msgstr "Бітавая хуткасьць кадаваньня (Кбіт/сэк)"
+
+#: src/gripcfg.c:473
+msgid "Number of CPUs to use"
+msgstr "Нумар працэсара для выкарыстаньня"
+
+#: src/gripcfg.c:477
+msgid "Encode 'nice' value"
+msgstr "Дакладнае значэньне кадэра"
+
+#: src/gripcfg.c:481
+msgid "Encode filter command"
+msgstr "Каманда філтраваньня кодэра"
+
+#: src/gripcfg.c:505
+msgid "Add ID3 tags to encoded files"
+msgstr "Дадаць тэг ID3 да кадаваных файлаў"
+
+#: src/gripcfg.c:511
+msgid "Add ID3v2 tags to encoded files"
+msgstr "Дадаць тэг ID2 да кадаваных файлаў"
+
+#: src/gripcfg.c:517
+msgid "Only tag files ending in '.mp3'"
+msgstr ""
+
+#: src/gripcfg.c:521
+msgid "ID3 comment field"
+msgstr "Поле камэнтара ID3"
+
+#: src/gripcfg.c:526
+msgid "ID3v1 Character set encoding"
+msgstr ""
+
+#: src/gripcfg.c:532
+#, fuzzy
+msgid "ID3v2 Character set encoding"
+msgstr "Выдаляць файл .wav пасьля кадаваньня"
+
+#: src/gripcfg.c:540
+msgid "ID3"
+msgstr "ID3"
+
+#: src/gripcfg.c:557 src/gripcfg.c:577
+msgid "DB server"
+msgstr "Паслужнік БД"
+
+#: src/gripcfg.c:561 src/gripcfg.c:581
+msgid "CGI path"
+msgstr "Шлях CGI"
+
+#: src/gripcfg.c:568
+msgid "Primary Server"
+msgstr "Першасны паслужнік"
+
+#: src/gripcfg.c:588
+msgid "Secondary Server"
+msgstr "Другасны паслужнік"
+
+#: src/gripcfg.c:598
+msgid "DB Submit email"
+msgstr "Адпраўка зьвестак у БД праз э.пошту"
+
+#: src/gripcfg.c:603
+#, fuzzy
+msgid "DB Character set encoding"
+msgstr "Выдаляць файл .wav пасьля кадаваньня"
+
+#: src/gripcfg.c:608
+msgid "Use freedb extensions"
+msgstr "Выкарыстоўваць пашырэньні freedb"
+
+#: src/gripcfg.c:613
+msgid "Perform disc lookups automatically"
+msgstr "Аўтаматычна запытваць зьвесткі аб дыске"
+
+#: src/gripcfg.c:621
+msgid "DiscDB"
+msgstr "БД дыскаў"
+
+#: src/gripcfg.c:630
+msgid "Use proxy server"
+msgstr "Выкарыстоўваць проксі"
+
+#: src/gripcfg.c:637
+msgid "Get server from 'http_proxy' env. var"
+msgstr ""
+"Атрымаць зьвесткі аб проксі з пераменай\n"
+"асяродьдзя 'http_proxy'"
+
+#: src/gripcfg.c:641
+msgid "Proxy server"
+msgstr "Паслужнік проксі"
+
+#: src/gripcfg.c:645
+msgid "Proxy port"
+msgstr "Порт проксі"
+
+#: src/gripcfg.c:649
+msgid "Proxy username"
+msgstr "Карыстальнік проксі"
+
+#: src/gripcfg.c:655
+msgid "Proxy password"
+msgstr "Пароль да проксі"
+
+#: src/gripcfg.c:663
+msgid "Proxy"
+msgstr "Проксі"
+
+#: src/gripcfg.c:672
+msgid "Email address"
+msgstr "Адрэса э.пошты"
+
+#: src/gripcfg.c:676
+msgid "CD update program"
+msgstr "Праграма абнаўленьня дыскаў"
+
+#: src/gripcfg.c:681
+msgid "Do not lowercase filenames"
+msgstr "Назвы файлаў не малымі літарамі"
+
+#: src/gripcfg.c:686
+msgid "Allow high bits in filenames"
+msgstr ""
+
+#: src/gripcfg.c:691
+msgid "Replace incompatible characters by hexadecimal numbers"
+msgstr ""
+
+#: src/gripcfg.c:696
+msgid "Do not change spaces to underscores"
+msgstr ""
+
+#: src/gripcfg.c:701
+msgid ""
+"Characters to not strip\n"
+"in filenames"
+msgstr ""
+
+#: src/gripcfg.c:706
+msgid "Show tray icon"
+msgstr ""
+
+#: src/gripcfg.c:713
+msgid "Misc"
+msgstr "Рознае"
+
+#: src/gripcfg.c:819
+#, fuzzy
+msgid "Error: Unable to save ripper config."
+msgstr "Памылка: Немагчыма захаваць файл канфігурацыі"
+
+#: src/gripcfg.c:890
+#, fuzzy
+msgid "Error: Unable to save encoder config."
+msgstr "Памылка: Немагчыма захаваць файл канфігурацыі"
+
+#: src/cddev.c:174 src/cddev.c:601
+#, c-format
+msgid "Drive status is %d\n"
+msgstr "Стан прылады: %d\n"
+
+#: src/cddev.c:176
+msgid "Drive doesn't support drive status check (assume CDS_NO_INFO)\n"
+msgstr "Прылада не падтрымлівае праверку стана (атрымана CDS_NO_INFO)\n"
+
+#: src/cddev.c:179
+msgid "No disc\n"
+msgstr "Дыск адсутнічае\n"
+
+#: src/cddev.c:281 src/cddev.c:290 src/cddev.c:307 src/cddev.c:334
+msgid "Error: Failed to read disc contents\n"
+msgstr "Памылка: Збой чытаньня зьместу дыска\n"
+
+#: src/cddev.c:604
+msgid "Drive doesn't support drive status check\n"
+msgstr "Прылада не падтрымлівае праверку стана\n"
+
+#: src/cddev.c:625 src/cddev.c:629
+#, c-format
+msgid "Unlock failed: %d"
+msgstr ""
+
+#: src/cddev.c:633
+msgid "CDIOCEJECT"
+msgstr "CDIOCEJECT"
+
+#: src/cdplay.c:83
+#, fuzzy
+msgid "Cannot do lookup while ripping."
+msgstr "Немагчыма дасылаць запыт падчас запісу"
+
+#. "misc"
+#: src/cdplay.c:120
+msgid "Unknown Disc"
+msgstr "Невядомы дыск"
+
+#: src/cdplay.c:124
+#, c-format
+msgid "Track %02d"
+msgstr "Трэк %02d"
+
+#: src/cdplay.c:184
+#, c-format
+msgid "Querying %s (through %s) for disc %02x.\n"
+msgstr "Запыт %s (праз %s) для дыска %02x.\n"
+
+#: src/cdplay.c:189
+#, c-format
+msgid "Querying %s for disc %02x.\n"
+msgstr "Запыт %s для дыска %02x.\n"
+
+#: src/cdplay.c:206
+#, c-format
+msgid ""
+"Match for \"%s / %s\"\n"
+"Downloading data...\n"
+msgstr ""
+"Супадзеньне для \"%s / %s\"\n"
+"Загрузка даньняў...\n"
+
+#: src/cdplay.c:214
+msgid "Done\n"
+msgstr "Выканана\n"
+
+#: src/cdplay.c:218
+msgid "Error saving disc data\n"
+msgstr "Памылка захаваньня даньняў дыска\n"
+
+#: src/cdplay.c:224
+msgid "No match\n"
+msgstr "Няма супадзеньняў\n"
+
+#: src/cdplay.c:242 src/cdplay.c:334
+#, fuzzy
+msgid "Length"
+msgstr "Час"
+
+#: src/cdplay.c:299
+msgid "Tracks"
+msgstr "Трэкі"
+
+#: src/cdplay.c:323
+msgid "Track"
+msgstr "Трэк"
+
+#: src/cdplay.c:633 src/discedit.c:390
+#, fuzzy
+msgid "Error saving disc data."
+msgstr "Памылка запісу даньняў дыска"
+
+#: src/cdplay.c:704
+msgid "Rotate play mode"
+msgstr "Рэжым паўтору прайграваньня"
+
+#: src/cdplay.c:724
+msgid "Toggle loop play"
+msgstr "Пераключыць паўтор прайграваньня"
+
+#: src/cdplay.c:802 src/rip.c:230
+msgid "Rip status"
+msgstr "Стан запісу"
+
+#: src/cdplay.c:869
+msgid "Play track / Pause play"
+msgstr "Граць / прыпыніць"
+
+#: src/cdplay.c:880
+msgid "Rewind"
+msgstr "Пераматаць назад"
+
+#: src/cdplay.c:891
+msgid "FastForward"
+msgstr "Пераматаць наперад"
+
+#: src/cdplay.c:901
+msgid "Go to previous track"
+msgstr "Перайсьці да папярэдняга трэка"
+
+#: src/cdplay.c:910
+msgid "Go to next track"
+msgstr "Перайсьці да наступнага трэка"
+
+#: src/cdplay.c:919
+msgid "Toggle play mode options"
+msgstr "Пераключыць рэжым прайграваньня"
+
+#: src/cdplay.c:929
+msgid "Next Disc"
+msgstr "Наступны дыск"
+
+#: src/cdplay.c:943
+msgid "Stop play"
+msgstr "Спыніць прайграваньне"
+
+#: src/cdplay.c:953
+msgid "Eject disc"
+msgstr "Вызваліць дыск"
+
+#: src/cdplay.c:962
+msgid "Scan Disc Contents"
+msgstr "Сканаваць дыск"
+
+#: src/cdplay.c:970
+msgid "Toggle Volume Control"
+msgstr "Пераключыць кіраваньне гучнасьцю"
+
+#: src/cdplay.c:979
+msgid "Toggle disc editor"
+msgstr "Пераключыць рэдактар дыска"
+
+#: src/cdplay.c:989
+msgid "Initiate/abort DiscDB lookup"
+msgstr "Запытаць зьвесткі ў БД дыскаў"
+
+#: src/cdplay.c:999
+msgid "Toggle track display"
+msgstr "Пераключыць адлюстраваньне запіса"
+
+#: src/cdplay.c:1006
+msgid "Exit Grip"
+msgstr "Выйсьці з Grip"
+
+#: src/cdplay.c:1173
+#, fuzzy
+msgid "Cannot fast forward while ripping."
+msgstr "Немагчыма пераматаць падчас запісу"
+
+#: src/cdplay.c:1204
+#, fuzzy
+msgid "Cannot rewind while ripping."
+msgstr "Немагчыма пераматаць падчас запісу"
+
+#: src/cdplay.c:1235
+#, fuzzy
+msgid "Cannot switch discs while ripping."
+msgstr "Немагчыма пераключаць дыскі падчас запісу"
+
+#: src/cdplay.c:1253
+msgid "Eject disc\n"
+msgstr "Вызваліць дыск\n"
+
+#: src/cdplay.c:1257
+#, fuzzy
+msgid "Cannot eject while ripping."
+msgstr "Немагчыма вызваліць дыск падчас запісу"
+
+#: src/cdplay.c:1267
+msgid "Have disc -- ejecting\n"
+msgstr "Маецца дыск - вызваленьне\n"
+
+#: src/cdplay.c:1334
+#, fuzzy
+msgid "Cannot play while ripping."
+msgstr "Немагчыма прайграваць падчас запісу"
+
+#: src/cdplay.c:1402 src/cdplay.c:1433
+#, fuzzy
+msgid "Cannot switch tracks while ripping."
+msgstr "Немагчыма пераключыць запісы падчас запісу"
+
+#: src/cdplay.c:1524
+msgid "Checking for a new disc\n"
+msgstr "Праверка новага дыска\n"
+
+#: src/cdplay.c:1529
+msgid "CDStat found a disc, checking tracks\n"
+msgstr "CDStat адшукаў дыск, прагляд запісаў\n"
+
+#: src/cdplay.c:1532
+msgid "We have a valid disc!\n"
+msgstr "Маецца дыск.\n"
+
+#: src/cdplay.c:1559
+msgid "No non-zero length tracks\n"
+msgstr ""
+
+#: src/cdplay.c:1568
+msgid "CDStat said no disc\n"
+msgstr "CDStat паведамляе аб адсутнасьці дыска\n"
+
+#: src/cdplay.c:1717 src/cdplay.c:1739
+#, c-format
+msgid "Current sector: %6d"
+msgstr "Бягучы сэктар: %6d"
+
+#: src/cdplay.c:1840
+msgid "No Disc"
+msgstr "Дыск адсутнічае"
+
+#: src/cdplay.c:1892
+msgid ""
+"This disc has been found on your secondary server,\n"
+"but not on your primary server.\n"
+"\n"
+"Do you wish to submit this disc information?"
+msgstr ""
+"Гэты дыск маецца на вашым другасным паслужніку,\n"
+"але не на першасным.\n"
+"\n"
+"Вы жадаеце прыняць зьвесткі аб гэтым дыске?"
+
+#: src/cdplay.c:1920 src/cdplay.c:1929
+#, fuzzy
+msgid "Error: Unable to create temporary file."
+msgstr "Памылка: Немагчыма стварыць часовы файл"
+
+#: src/cdplay.c:1947
+#, fuzzy
+msgid "Error: Unable to write disc data."
+msgstr "Памылка: Немагчыма запісаць даньні дыска"
+
+#: src/cdplay.c:1956
+#, c-format
+msgid "Mailing entry to %s\n"
+msgstr ""
+
+#: src/dialog.c:44
+msgid "System Message"
+msgstr "Сыстэмнае паведамленьне"
+
+#: src/discdb.c:207
+#, c-format
+msgid "URI is %s\n"
+msgstr "URI %s\n"
+
+#: src/discdb.c:287
+#, c-format
+msgid "Query is [%s]\n"
+msgstr "Запыт [%s]\n"
+
+#: src/discdb.c:788
+#, c-format
+msgid "Stat error %d on %s\n"
+msgstr "Памылка стану %d на %s\n"
+
+#: src/discdb.c:792
+#, c-format
+msgid "Creating directory %s\n"
+msgstr "Стварэньне каталёга %s\n"
+
+#: src/discdb.c:797
+#, c-format
+msgid "Error: %s exists, but is a file\n"
+msgstr "Памылка: %s існуе, але гэта файл\n"
+
+#: src/discdb.c:804
+#, c-format
+msgid "Error: Unable to open %s for writing\n"
+msgstr "Памылка: Немагчыма адкрыць %s для запісу\n"
+
+#: src/discedit.c:67
+msgid "Disc title"
+msgstr "Назва дыска"
+
+#: src/discedit.c:74 src/discedit.c:176
+msgid "Track name"
+msgstr "Назва трэка"
+
+#: src/discedit.c:84
+msgid "W"
+msgstr ""
+
+#: src/discedit.c:110
+msgid "Disc artist"
+msgstr "Выканаўца дыска"
+
+#: src/discedit.c:127
+msgid "ID3 genre:"
+msgstr "ID3 жанр"
+
+#: src/discedit.c:158
+msgid "Disc year"
+msgstr "Год запіса"
+
+#: src/discedit.c:196
+msgid "Track artist"
+msgstr "Выканаўца трэка"
+
+#: src/discedit.c:213
+msgid "Split:"
+msgstr "Падзяленьне"
+
+#: src/discedit.c:217
+msgid "Title/Artist"
+msgstr "Назва/Выканаўца"
+
+#: src/discedit.c:224
+msgid "Artist/Title"
+msgstr "Выканаўца/Назва"
+
+#: src/discedit.c:232
+msgid "Split chars"
+msgstr ""
+
+#: src/discedit.c:254
+msgid "Multi-artist"
+msgstr "Некалькі выканаўцаў"
+
+#: src/discedit.c:265
+msgid "Save disc info"
+msgstr "Захаваць зьвесткі дыска"
+
+#: src/discedit.c:274
+msgid "Submit disc info"
+msgstr "Прыняць зьвесткі дыска"
+
+#: src/discedit.c:393
+#, fuzzy
+msgid "No disc present."
+msgstr "Дыск адсутнічае"
+
+#: src/discedit.c:543
+#, fuzzy
+msgid "Cannot submit. No disc is present."
+msgstr ""
+"Немагчыма прыняць\n"
+"Дыск адсутнічае"
+
+#: src/discedit.c:558
+#, fuzzy
+msgid "You must enter a disc title."
+msgstr "Вы мусіце пазначыць назву дыска"
+
+#: src/discedit.c:565
+#, fuzzy
+msgid "You must enter a disc artist."
+msgstr "Вы мусіце пазначыць выканаўца"
+
+#: src/discedit.c:575
+msgid ""
+"You are about to submit this disc information\n"
+"to a commercial CDDB server, which will then\n"
+"own the data that you submit. These servers make\n"
+"a profit out of your effort. We suggest that you\n"
+"support free servers instead.\n"
+"\n"
+"Continue?"
+msgstr ""
+
+#: src/discedit.c:584
+msgid ""
+"You are about to submit this\n"
+"disc information via email.\n"
+"\n"
+"Continue?"
+msgstr ""
+"Вы зьбіраецеся перадаць зьвесткі\n"
+"аб гэтым дыске праз э. пошту.\n"
+"\n"
+"Працягваць?"
+
+#: src/discedit.c:601
+msgid "Genre selection"
+msgstr "Выбар жанра"
+
+#: src/discedit.c:605
+msgid ""
+"Submission requires a genre other than 'unknown'\n"
+"Please select a DiscDB genre below"
+msgstr ""
+"Перадача патрабуе жанр адрозны ад \"невядомы\"\n"
+"Калі ласка, выбярыце жанр са сьпісу ніжэй"
+
+#: src/discedit.c:615
+msgid "DiscDB genre"
+msgstr "Жанр БД дыскаў"
+
+#: src/discedit.c:635
+msgid "Submit"
+msgstr "Прыняць"
+
+#: src/discedit.c:646
+msgid "Cancel"
+msgstr "Адмяніць"
+
+#. Doh!
+#: src/id3.c:291
+msgid "unknown ID3 field\n"
+msgstr "невядомае поле ID3\n"
+
+#: src/launch.c:121
+#, c-format
+msgid "Error: unable to translate filename. No such user as %s\n"
+msgstr ""
+"Памылка: Немагчыма перакласьці назву файла. Адсутнічае карыстальнік як %s\n"
+
+#: src/launch.c:315 src/rip.c:1535
+msgid "Exec failed\n"
+msgstr "Збой выкананьня\n"
+
+#: src/parsecfg.c:58
+msgid "Error: Bad entry type\n"
+msgstr "Памылка: Кепскі тып поля\n"
+
+#: src/parsecfg.c:84
+msgid "Error: Invalid config file\n"
+msgstr "Памылка: Недапушчальны файл канфігурацыі\n"
+
+#: src/rip.c:104
+msgid "Rip+Encode"
+msgstr "Запіс+кадаваньне"
+
+#: src/rip.c:106
+msgid "Rip and encode selected tracks"
+msgstr "Запіс і кадаваньне вылучаных запісаў"
+
+#: src/rip.c:112
+msgid "Rip Only"
+msgstr "Толькі запіс"
+
+#: src/rip.c:114
+msgid "Rip but do not encode selected tracks"
+msgstr "Запіс без кадаваньня вылучаных запісаў"
+
+#: src/rip.c:120
+msgid "Abort Rip and Encode"
+msgstr ""
+"Перарваць працэсы\n"
+"запісу й кадаваньня"
+
+#: src/rip.c:122
+msgid "Kill all active rip and encode processes"
+msgstr "Забіць усе актыўныя працэсы запісу й кадаваньня"
+
+#: src/rip.c:130
+msgid "Abort Ripping Only"
+msgstr "Перарваць запіс"
+
+#: src/rip.c:132
+msgid "Kill rip process"
+msgstr "Забіць працэс запісу"
+
+#: src/rip.c:138
+msgid "DDJ Scan"
+msgstr "Сканаваць DDJ"
+
+#: src/rip.c:140
+msgid "Insert disc information into the DigitalDJ database"
+msgstr "Унесьці зьвесткі аб дыску ў базу даньняў DigitalDJ"
+
+#: src/rip.c:155
+msgid "Rip partial track"
+msgstr "Запіс часткі трэка"
+
+#: src/rip.c:166
+msgid "Play"
+msgstr "Граць"
+
+#: src/rip.c:173
+msgid "Current sector:      0"
+msgstr "Бягучы сэктар:      0"
+
+#: src/rip.c:204 src/rip.c:221 src/rip.c:269 src/rip.c:862 src/rip.c:915
+#: src/rip.c:917 src/rip.c:1065 src/rip.c:1066
+msgid "Rip: Idle"
+msgstr "Запіс: Вольны"
+
+#: src/rip.c:209
+msgid "Enc: Trk 99 (99.9x)"
+msgstr "Кадаваньне: Трк 99 (99.9x)"
+
+#: src/rip.c:240 src/rip.c:282 src/rip.c:1036 src/rip.c:1050
+msgid "Enc: Idle"
+msgstr "Кадаваньне: Вольны"
+
+#: src/rip.c:264
+msgid "Overall indicators:"
+msgstr "Агульныя паказьнікі:"
+
+#: src/rip.c:327
+msgid "Start sector"
+msgstr "Пачатковы сэктар"
+
+#: src/rip.c:332
+msgid "End sector"
+msgstr "Апошні сэктар"
+
+#: src/rip.c:380
+#, fuzzy, c-format
+msgid "Inserting track %d into the ddj database\n"
+msgstr "Унесьці зьвесткі у базу даньняў SQL"
+
+#: src/rip.c:602
+#, fuzzy
+msgid "Error: can't open m3u file."
+msgstr "Памылка: Немагчыма адкрыць m3u\n"
+
+#: src/rip.c:644
+msgid "In KillRip\n"
+msgstr ""
+
+#: src/rip.c:670
+#, c-format
+msgid "Now total enc size is: %d\n"
+msgstr "Агульны памер кадаваньня: %d\n"
+
+#: src/rip.c:825
+#, c-format
+msgid "Rip: Trk %d (%3.1fx)"
+msgstr "Запіс: Трк %d (%3.1fx)"
+
+#: src/rip.c:858
+#, c-format
+msgid "Rip: %6.2f%%"
+msgstr "Запіс: %6.2f%%"
+
+#: src/rip.c:878
+msgid "Rip finished\n"
+msgstr "Запіс скончаны\n"
+
+#: src/rip.c:904
+#, c-format
+msgid "Rip partial %d  num wavs %d\n"
+msgstr ""
+
+#: src/rip.c:907
+#, c-format
+msgid "Next track is %d, total is %d\n"
+msgstr "Наступны трэк %d, агулам %d трэкаў\n"
+
+#: src/rip.c:913
+msgid "Check if we need to rip another track\n"
+msgstr "Праверка, ці не патрабуецца запіс іншага трэка\n"
+
+#: src/rip.c:955
+#, c-format
+msgid "Enc: Trk %d (%3.1fx)"
+msgstr "Кадаваньне: Трк %d (%3.1fx)"
+
+#: src/rip.c:973
+#, c-format
+msgid "Enc: %6.2f%%"
+msgstr "Кадаваньне: %6.2f%%"
+
+#: src/rip.c:983
+#, c-format
+msgid "Finished encoding on cpu %d\n"
+msgstr "Скончана кадаваньне на працэсары %d\n"
+
+#: src/rip.c:1001
+#, c-format
+msgid "Deleting [%s]\n"
+msgstr "Выдаленьне [%s]\n"
+
+#: src/rip.c:1058
+msgid "Ripping is finished\n"
+msgstr "Запіс скончаны\n"
+
+#: src/rip.c:1169 src/rip.c:1175
+msgid "NoArtist"
+msgstr "Выканаўца невядомы"
+
+#: src/rip.c:1180
+msgid "NoTitle"
+msgstr "Назва невядома"
+
+#: src/rip.c:1270
+msgid ""
+"No disc was detected in the drive. If you have a disc in your drive, please "
+"check your CDRom device setting under Config->CD."
+msgstr ""
+
+#: src/rip.c:1279
+msgid ""
+"Invalid rip executable.\n"
+"Check your rip config, and ensure it specifies the full path to the ripper "
+"executable."
+msgstr ""
+
+#: src/rip.c:1287
+#, fuzzy
+msgid ""
+"Invalid encoder executable.\n"
+"Check your encoder config, and ensure it specifies the full path to the "
+"encoder executable."
+msgstr ""
+"Недапушчальная каманда кадаваньня\n"
+"Праверце вашую канфігурацыю кодэра"
+
+#: src/rip.c:1323
+msgid ""
+"No tracks selected.\n"
+"Rip whole CD?\n"
+msgstr ""
+"Трэкі не вылучаны.\n"
+"Запісываць увесь дыск?\n"
+
+#: src/rip.c:1346
+msgid "Ripping whole CD\n"
+msgstr "Запіс усяго дыска\n"
+
+#: src/rip.c:1385
+msgid "In RipNextTrack\n"
+msgstr ""
+
+#: src/rip.c:1392
+#, c-format
+msgid "First checked track is %d\n"
+msgstr "Першы правераны запіс %d\n"
+
+#: src/rip.c:1402
+msgid "Ripping away!\n"
+msgstr ""
+
+#: src/rip.c:1449
+msgid "No write access to write wav file"
+msgstr "Недахоп правоў для запісу файла wav"
+
+#: src/rip.c:1463
+#, c-format
+msgid "Ripping track %d to %s\n"
+msgstr "Запіс трэка %d у %s\n"
+
+#: src/rip.c:1467
+#, c-format
+msgid "Rip: Trk %d (0.0x)"
+msgstr "Запіс: Трк %d (0.0x)"
+
+#: src/rip.c:1472
+#, c-format
+msgid "File %s has already been ripped. Skipping...\n"
+msgstr "Файл %s ужо быў запісаны. Прапускаецца...\n"
+
+#: src/rip.c:1493 src/rip.c:1745
+msgid "Out of space in output directory"
+msgstr "Недахоп прасторы ў каталёге для вываду"
+
+#: src/rip.c:1569
+msgid "Calling CDPRip\n"
+msgstr "Выклік CDPRip\n"
+
+#: src/rip.c:1655
+#, fuzzy, c-format
+msgid "Added track %d to %s list\n"
+msgstr "Даданьне трэка %d да сьпіса кадаваньня\n"
+
+#: src/rip.c:1681
+msgid "No free cpus\n"
+msgstr "Няма вольных працэсараў\n"
+
+#: src/rip.c:1697
+#, c-format
+msgid "Enc track %d\n"
+msgstr "Кадаваньне трэка %d\n"
+
+#: src/rip.c:1719
+#, fuzzy
+msgid "No write access to write encoded file."
+msgstr "Недахоп правоў для запісу кадаванага файла"
+
+#: src/rip.c:1730
+#, c-format
+msgid "%i: Encoding to %s\n"
+msgstr "%i: Кадаваньне ў %s\n"
+
+#: src/rip.c:1734
+#, c-format
+msgid "Enc: Trk %d (0.0x)"
+msgstr "Кадаваньне: Трк %d (0.0x)"
+
+#: src/rip.c:1800
+msgid "In CalculateAll\n"
+msgstr ""
+
+#: src/rip.c:1806
+msgid "We aren't ripping now, so let's zero encoding values\n"
+msgstr ""
+
+#: src/rip.c:1822
+#, c-format
+msgid "Total rip size is: %d\n"
+msgstr "Агульны памер запісанага: %d\n"
+
+#: src/rip.c:1823
+#, c-format
+msgid "Total enc size is: %d\n"
+msgstr "Агульны памер кадаванага: %d\n"
+
+#~ msgid ""
+#~ "Invalid rip executable\n"
+#~ "Check your rip config"
+#~ msgstr ""
+#~ "Недапушчальная каманда запісу\n"
+#~ "Праверце вашую канфігурацыю запісу"
+
+#~ msgid "Keep application minimum size"
+#~ msgstr "Дастасаваньне захоўвае мінімальны памер"
+
+#~ msgid "Reply is [%s]\n"
+#~ msgstr "Адказ [%s]\n"
+
+#, fuzzy
+#~ msgid "File System Character set encoding"
+#~ msgstr "Выдаляць файл .wav пасьля кадаваньня"
+
+#~ msgid "Could not parse geometry string `%s'"
+#~ msgstr "Немагчыма разабраць радок геамэтрыі \"%s\""
+
+#~ msgid "Aborted\n"
+#~ msgstr "Спынена\n"
+
+#~ msgid "PL"
+#~ msgstr "PL"
+
+#~ msgid "Column/Button: %d/%d\n"
+#~ msgstr "Слупок/Кнопка: %d/%d\n"
+
+#~ msgid "Exit GCD"
+#~ msgstr "Выйсьці з GCD"

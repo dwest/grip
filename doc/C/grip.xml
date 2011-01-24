@@ -1,0 +1,1361 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+  <article id="grip" lang="en">
+  <articleinfo>
+    <title>Grip User's Guide</title>
+    <authorgroup>
+      <author>
+        <firstname>Mike</firstname> <surname>Oliphant</surname>
+        <affiliation>
+          <address>
+            <email>grip@nostatic.org</email>
+          </address>
+        </affiliation>
+      </author>
+    </authorgroup>
+    <copyright>
+      <year>2004</year> <holder>Mike Oliphant</holder>
+    </copyright>
+    <legalnotice>
+      <para>This documentation is free software; you can redistribute
+        it and/or modify it under the terms of the GNU General Public
+        License as published by the Free Software Foundation; either
+        version 2 of the License, or (at your option) any later
+        version.</para>
+      
+      <para>This program is distributed in the hope that it will be
+        useful, but WITHOUT ANY WARRANTY; without even the implied
+        warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+        See the GNU General Public License for more details.</para>
+      
+      <para>You should have received a copy of the GNU General Public
+        License along with this program; if not, write to the Free
+        Software Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+        MA 02111-1307 USA</para>
+      
+      <para>For more details see the file COPYING in the source
+        distribution of GNOME.</para>
+    </legalnotice>
+  </articleinfo>
+  
+  <sect1 id="intro">
+    <title>Introduction</title>
+
+    <mediaobject>
+      <imageobject><imagedata
+                     format="PNG" fileref="grip-logo.png"/>
+      </imageobject>
+    </mediaobject>
+
+    <para>Grip is a cd-player and cd-ripper for the Gnome desktop. It has
+      the ripping capabilities of cdparanoia builtin, but can also use
+      external rippers (such as cdda2wav). It also provides an automated
+      frontend for MP3 (and other audio format) encoders, letting you take a
+      disc and transform it easily straight into MP3s. Internet disc lookups
+      are supported for retrieving track information from disc database
+      servers. Grip works with DigitalDJ to provide a unified "computerized"
+      version of your music collection.</para>
+  </sect1>
+  
+  <sect1 id="cdplayer">
+    <title>Playing CDs with Grip</title> 
+    <para>Grip functions as a full-featured CD player, as can be seen in
+      <xref linkend="cdplayerfull"/>. Tracks can be selected by clicking on
+      them with the left mouse button. Double-clicking will select the track,
+      and begin playing it.</para>
+
+    <figure id="cdplayerfull">
+      <title>Grip as a CD Player</title>
+      <screenshot>
+        <mediaobject><imageobject><imagedata format="PNG"
+                                    fileref="cdplayer.png"/>
+          </imageobject></mediaobject>
+      </screenshot>
+    </figure>
+
+    <sect2>
+      <title>CD Player Controls</title>
+
+      <para>Underneath the "LCD" display is a panel of buttons that allow
+        you to control CD playing in Grip. These buttons function as
+        follows:</para>
+
+      <itemizedlist>
+        <listitem>
+          <para><mediaobject><imageobject><imagedata format="PNG"
+                                            fileref="playpause.png"/>
+          </imageobject></mediaobject>
+            <guilabel>Play/Pause</guilabel> &mdash; Causes the selected track
+            to play if it is stopped or paused. If a track is currently
+            playing, it will go into pause mode.</para>
+        </listitem>
+
+        <listitem>
+          <para><mediaobject><imageobject><imagedata format="PNG"
+                                            fileref="rewind.png"/>
+          </imageobject></mediaobject>
+            <guilabel>Rewind</guilabel> &mdash; While this button is held
+            down, Grip will move backward in the currently playing track.
+          </para>
+        </listitem>
+        
+        <listitem>
+          <para><mediaobject><imageobject><imagedata format="PNG"
+                                            fileref="ffwd.png"/>
+          </imageobject></mediaobject>
+            <guilabel>FastForward</guilabel> &mdash; While this button is
+            held down, Grip will more forward in the currently playing
+            track.</para>
+        </listitem>
+        
+        <listitem>
+          <para><mediaobject><imageobject><imagedata format="PNG"
+                                            fileref="prevtrk.png"/>
+          </imageobject></mediaobject>
+            <guilabel>Previous track</guilabel> &mdash; If a track is
+            currently playing near the beginning of a track, this will
+            rewind to the beginning. Otherwise, it will skip to the previous
+            track.
+          </para>
+        </listitem>
+        
+        <listitem>
+          <para><mediaobject><imageobject><imagedata format="PNG"
+                                            fileref="nexttrk.png"/>
+          </imageobject></mediaobject>
+            <guilabel>Next track</guilabel> &mdash; This will skip to the next
+            track.</para>
+        </listitem>
+
+        <listitem>
+          <para><mediaobject><imageobject><imagedata format="PNG"
+                                            fileref="progtrack.png"/>
+          </imageobject></mediaobject>
+            <guilabel>Track Mode</guilabel> &mdash; This brings up the track
+            mode interface, described in <xref linkend="sect-trackmode"/>.
+          </para>
+        </listitem>
+
+        <listitem>
+          <para><mediaobject><imageobject><imagedata format="PNG"
+                                            fileref="stop.png"/>
+          </imageobject></mediaobject>
+            <guilabel>Stop</guilabel> &mdash; Stops track playback.</para>
+        </listitem>
+        
+        <listitem>
+          <para><mediaobject><imageobject><imagedata format="PNG"
+                                            fileref="eject.png"/>
+          </imageobject></mediaobject>
+            <guilabel>Eject</guilabel> &mdash; Opens or closes the cdrom
+            tray.</para>
+        </listitem>
+        
+        <listitem>
+          <para><mediaobject><imageobject><imagedata format="PNG"
+                                            fileref="cdscan.png"/>
+          </imageobject></mediaobject>
+            <guilabel>Scan disc contents</guilabel> &mdash; Causes Grip to
+            force a scan of the current CD as if it were just inserted (useful
+            if you have polling for a new disc turned off).</para>
+        </listitem>
+
+        <listitem>
+          <para><mediaobject><imageobject><imagedata format="PNG"
+                                            fileref="volume.png"/>
+          </imageobject></mediaobject>
+            <guilabel>Volume</guilabel> &mdash; Toggles display of the
+            volume control slider interface.</para>
+        </listitem>
+        
+        <listitem>
+          <para><mediaobject><imageobject><imagedata format="PNG"
+                                            fileref="trkedit.png"/>
+          </imageobject></mediaobject>
+            <guilabel>Track Edit</guilabel> &mdash; This brings up the track
+            editing interface described in ...</para>
+        </listitem>
+        
+        <listitem>
+          <para><mediaobject><imageobject><imagedata format="PNG"
+                                            fileref="discdb.png"/>
+          </imageobject></mediaobject>
+            <guilabel>DiscDB</guilabel> &mdash; This initiates lookup of the
+            CD over the network, or aborts a disc lookup currently in
+            progress.</para>
+        </listitem>
+        
+        <listitem>
+          <para><mediaobject><imageobject><imagedata format="PNG"
+                                            fileref="minmax.png"/>
+          </imageobject></mediaobject>
+            <guilabel>Min/Max</guilabel> &mdash; Toggles between the "full"
+            and "cd-only" (shown in <xref linkend="cdplayersmall"/>) display
+            modes.</para>
+          
+          <para>
+            <figure id="cdplayersmall">
+              <title>Grip in "cd-only" mode.</title>
+              <screenshot>
+                <mediaobject><imageobject><imagedata format="PNG"
+                                            fileref="cdplayersmall.png"/>
+          </imageobject></mediaobject>
+          </screenshot>
+          </figure>
+          </para>
+
+        </listitem>
+
+        <listitem>
+          <para><mediaobject><imageobject><imagedata format="PNG"
+                                            fileref="quit.png"/>
+          </imageobject></mediaobject>
+            <guilabel>Quit</guilabel> &mdash; Exits Grip.</para>
+        </listitem>
+
+      </itemizedlist>
+    </sect2>
+
+    <sect2 id="sect-trackmode">
+      <title>Track Mode Selector</title>
+      <para>
+        <figure id="modeinterface">
+          <title>The Play Mode Interface</title>
+          <screenshot>
+            <mediaobject><imageobject><imagedata format="PNG"
+                                        fileref="modeinterface.png"/>
+      </imageobject></mediaobject>
+      </screenshot>
+      </figure>
+      </para>
+      
+      <para>The track mode selection interface (shown in <xref
+          linkend="modeinterface"/>) allows you to control how Grip plays the
+        tracks on a CD. The following options are available:</para>
+      <itemizedlist>
+        <listitem>
+          <para><mediaobject><imageobject><imagedata format="PNG"
+                                            fileref="playnormal.png"/>
+          </imageobject></mediaobject>
+            <guilabel>Normal Mode</guilabel> &mdash; In this mode,
+            tracks will be played in normal, numbered order.</para>
+        </listitem>
+        
+        <listitem>
+          <para><mediaobject><imageobject><imagedata format="PNG"
+                                            fileref="playrandom.png"/>
+          </imageobject></mediaobject>
+            <guilabel>Random Mode</guilabel> &mdash; In this mode,
+            tracks will be played in a random order.</para>
+        </listitem>
+        
+        <listitem>
+          <para><mediaobject><imageobject><imagedata format="PNG"
+                                            fileref="playplaylist.png"/>
+          </imageobject></mediaobject>
+            <guilabel>Playlist Mode</guilabel> &mdash; In this mode,
+            track will be played in an order you specify. In the text
+            entry box, entry a list of comma separated list of the
+            tracks you wish to play.</para>
+        </listitem>
+        
+        <listitem>
+          <para><mediaobject><imageobject><imagedata format="PNG"
+                                            fileref="playloop.png"/>
+          </imageobject></mediaobject>
+            <guilabel>Loop Mode</guilabel> &mdash; In loop mode, when
+            playback finishes it will then resume at the beginning
+            again.</para>
+        </listitem>
+        
+        <listitem>
+          <para><mediaobject><imageobject><imagedata format="PNG"
+                                            fileref="playonce.png"/>
+          </imageobject></mediaobject>
+            <guilabel>Single Play Mode</guilabel> &mdash; In this mode,
+            when playback finishes it will not begin again.</para>
+        </listitem>
+      </itemizedlist>
+    </sect2>
+
+  </sect1>
+
+  <sect1 id="ripping">
+    <title>Ripping CDs with Grip</title>
+
+    <para>Playing CDs is great, but what Grip is really designed for is
+      ripping CDs and creating encoded versions of the tracks.</para>
+
+    <sect2>
+      <title>Selecting Tracks To Rip</title>
+      <para>Before ripping, you need to select the tracks that you would
+        like to rip. This can be done by right-clicking on tracks in the
+        "Tracks" tab, or left clicking on a track when your mouse is under the
+        "Rip" column. In addtion, you can quickly select/deselect all tracks
+        for ripping by clicking on the "Rip" column label.</para>
+    </sect2>
+
+    <sect2>
+      <title>Ripping CDs</title>
+      <figure id="rip-interface">
+        <title>The ripping interface</title>
+        <screenshot>
+          <mediaobject><imageobject><imagedata format="PNG"
+                                      fileref="ripping.png"/>
+            </imageobject></mediaobject>
+        </screenshot>
+      </figure>
+
+      <para>There are number of buttons in the interface under the "Rip"
+        tab. They function as follows:</para>
+      
+      <itemizedlist>
+        <listitem>
+          <para><guilabel>Rip+Encode</guilabel> &mdash; This will cause Grip
+            to rip and then encode all selected tracks.</para>
+        </listitem>
+        
+        <listitem>
+          <para><guilabel>Rip Only</guilabel> &mdash; This will cause Grip
+            to rip all selected tracks, but not encode them.</para>
+        </listitem>
+        
+        <listitem>
+          <para><guilabel>Abort Rip and Encode</guilabel> &mdash; Clicking
+            this button will abort all active rip and encode
+            processes.</para>
+        </listitem>
+        
+        <listitem>
+          <para><guilabel>Abort Ripping Only</guilabel> &mdash; Clicking
+            this button will abort ripping, but will leave encoding
+            running.</para>
+        </listitem>
+        
+        <listitem>
+          <para><guilabel>DDJ Scan</guilabel> &mdash; Clicking this button
+            will insert all track information for the current disc into
+            DigitalDJ's database (if it is installed)</para>
+        </listitem>
+        
+        <listitem>
+          <para><guilabel>Rip partial track</guilabel> &mdash; If selected,
+            Grip will configured to rip a portion of a single track (as
+            specified by the "Start sector" and "End sector" values). The
+            "Play" button can be used preview the selected portion.</para>
+        </listitem>
+        
+      </itemizedlist>
+      
+      <para>In the bottom portion of the interface, Grip displays progress
+        bars for the rip and encode processes. It also computes the speed of
+        the processes as a function of normal playback speed (so 2.0x, for
+        example, means that processing is running twice as fast as normal
+        playback, on average). In addition, if Grip is using builtin
+        cdparanoia to rip, there will be a "smilie" indicator next to the
+        progress bar that reflects how much trouble Grip is having ripping
+        the CD. The meaning of the different smiles are as follows:</para>
+
+      <itemizedlist>
+
+        <listitem>
+          <para><mediaobject><imageobject><imagedata format="PNG"
+                                            fileref="smile1.png"/>
+          </imageobject></mediaobject>Normal operation, low/no jitter</para>
+        </listitem>
+        
+        <listitem>
+          <para><mediaobject><imageobject><imagedata format="PNG"
+                                            fileref="smile2.png"/>
+          </imageobject></mediaobject>Normal operation, considerable jitter</para>
+        </listitem>
+        
+        <listitem>
+          <para><mediaobject><imageobject><imagedata format="PNG"
+                                            fileref="smile3.png"/>
+          </imageobject></mediaobject>Read drift</para>
+        </listitem>
+        
+        <listitem>
+          <para><mediaobject><imageobject><imagedata format="PNG"
+                                            fileref="smile4.png"/>
+          </imageobject></mediaobject>Unreported
+            loss of streaming in atomic read operation</para>
+        </listitem>
+        
+        <listitem>
+          <para><mediaobject><imageobject><imagedata format="PNG"
+                                            fileref="smile5.png"/>
+          </imageobject></mediaobject>Finding
+            read problems at same point during reread; hard to correct</para>
+        </listitem>
+        
+        <listitem>
+          <para><mediaobject><imageobject><imagedata format="PNG"
+                                            fileref="smile6.png"/>
+          </imageobject></mediaobject>SCSI/ATAPI transport error</para>
+        </listitem>
+        
+        <listitem>
+          <para><mediaobject><imageobject><imagedata format="PNG"
+                                            fileref="smile7.png"/>
+          </imageobject></mediaobject>Scratch detected</para>
+        </listitem>
+        
+        <listitem>
+          <para><mediaobject><imageobject><imagedata format="PNG"
+                                            fileref="smile8.png"/>
+          </imageobject></mediaobject>Gave up trying to perform a correction</para>
+        </listitem>
+
+      </itemizedlist>
+
+      <para>In addition to the individual track rip/encode progress bars,
+        Grip displays overall progress bars that indicate the overall progress
+        of a multi-track rip.</para>
+      
+      <para>Grip also places an indicator for both ripping and encoding the
+        the LCD display. They show progress in %25 intervals, as can be seen
+        in this example of Grip in "small" mode. In this case, we are almost
+        finished ripping a track, and have encoded about a quarter of a
+        track.</para>
+      
+      
+      <figure id="rip-small">
+        <title>Ripping in "small" mode</title>
+        <screenshot>
+          <mediaobject><imageobject><imagedata format="PNG"
+                                      fileref="ripsmall.png"/>
+            </imageobject></mediaobject>
+        </screenshot>
+      </figure>
+    </sect2>
+    
+    <sect2 id="rip-perform">
+      <title>Increasing Ripping Performance</title>
+
+      <para>If you are using an IDE CDrom drive, using SCSI emulation can
+        give a significant performance increase. Apparently, dma is not used
+        by the IDE driver (at least in 2.4 kernels). To enable SCSI
+        emulation, add "hdx=ide-scsi" (where the "x" in "hdx" is is replaced
+        with the appropriate letter for your CDRom device) to end of the
+        "kernel" line in /etc/grub.conf (if you are using grub), or as a
+        line after "root=/dev/something" in /etc/lilo.conf (if you are using
+        lilo)</para>
+
+      <para>You can also disable paranoia to get approximately a 2x
+        speedup. This is not recommended, however, unless you are very
+        confident in the ability of your drive to do rock-solid CDDA
+        extraction (or unles you enjoy having pops in your audio)</para>
+    </sect2>
+
+    <sect2 id="sect-scsi">
+      <title>Using a SCSI drive</title>
+
+      <para>If you are using a SCSI drive, or an IDE drive under SCSI
+        emulation, Grip needs to access the generic scsi device in
+        addition to the cdrom device. On most systems, the generic scsi
+        device will be /dev/sgx, where 'x' is a number. Unless you have
+        multiple scsi devices, the device would be /dev/sg0. Ensure that
+        your user account has access to this device, and that this device
+        is specified in your rip configuration (see <xref
+          linkend="ripconfig"/>).</para>
+    </sect2>
+
+  </sect1>
+
+  <sect1 id="configure">
+    <title>Configuring Grip</title>
+
+    <para>The "Config" tab gives you access to a series of sub-tabs that
+      allow you to configure the various functions of Grip. Each of these
+      sub-tabs is described in detail in the following sections.</para>
+
+    <sect2 id="cdconfig">
+      <title>The "CD" config tab</title>
+      <figure id="cdconfig-image">
+        <title>The "CD" config tab</title>
+        <screenshot>
+          <mediaobject><imageobject><imagedata format="PNG"
+                                      fileref="cdconfig.png"/>
+            </imageobject></mediaobject>
+        </screenshot>
+      </figure>
+      
+      <para>This tab allows to you configure options associated with your
+        cdrom device and CD playback. The options are:</para>
+
+
+      <itemizedlist>
+        <listitem>
+          <para><guilabel>CDRom device</guilabel> &mdash; Specifies the
+            CDRom device to be used for CD playback.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Don't interrupt playback on
+              exit/startup</guilabel> &mdash; If this option is checked, Grip
+            will not stop a playing track when it is shut down. Also, if a CD
+            is already playing when Grip starts, it will keep playing.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Rewind when stopped</guilabel> &mdash; If this
+            option is checked, Grip will rewind to the beginning of the disc
+            whenever playback is stopped.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Startup with first track if not playing</guilabel>
+            &mdash; If this option is checked, Grip will always make the first
+            track on the CD the current track if the CD is not currently
+            playing. Otherwise, Grip will start with whatever track is
+            currently set with the CDRom device.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Reshuffle before each playback</guilabel> &mdash;
+            If this option is checked, randomized playback will be
+            re-randomized each time playback is restarted. Otherwise, the same
+            random sequence will be reused.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Work around faulty eject</guilabel> &mdash; If
+            this option is set, Grip will not rely on querying the open/closed
+            status of the CDRom tray.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Poll disc drive for new disc</guilabel> &mdash; If
+            this option is set, Grip will poll the disc drive to check if a
+            new disc has been inserted.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Poll interval</guilabel> &mdash; This specifies
+            the number of seconds Grip waits between checks for a new
+            disc.</para>
+        </listitem>
+
+      </itemizedlist>
+
+    </sect2>
+
+    <sect2 id="ripconfig">
+      <title>The "Rip" config tab</title>
+
+      <para>This tab allows to you configure Grip's ripping
+        capabilities.</para>
+
+      <figure id="ripconfig-image">
+        <title>The "Rip" config tab</title>
+        <screenshot>
+          <mediaobject><imageobject><imagedata format="PNG"
+                                      fileref="ripconfig.png"/>
+            </imageobject></mediaobject>
+        </screenshot>
+      </figure>
+      
+      <itemizedlist>
+        <listitem>
+          <para><guilabel>Ripper</guilabel> &mdash; This allows you to
+            select from various presets configured for various Rippers. By
+            default, "grip (cdparanoia)" is used, which rips with Grip's
+            builtin version of cdparanoia.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Disable paranoia</guilabel> &mdash; If this option
+            is checked, Grip will disable cdparanoia's verification
+            system. This will make ripping approximately twice as fast, but
+            can result in errors. Unless you are very confident that your
+            drive is rock solid, it is recommended that you do not select this
+            option.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Disable extra paranoia</guilabel> &mdash; If this
+            option is selected, Grip will only do overlap checking to ensure
+            proper alignment of reads. It will not verify reads for
+            errors.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Disable scratch detection / repair</guilabel>
+            &mdash; These options allow you to determine whether Grip attempts
+            to detect scratches on the CD, and whether or not it attempts to
+            repair the scratches it detects.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Calculate gain adjustment</guilabel>
+            &mdash; If this option is checked, Grip will calculate a suggested
+            gain adjustment for tracks as it rips. Computed values can then be
+            passed to external programs via the '%r' and '%R' switches.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Rip file format</guilabel> &mdash; This allows to
+            you configure the filename and path that Grip rips files to. The
+            list of available switches can be found in <xref
+              linkend="gripswitches"/>.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Generic SCSI device</guilabel> &mdash; If you are
+            using a SCSI drive, or an IDE drive under SCSI emulation, you need
+            to specify the generic SCSI device to be used. Form more
+            information on using a SCSI drive, see <xref linkend="sect-scsi"/>
+          </para>
+        </listitem>
+
+      </itemizedlist>
+
+      <para>If you select a ripper other than Grip's builtin cdparanoia, the
+        configuration dialog will look slightly different:</para>
+
+      <figure id="ripconfig2-image">
+        <title>Configuring an external ripper</title>
+        <screenshot>
+          <mediaobject><imageobject><imagedata format="PNG"
+                                      fileref="ripconfig2.png"/>
+            </imageobject></mediaobject>
+        </screenshot>
+      </figure>
+
+      <itemizedlist>
+        <listitem>
+          <para><guilabel>Ripping executable</guilabel> &mdash; This is the
+            full path to the executable to be used for ripping</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Rip command-line</guilabel> &mdash; This is the
+            command-line to be passed to the ripping program. The list of
+            available switches can be found in <xref
+              linkend="gripswitches"/>.</para>
+        </listitem>
+
+      </itemizedlist>
+
+      <para>The second sub-tab contains addition options that you can
+        specify to configure the ripping process.</para>
+
+      <figure id="ripconfig3-image">
+        <title>Additional ripping options</title>
+        <screenshot>
+          <mediaobject><imageobject><imagedata format="PNG"
+                                      fileref="ripconfig3.png"/>
+            </imageobject></mediaobject>
+        </screenshot>
+      </figure>
+
+      <itemizedlist>
+        <listitem>
+          <para><guilabel>Rip 'nice' value</guilabel> &mdash; This allows
+            you to set the 'nice' level to run the ripping process at. This
+            changes the scheduling priorty of the process. The range goes from
+            -20 (highest priority) to 19 (lowest).</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Max non-encoded .wav's</guilabel> &mdash; This
+            allows you to specify the maximum number of ripped wave files that
+            can accumulate if ripping is proceding faster than encoding can
+            keep up. It is useful to keep unencoded .wav files from taking up
+            too much disk space.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Auto-rip on insert</guilabel> &mdash; If this
+            option is checked, Grip will automatically begin ripping all
+            tracks on a disc when it is inserted.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Beep after rip</guilabel> &mdash; If this option
+            is checked, Grip will emit a beep when ripping is finished.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Auto-eject after rip</guilabel> &mdash; If this
+            option is checked, Grip will eject the disc after ripping is
+            finished.</para>
+        </listitem>
+        
+        <listitem>
+          <para><guilabel>Auto-eject delay</guilabel> &mdash; This allows
+            you to specify a delay (in seconds) before auto-ejection will
+            happen. This is useful on some drives that need time to spin down
+            before ejection can occur.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Delay before ripping</guilabel> &mdash; If this is
+            selected, grip will delay 5 seconds before starting to rip. This
+            can help with some drives (particularly some dvd drives) that take
+            a while to spin up.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Stop cdrom drive between tracks</guilabel> &mdash;
+            If this is selected, grip will spin down the cdrom drive between
+            ripping tracks.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Wav filter command</guilabel> &mdash; This allows
+            you to specify a program (full path to executable, followed by
+            the command-line) to run after a file has been ripped, but
+            before it is encoded. This is useful for such tasks as
+            normalization. The list of available switches can be found in
+            <xref linkend="gripswitches"/>.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Disc filter command</guilabel> &mdash; This
+            operates much like the Wav filter command, except that it is run
+            once after an entire disc has finished ripping.</para>
+        </listitem>
+
+      </itemizedlist>
+
+    </sect2>
+
+    <sect2 id="mp3config">
+      <title>The "Encode" config tab</title>
+
+      <para>This tab allows to you configure Grip's encoding
+        capabilities.</para>
+
+      <figure id="mp3config-image">
+        <title>The "Encode" config tab</title>
+        <screenshot>
+          <mediaobject><imageobject><imagedata format="PNG"
+                                      fileref="mp3config.png"/>
+            </imageobject></mediaobject>
+        </screenshot>
+      </figure>
+
+      <itemizedlist>
+        <listitem>
+          <para><guilabel>Encoder</guilabel> &mdash; This allows
+            you to select an encoder preset.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Encoder executable</guilabel> &mdash; This specifies
+            the full path to the executable program you wish to use for
+            encoding.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Encoder command-line</guilabel> &mdash; This is the
+            command-line to be passed to the encoding program. The list of
+            available switches can be found in <xref
+              linkend="gripswitches"/>.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Encode file format</guilabel> &mdash; This allows to
+            you configure the filename and path that Grip encodes to. The
+            list of available switches can be found in <xref
+              linkend="gripswitches"/>.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>The second sub-tab contains addition options that you can
+        specify to configure the encoding process.</para>
+
+      <figure id="mp3config2-image">
+        <title>Additional encoding options</title>
+        <screenshot>
+          <mediaobject><imageobject><imagedata format="PNG"
+                                      fileref="mp3config2.png"/>
+            </imageobject></mediaobject>
+        </screenshot>
+      </figure>
+
+      <itemizedlist>
+        <listitem>
+          <para><guilabel>Delete .wav after encoding</guilabel> &mdash; If
+            this option is checked, Grip will delete wav files after it has
+            finished encoding them.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Insert info into SQL database</guilabel> &mdash; If
+            this option is checked, Grip will insert track meta-data into the
+            DigitalDJ database (if it is installed).</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Create .m3u files</guilabel> &mdash; If
+            this option is checked, Grip will create .m3u playlist listing the
+            tracks on a CD when it is ripped.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Use relative paths in .m3u files</guilabel>
+            &mdash; If this option is checked, filename is .m3u files will be
+            relative to the directory the .m3u file is in (otherwise, full
+            paths will be used).</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>M3U file format</guilabel> &mdash; This specifies
+            the filename format to be used when writing .m3u files. The list
+            of available switches can be found in <xref
+              linkend="gripswitches"/>.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Encoding bitrate</guilabel> &mdash; This is the
+            encoding bitrate (kilobits per second) to be used. This value is
+            passed to the encoder using the '%b' switch.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Number of CPUs to use</guilabel> &mdash; On
+            SMP systems, Grip can encode using multiple processors. This value
+            specifies the number of simultaneous encode processes to run. Grip
+            needs to be restarted for a change to take effect.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Encode 'nice' value</guilabel> &mdash; This allows
+            you to set the 'nice' level to run encoding at. This changes the
+            scheduling priorty of the process. The range goes from -20
+            (highest priority) to 19 (lowest).</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Encode filter command</guilabel> &mdash; This allows
+            you to specify a program (full path to executable, followed by
+            the command-line) to run after a file has been encoded. The list
+            of available switches can be found in <xref
+              linkend="gripswitches"/>.</para>
+        </listitem>
+      </itemizedlist>
+    </sect2>
+
+    <sect2 id="id3config">
+      <title>The "ID3" config tab</title>
+
+      <para>This tab allows to you customize Grip's use of ID3 tags.</para>
+
+      <figure id="id3config-image">
+        <title>The "ID3" config tab</title>
+        <screenshot>
+          <mediaobject><imageobject><imagedata format="PNG"
+                                      fileref="id3config.png"/>
+            </imageobject></mediaobject>
+        </screenshot>
+      </figure>
+
+      <itemizedlist>
+        <listitem>
+          <para><guilabel>Add ID3 tags to encoded files</guilabel> &mdash;
+            If this option is checked, Grip will add ID3v1 tags to the files
+            it encodes. ID3 tags are used to put song meta-data into an
+            encoded file. You will want to disable this if you are encoding
+            with a format other than MP3.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Add ID3v2 tags to encoded files</guilabel> &mdash;
+            This option is only displayed if Grip has been compiled with ID3v2
+            support. If it is checked, Grip will add ID3v2 tags to the files
+            it encodes. ID3v2 tags remove the 20-character field length
+            limitation imposed by ID3v1.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>ID3 comment field</guilabel> &mdash; This allows
+            you to specify the format of the ID3 comment field. The list of
+            available switches can be found in <xref
+              linkend="gripswitches"/>.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>ID3v1 Character set encoding</guilabel> &mdash;
+          The character encoding to be used for ID3v1 tags. ISO_8859_1 is
+          recommended.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>ID3v2 Character set encoding</guilabel> &mdash;
+          The character encoding to be used for ID3v1 tags. ISO_8859_1 or UTF-8
+          are the most likely options.</para>
+        </listitem>
+      </itemizedlist>
+
+    </sect2>
+
+    <sect2 id="discdbconfig">
+      <title>The "DiscDB" config tab</title>
+
+      <para>This tab allows to you customize how Grip talks to disc
+        information servers (such as freedb) to obtain disc meta-data.</para>
+
+      <figure id="discdbconfig-image">
+        <title>The "DiscDB" config tab</title>
+        <screenshot>
+          <mediaobject><imageobject><imagedata format="PNG"
+                                      fileref="discdbconfig.png"/>
+            </imageobject></mediaobject>
+        </screenshot>
+      </figure>
+
+      <itemizedlist>
+        <listitem>
+          <para><guilabel>Primary/Secondary Server</guilabel> &mdash; Grip
+            allows you to configure a primary and secondary disc database
+            server. If information cannot be found using the primary server,
+            Grip will then try using the secondary server.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>DB server</guilabel> &mdash; This is the http
+            address of the disc database server.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>DB server</guilabel> &mdash; This is the path to
+            the CGI to be used on the disc database server. It is generally
+            "~cddb/cddb.cgi".</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>DB Character set encoding</guilabel> &mdash; The
+          character encoding to use when tranferring data to/from the
+          server. This should generally be set to UTF-8.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>DB Submit email</guilabel> &mdash; This allows you
+            to specify the email address to send disc database submissions
+            to.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Use freedb extensions</guilabel> &mdash; If
+            checked, Grip will make use of extensions to the disc database
+            format used by freedb. Otherwise, it will use an older
+            format.</para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Perform disc lookups automatically</guilabel>
+            &mdash; If this option is checked, Grip will automatically query
+            the disc database server when a disc is inserted that does not
+            already have meta-data stored.</para>
+        </listitem>
+      </itemizedlist>
+    </sect2>
+
+    <sect2 id="proxyconfig">
+      <title>The "Proxy" config tab</title>
+
+      <para>This tab allows to you configure Grip to communicate through a
+        proxy server.</para>
+
+      <figure id="proxyconfig-image">
+        <title>The "Proxy" config tab</title>
+        <screenshot>
+          <mediaobject><imageobject><imagedata format="PNG"
+                                      fileref="proxyconfig.png"/>
+            </imageobject></mediaobject>
+        </screenshot>
+      </figure>
+
+      <itemizedlist>
+        <listitem>
+          <para><guilabel>Use proxy server</guilabel> &mdash; Indicates
+            whether or not Grip should do disc lookups via a proxy server.
+          </para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Get server from 'http_proxy' env. var</guilabel>
+            &mdash; If this option is checked, Grip will check the
+            'http_proxy' environment variable, and use its value as the name
+            of the proxy server.
+          </para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Proxy server</guilabel> &mdash; The name of the
+            proxy server to use.
+          </para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Proxy port</guilabel> &mdash; The port to use on
+            the proxy server (usually 8000).
+          </para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Proxy username</guilabel> &mdash; Some proxies
+            require user authentication. This field is the username you wish
+            to authenticte with.
+          </para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Proxy password</guilabel> &mdash; This is the
+            password that goes along with the username for proxy
+            authentication.
+          </para>
+        </listitem>
+      </itemizedlist>
+
+    </sect2>
+
+    <sect2 id="miscconfig">
+      <title>The "Misc" config tab</title>
+
+      <para>This tab allows contains various additional configuration
+        options.</para>
+
+      <figure id="msicconfig-image">
+        <title>The "Misc" config tab</title>
+        <screenshot>
+          <mediaobject><imageobject><imagedata format="PNG"
+                                      fileref="miscconfig.png"/>
+            </imageobject></mediaobject>
+        </screenshot>
+      </figure>
+
+      <itemizedlist>
+        <listitem>
+          <para><guilabel>Email address</guilabel> &mdash; A valid email
+            addres where you can be reached. This is used with disc database
+            submissions to allow the disc database server to contact you if
+            there are problems with a submission.
+          </para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>CD update program</guilabel> &mdash; This allows
+            you to specify a program (full path to executable, followed by
+            the command-line) to run when a new disc is inserted. This is
+            useful for such tasks as normalization. The list of available
+            switches can be found in <xref linkend="gripswitches"/>.
+          </para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Do not lowercase filenames</guilabel> &mdash; By
+            default, Grip lowercases the strings used when translating the '%'
+            switches. If this option is checked, it will not do this.
+          </para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Allow high bits in filename</guilabel> &mdash; By
+            default, Grip strips high-bit characters in the strings used when
+            translating the '%' switches. If this option is checked, it will
+            not do this.
+          </para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Do not change spaces to underscores</guilabel>
+            &mdash; By default, Grip replaces spaces with underscores in the
+            strings used when translating the '%' switches. If this option is
+            checked, it will not do this.
+          </para>
+        </listitem>
+
+        <listitem>
+          <para><guilabel>Characters to not strip in filenames</guilabel>
+            &mdash; Grip strips all non-alphanumeric characters in the
+            strings used when translating the '%' switches. Any characters
+            entered here will explicity not be stripped.
+          </para>
+        </listitem>
+
+      </itemizedlist>
+
+    </sect2>
+
+    <sect2 id="gripswitches">
+      <title>Configuration (%) switches</title>
+
+      <para>Here is a list of the '%' switches used in command-lines.</para>
+
+      <itemizedlist>
+        <listitem><para><guilabel>b</guilabel> &mdash; The bitrate that files
+            are being encoded at.  </para></listitem>
+
+        <listitem><para><guilabel>c</guilabel> &mdash; The CDrom device
+            being used.  </para></listitem>
+
+        <listitem><para><guilabel>C</guilabel> &mdash; The generic scsi
+            device being used (note that this will be substituted with the
+            CDrom device if no generic scsi device has been
+            specified).</para></listitem>
+
+        <listitem><para><guilabel>w</guilabel> &mdash; The filename of the
+            wave file being ripped.  </para></listitem>
+
+        <listitem><para><guilabel>m</guilabel> &mdash; The filename of the
+            file being encoded.  </para></listitem>
+
+        <listitem><para><guilabel>t</guilabel> &mdash; The track
+            number,beginning at 1, and zero-filled (ie: '03' for the third
+            track).  </para></listitem>
+
+        <listitem><para><guilabel>s</guilabel> &mdash; The start sector of
+            the track.  </para></listitem>
+
+        <listitem><para><guilabel>e</guilabel> &mdash; The end sector of the
+            track.  </para></listitem>
+
+        <listitem><para><guilabel>n</guilabel> &mdash; The name of the
+            track.  </para></listitem>
+
+        <listitem><para><guilabel>a</guilabel> &mdash; The artist name for
+            the track.  </para></listitem>
+
+        <listitem><para><guilabel>A</guilabel> &mdash; The artist name for
+            the disc.  </para></listitem>
+
+
+        <listitem><para><guilabel>d</guilabel> &mdash; The name of the disc.
+          </para></listitem>
+        
+        <listitem><para><guilabel>i</guilabel> &mdash; The disc database id
+            (in hex) for the disc.  </para></listitem>
+        
+        <listitem><para><guilabel>y</guilabel> &mdash; The year of the disc.
+          </para></listitem>
+        
+        <listitem><para><guilabel>g</guilabel> &mdash; The ID3 genre id of
+            the disc.  </para></listitem>
+        
+        <listitem><para><guilabel>G</guilabel> &mdash; The ID3 genre string
+            of the disc.  </para></listitem>
+
+        <listitem><para><guilabel>r</guilabel> &mdash; The recommended
+            replay gain for the track (in dB). Note that this is only applicable
+            if you have enabled gain calculation. You can find more information
+            on this gain adjustment at <ulink
+              url="http://www.replaygain.org">www.replaygain.org</ulink></para>
+        </listitem>
+
+        <listitem><para><guilabel>R</guilabel> &mdash; The recommended
+            replay gain for the entire album (in dB). This value is only valide
+            after an entire disc has been ripped (it is designed to be used with
+            the disc filter command).</para>
+        </listitem>
+
+        <listitem><para><guilabel>x</guilabel> &mdash; The encoded file
+        extension (ie "mp3")</para></listitem>
+        
+      </itemizedlist>
+      
+      <para>Any of the '%' switches can optionally be preceded by a '*' or
+        '!' modifier (for example, '%*a'). '*' prevents Grip from doing any
+        stripping of characters from the string. '!' forces Grip to strip
+        characters from the string. If neither modifier is used, Grip will
+        do what it thinks is best (generally, it will only munge strings if
+        it knows they are part of a filename).</para>
+    </sect2>
+  </sect1>
+  
+  <sect1 id="faq">
+    <title>FAQ</title>
+
+    <itemizedlist>
+      <listitem><para>Q: When I try to rip a track, I get X I/O errors. What
+          gives?</para>
+        
+        <para>A: This seems to be a problem with non-thread-safe
+          systems. Make sure your system is safe for threads. This often
+          seems to be associated with libc5.</para></listitem>
+      
+      
+      <listitem><para>Q: I just get a message saying that the program can't
+          access my drive. This makes it hard to do much. Help!</para>
+        
+        <para>A: Your user account must have access to the cdrom device.
+        </para></listitem>
+      
+      
+      <listitem><para>Q: I can play cd's fine, but my ripper can't access
+          the drive. Why not?</para>
+        
+        <para>A: On scsi systems, rippers (cdparanoia, at least) need access
+          to the generic scsi device as well.</para></listitem>
+      
+      
+      <listitem><para>Q: The progress bar doesn't seem to be completely
+          accurate when encoding. Why can't it get it right?</para>
+        
+        <para>A: The progress bar is done based on the size of the output
+          file. If you have the kbits/sec set properly, Grip should estimate
+          the size properly. Note that if you use variable bitrate encoding
+          (supported by encoders like LAME and xing) Grip has no way to
+          accurately guess the file size.</para></listitem>
+      
+      <listitem><para>Q: When I try to rip, Grip skips some of the tracks I
+          have selected. That's not nice -- how can I make it stop?</para>
+        
+        <para>A: Some drives (particularly some dvd drives) take a while to
+          spin up, and get confused if ripping starts before they are
+          ready. Try enabling the "Delay before ripping" setting in <xref
+            linkend="ripconfig"/>.</para></listitem>
+      
+      <listitem><para>Q: When I encode tracks, the progress bar never
+          does anything. What happened to progress?</para>
+        
+        <para>A: If your encoder doesn't accept an output filename (like
+          BladeEnc), or you haven't passed it one on the command-line, then
+          it might not be outputting to the file Grip expects. Make sure
+          that your encoded file format is set to what your encoder is
+          actually producing.</para></listitem>
+      
+      
+      <listitem><para>Q: When Grip looks up disc information, it works, but
+          says "Error saving disc data". Why?</para>
+        
+        <para>A: Grip saves local copies of disc track information in the
+          directory "~/.cddb". It must be able to create or access this
+          directory.</para></listitem>
+      
+      
+      <listitem><para>Q: How come I don't get any scrollbars in the track
+          display?</para>
+        
+        <para>A: You are using a version of Grip compiled for gtk+ v1.0.x on
+          a system that has gtk+ v1.2.x installed. You need to either get a
+          binary compiled for the development series of gtk+, or compile
+          Grip yourself.</para></listitem>
+      
+      
+      <listitem><para>Q: When my buddy runs Grip, he gets those nifty LCD
+          icons showing rip/encode/DiscDB status, but I don't. What makes him
+          so special?</para>
+        
+        <para>A: He's using a more recent version of gtk+ than you are. Due
+          to bugs in gtk+ v1.0.x, I don't support the icons under
+          it. Upgrade your gtk+!</para></listitem>
+      
+      
+      <listitem><para>Q: I can't get Grip to rip any tracks! This makes it
+          less than useful...</para>
+        
+        <para>A: Grip won't rip tracks unless you tell it what to rip. Use
+          the right mouse button to select tracks for
+          ripping.</para></listitem>
+      
+      
+      <listitem><para>Q: I was listening to a CD in Grip and it sounded
+          horrible! What's up?</para>
+        
+        <para>A: Perhaps you are listening to country
+          music...</para></listitem>
+    </itemizedlist>
+    
+  </sect1>
+
+  <sect1 id="morehelp">
+    <title>Getting More Help</title> <para>If you need more help with Grip,
+      your best resource is the Grip mailing list. You will find it <ulink
+        url="http://lists.sourceforge.net/mailman/listinfo/grip-users">
+        here</ulink>. Be sure to check the mailing list archives for answers to
+      any questions you may have.</para>
+  </sect1>
+
+  <sect1 id="bugs">
+    <title>Reporting Bugs / Sumitting Patches</title>
+
+    <para>To report a bug with Grip, or to submit a patch. Please do so at
+      the <ulink url="http://sourceforge.net/projects/grip">Grip
+        section</ulink> on sourceforge.net.</para>
+  </sect1>
+
+  <sect1 id="cddb">
+    <title>CDDB notes</title> <para>I have declined to sign a license
+      agreement with Escient, the company who owns "www.cddb.com" and runs
+      the CDDB server "us.cddb.com". Their license would (among other
+      things) have required me to place advertisements in Grip and restrict
+      you, the user, to use only their databases. I am against this
+      commercial use of the track information submitted by users such as
+      yourself. For this reason, I encourage you to use free servers, such
+      as freedb.org.</para>
+  </sect1>
+
+  <sect1 id="license">
+    <title>License and Disclaimer</title> <para>Grip is Copyright
+      &amp;copy 2002 by Mike Oliphant. Grip may be used and distributed
+      under the terms of the GNU General Public License. All other brand and
+      product names are trademarks, registered trademarks or service marks of
+      their respective holders.</para>
+    
+    <para>These programs are distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+      General Public License for more details.</para>
+    
+    <para>You should have received a copy of the GNU General Public License
+      along with this distribution; if not, write to the Free Software
+      Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111,
+      USA.</para>
+  </sect1>    
+
+  <sect1 id="acknowledge">
+    <title>Acknowledgments</title>
+
+    <para>Thanks go to:</para>
+    
+    <itemizedlist>
+
+      <listitem><para>Everyone involved in GTK development for a wonderful
+          GUI</para></listitem>
+
+      <listitem><para>Tony Arcieri, for libcdaudio, which formed the basis
+          of Grip's low-level cd control and disc database access
+          routines</para></listitem>
+
+      <listitem><para>Monty, for cdparanoia and the paranoia
+          library</para></listitem>
+
+      <listitem><para>Heiko Eissfeldt for cdda2wav</para></listitem>
+
+      <listitem><para>Mike Cheng, Mark Taylor and all the others who have
+          worked on LAME</para></listitem>
+
+      <listitem><para>Tord Jansson for BladeEnc</para></listitem>
+
+      <listitem><para>Michael Kaiser and everyone else who has helped out
+          with freedb</para></listitem>
+
+      <listitem><para>Ti Kan, for the xmcd button bitmaps, many of which I
+          use in modified form (shame on you for the cddb fiasco,
+          however)</para></listitem>
+
+      <listitem><para>mp3.com for hosting nostatic.org</para></listitem>
+
+      <listitem><para>David Robinson and Glen Sawyer for
+          ReplayGain</para></listitem>
+
+      <listitem><para>Everyone else who has given me feedback, contributed
+          code, and helped test Grip (see the ChangeLog and CREDITS for
+          specific contributions)</para></listitem>
+
+    </itemizedlist>
+
+  </sect1>
+
+  </article>
+
+
+
+
+

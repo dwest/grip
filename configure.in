@@ -1,0 +1,132 @@
+AC_PREREQ(2.52)
+
+AC_INIT(grip, 3.3.1, http://sf.net/tracker/?group_id=3714&atid=103714)
+AC_CONFIG_SRCDIR(src/main.c)
+AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
+
+AM_MAINTAINER_MODE
+AM_CONFIG_HEADER(config.h)
+
+AC_ARG_ENABLE(shared_cdpar,
+	[  --disable-shared-cdpar  use static cdparanoia lib],
+        ,enable_shared_cdpar=yes)
+
+AC_ARG_ENABLE(cdpar,
+	[  --disable-cdpar         do not compile with cdparanoia],
+        , enable_cdpar=yes)
+
+AC_ARG_ENABLE(id3,
+	[  --disable-id3           do not compile with id3lib],
+        , enable_id3=yes)
+
+AC_ARG_ENABLE(shared_id3,
+	[  --disable-shared-id3    use static id3lib],
+        , enable_shared_id3=yes)
+
+AC_PROG_CC
+AC_PROG_CXX
+AC_ISC_POSIX
+AC_HEADER_STDC
+AC_CHECK_HEADERS(sys/vfs.h sys/statvfs.h)
+AC_CHECK_HEADERS(linux/cdrom.h linux/ucdrom.h sys/cdio.h io/cam/cdrom.h sys/mntent.h)
+AC_CHECK_HEADERS(linux/soundcard.h machine/soundcard.h sys/soundcard.h sys/audioio.h sys/audio.io.h sun/audioio.h)
+
+AM_PROG_LIBTOOL
+
+PKG_CHECK_MODULES(GNOME, libgnomeui-2.0 >= 2.2.0,
+                  [LIBS="$LIBS $GNOME_LIBS"
+                   CFLAGS="$CFLAGS $GNOME_CFLAGS"])
+
+PKG_CHECK_MODULES(TERMINAL_WIDGET, vte)
+CFLAGS="$TERMINAL_WIDGET_CFLAGS $CFLAGS"
+
+dnl check for ghttp
+AC_CHECK_HEADER(curl/curl.h, [], [AC_MSG_ERROR(libcurl headers are missing)])
+AC_CHECK_LIB(curl,curl_global_init, [LIBS="$LIBS `curl-config --libs`"], [AC_MSG_ERROR(curl libs are missing)])
+
+GETTEXT_PACKAGE=grip-2.2
+AC_SUBST(GETTEXT_PACKAGE)
+AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package])
+ALL_LINGUAS="fr de zh_CN zh_HK zh_TW ja pt_BR ru es ca it be fi bg nl hu pl_PL"
+AM_GLIB_GNU_GETTEXT
+
+dnl do cdparanoia check
+if test "$enable_cdpar" = "yes"; then
+  LIBS="$LIBS -lm"
+
+  AC_CHECK_HEADERS(cdda_interface.h cdda_paranoia.h)
+  AC_CHECK_HEADERS(cdda/cdda_interface.h cdda/cdda_paranoia.h)
+
+  AC_CHECK_LIB(cdda_interface,main,
+    if test "$enable_shared_cdpar" = "yes"; then
+      echo "using shared cdparanoia libraries"
+      CDPAR_LIBS="-lcdda_interface -lcdda_paranoia"
+    else
+      echo "using static cdparanoia libraries"
+      CDPAR_LIBS="$prefix/lib/libcdda_interface.a $prefix/lib/libcdda_paranoia.a"
+    fi)
+fi
+AC_SUBST(CDPAR_LIBS)
+
+id3_libs_bak=$LIBS
+if test "$enable_id3" = "yes"; then
+	AC_SEARCH_LIBS(ID3Tag_Link,"id3 -lz -lstdc++",
+		id3lib=yes
+		AC_DEFINE(HAVE_ID3V2, [], [Description])
+		if test "$enable_shared_id3" = "yes"; then
+		  echo "using shared id3lib"
+		  ID3_LIBS="-lid3 -lz -lstdc++"
+	        else
+		  echo "using static id3lib"
+		  ID3_LIBS="$prefix/lib/libid3.a -lz -lstdc++"
+	    fi,
+		id3lib=no
+		AC_MSG_WARN(id3lib not found - disabling id3v2 support))
+fi
+
+dnl expected version for cross compiling
+ID3LIB_MAJOR=3
+ID3LIB_MINOR=7
+ID3LIB_PATCH=13
+
+dnl This test will extract the version number from id3lib and define the macros
+dnl ID3LIB_MAJOR, ID3LIB_MINOR, ID3LIB_PATCH
+if test $id3lib = yes; then
+    AC_MSG_CHECKING(for id3lib version)
+      AC_TRY_RUN([
+#include <id3.h>
+#include <stdio.h>
+int 
+main ()
+{
+    FILE *output;
+    output=fopen("conftest.id3","w");
+    fprintf(output,"ID3LIB_MAJOR=%d\nID3LIB_MINOR=%d\nID3LIB_PATCH=%d\n",
+	ID3LIB_MAJOR_VERSION,ID3LIB_MINOR_VERSION,ID3LIB_PATCH_VERSION);
+    fclose(output);
+    exit(0);
+}
+], . conftest.id3
+   echo "${ID3LIB_MAJOR}.${ID3LIB_MINOR}.${ID3LIB_PATCH}", 
+   AC_MSG_WARN(could not determine id3lib version),[echo $ac_n "cross compiling; assuming ${ID3LIB_MAJOR}.${ID3LIB_MINOR}.${ID3LIB_PATCH} $ac_c"])
+   AC_DEFINE_UNQUOTED(ID3LIB_MAJOR, $ID3LIB_MAJOR, [Description])
+   AC_DEFINE_UNQUOTED(ID3LIB_MINOR, $ID3LIB_MINOR, [Description])
+   AC_DEFINE_UNQUOTED(ID3LIB_PATCH, $ID3LIB_PATCH, [Description])
+fi
+AC_SUBST(ID3_LIBS)
+LIBS=$id3_libs_bak
+
+AC_SUBST(CFLAGS)
+AC_SUBST(CPPFLAGS)
+AC_SUBST(LDFLAGS)
+
+AC_OUTPUT([
+Makefile
+grip.spec
+src/Makefile
+po/Makefile.in
+pixmaps/Makefile
+doc/Makefile
+doc/C/Makefile
+contrib/Makefile
+])

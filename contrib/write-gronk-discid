@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# write-gronk-discid
+#
+# When invoked as the "MP3 Filter" by Grip, writes
+# a "discid" file for use by Jamie Zawinski's Gronk
+# MP3 Jukebox (http://www.jwz.org/gronk/).
+#
+# Set as MP3 filter like: "write-gronk-discid %m %i".
+#
+
+test $# -eq 2 -a -f "$1" || exit 1
+
+DIR=`dirname "$1"`
+DISCID=$2
+IDFILE=$DIR/discid
+
+rm -f $IDFILE*
+echo $DISCID > $IDFILE.$DISCID
+ln -s `basename $IDFILE.$DISCID` $IDFILE
+
+#
+#EOF

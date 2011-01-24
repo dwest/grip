@@ -1,0 +1,1251 @@
+# Bulgarian translation of grip.
+# Copyright (C) 2004 Vladimir Petkov, InterSpace Media Art Center : www.i-space.org
+# This file is distributed under the same license as the Grip package.
+# Vladimir "Kaladan" Petkov <vpetkov@i-space.org>, 2004.
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-06-25 11:23-0700\n"
+"PO-Revision-Date: 2004-02-08 14:03+0200\n"
+"Last-Translator: Vladimir \"Kaladan\" Petkov <vpetkov@i-space.org>\n"
+"Language-Team: Bulgarian <dict@linux.zonebg.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/main.c:56
+msgid "Specify the geometry of the main window"
+msgstr "Определя размерите на основния прозорец"
+
+#: src/main.c:57
+msgid "GEOMETRY"
+msgstr "РАЗМЕРИ"
+
+#: src/main.c:65
+msgid "Specify the config file to use (in your home dir)"
+msgstr "Определя конфигурационния файл в употреба (в домашната директория)"
+
+#: src/main.c:66
+msgid "CONFIG"
+msgstr "КОНФИГУРАЦИЯ"
+
+#: src/main.c:74
+msgid "Specify the cdrom device to use"
+msgstr "Определя CD ROM устройството"
+
+#: src/main.c:75 src/main.c:84
+msgid "DEVICE"
+msgstr "УСТРОЙСТВО"
+
+#: src/main.c:83
+msgid "Specify the generic scsi device to use"
+msgstr "Упределя SCSI устройството в употреба"
+
+#: src/main.c:92
+msgid "Launch in \"small\" (cd-only) mode"
+msgstr "Зарежда в \"ограничен\" (CD-ROM само) режим"
+
+#: src/main.c:101
+msgid "\"Local\" mode -- do not look up disc info on the net"
+msgstr "\"Локален\"·режим·--·не се търси информация за диска в интернет"
+
+#: src/main.c:110
+msgid "Do not do I/O redirection"
+msgstr "Не прави I/O пренасочване"
+
+#: src/main.c:119
+msgid "Run in verbose (debug) mode"
+msgstr "Стартира в режим за докладване на грешки"
+
+#: src/grip.c:181
+msgid "Grip"
+msgstr "Grip"
+
+#: src/grip.c:238
+#, c-format
+msgid "Error: Unable to initialize [%s]\n"
+msgstr "Грешка: Разпознаването е невъзможно [%s]\n"
+
+#: src/grip.c:324
+msgid ""
+"This is a development version of Grip. If you encounter problems, you are "
+"encouraged to revert to the latest stable version."
+msgstr ""
+
+#: src/grip.c:330
+msgid "Grip started successfully\n"
+msgstr ""
+
+#: src/grip.c:344
+msgid ""
+"Work is in progress.\n"
+"Really shut down?"
+msgstr ""
+"Извършва се работа.\n"
+"Да изгася програмата?"
+
+#: src/grip.c:395
+msgid "Status"
+msgstr "Статус"
+
+#: src/grip.c:410
+msgid "General"
+msgstr "Основен"
+
+#: src/grip.c:425 src/gripcfg.c:362 src/cdplay.c:251 src/cdplay.c:345
+#: src/rip.c:95
+msgid "Rip"
+msgstr "Извличане"
+
+#: src/grip.c:440 src/gripcfg.c:496
+msgid "Encode"
+msgstr "Кодиране"
+
+#: src/grip.c:485
+msgid "Help"
+msgstr "Помощ"
+
+#: src/grip.c:490
+msgid "Table Of Contents"
+msgstr "Съдържание"
+
+#: src/grip.c:496
+msgid "Playing CDs"
+msgstr "Изпълняващи се CD-та"
+
+#: src/grip.c:502
+msgid "Ripping CDs"
+msgstr "Извличащи се CD-та"
+
+#: src/grip.c:508
+msgid "Configuring Grip"
+msgstr "Конфигурация"
+
+#: src/grip.c:514
+msgid "FAQ"
+msgstr "Често Задавани Въпроси"
+
+#: src/grip.c:520
+msgid "Getting More Help"
+msgstr "Допълнителна помощ"
+
+#: src/grip.c:526
+msgid "Reporting Bugs"
+msgstr "Докладване за грешки"
+
+#: src/grip.c:546
+msgid "About"
+msgstr "Относно"
+
+#: src/grip.c:565
+#, c-format
+msgid "Version %s"
+msgstr ""
+
+#: src/grip.c:905
+msgid "Created by Grip"
+msgstr ""
+
+#: src/grip.c:922
+msgid ""
+"Your config file is out of date -- resetting to defaults.\n"
+"You will need to re-configure Grip.\n"
+"Your old config file has been saved with -old appended."
+msgstr ""
+"Вашият конфигурационен файл е остарял - зареждане на настройките по "
+"подразбиране.\n"
+"Grip трябва да бъде пренастроен.\n"
+"Старият конфигурационен фал е запазен с -old·в края."
+
+#: src/grip.c:995
+#, c-format
+msgid "server is %s, port %d\n"
+msgstr "сървър е·%s,·порт·%d\n"
+
+#: src/grip.c:1016
+#, fuzzy
+msgid "Error: Unable to save config file."
+msgstr "Грешка: Запазването на конфигурационния файл е невъзможно"
+
+#: src/gripcfg.c:105
+msgid "Config"
+msgstr "Настройки"
+
+#: src/gripcfg.c:113
+msgid "CDRom device"
+msgstr "CDRom устройство"
+
+#: src/gripcfg.c:118
+msgid "Don't interrupt playback on exit/startup"
+msgstr "Не прекъсва музиката на излизане/стартиране"
+
+#: src/gripcfg.c:122
+msgid "Rewind when stopped"
+msgstr "Започва от начало, когато е музиката е спряна"
+
+#: src/gripcfg.c:127
+msgid "Startup with first track if not playing"
+msgstr "Започва с първата песен ако не свири"
+
+#: src/gripcfg.c:132
+msgid "Auto-play on disc insert"
+msgstr "Автоматично стартира диск при постяване в устройството"
+
+#: src/gripcfg.c:137
+msgid "Reshuffle before each playback"
+msgstr "Разбърква преди всяко изпълнение"
+
+#: src/gripcfg.c:142
+msgid "Work around faulty eject"
+msgstr ""
+
+#: src/gripcfg.c:147
+msgid "Poll disc drive for new disc"
+msgstr ""
+
+#: src/gripcfg.c:151
+msgid "Poll interval (seconds)"
+msgstr ""
+
+#: src/gripcfg.c:159
+msgid "CD"
+msgstr "CD"
+
+#: src/gripcfg.c:175
+msgid "Ripper:"
+msgstr "Извличаща програма:"
+
+#: src/gripcfg.c:220
+msgid "Ripping executable"
+msgstr ""
+
+#: src/gripcfg.c:225
+msgid "Rip command-line"
+msgstr "Команден интерпретатор"
+
+#: src/gripcfg.c:236
+msgid "Disable paranoia"
+msgstr "Изключва paranoia"
+
+#: src/gripcfg.c:241
+msgid "Disable extra paranoia"
+msgstr "Изключва допъплнителна paranoia"
+
+#: src/gripcfg.c:247
+msgid "Disable scratch"
+msgstr "Изключва драскане"
+
+#: src/gripcfg.c:251
+msgid "detection"
+msgstr "засичане"
+
+#: src/gripcfg.c:255
+msgid "repair"
+msgstr "поправя"
+
+#: src/gripcfg.c:263
+msgid "Calculate gain adjustment"
+msgstr ""
+
+#: src/gripcfg.c:271
+msgid "Rip file format"
+msgstr "Формат на извлечения файл"
+
+#: src/gripcfg.c:275
+msgid "Generic SCSI device"
+msgstr "SCSI устройство"
+
+#: src/gripcfg.c:283
+msgid "Ripper"
+msgstr "Програма за извличане"
+
+#: src/gripcfg.c:292
+msgid "Rip 'nice' value"
+msgstr "Извлича \"добра\" стойност"
+
+#: src/gripcfg.c:296
+msgid "Max non-encoded .wav's"
+msgstr "Максимално не-кодирани .wav файлове"
+
+#: src/gripcfg.c:302
+msgid "Auto-rip on insert"
+msgstr "Автоматично извличане при вмъкване на CD"
+
+#: src/gripcfg.c:306
+msgid "Beep after rip"
+msgstr "Звуков сигнал след извличане"
+
+#: src/gripcfg.c:316
+msgid "Auto-eject after rip"
+msgstr "Автоматично изваждане на диска след извличане"
+
+#: src/gripcfg.c:320
+msgid "Auto-eject delay"
+msgstr "Закъснение на автоматичното изваждане"
+
+#: src/gripcfg.c:328
+msgid "Delay before ripping"
+msgstr "Закъснение преди извличането"
+
+#: src/gripcfg.c:333
+msgid "Delay encoding until disc is ripped"
+msgstr "Закъснение на кодирането след като дискът е извлечен"
+
+#: src/gripcfg.c:338
+msgid "Stop cdrom drive between tracks"
+msgstr "Спира CDRom устройството между песните"
+
+#: src/gripcfg.c:342
+msgid "Wav filter command"
+msgstr "Команда за филтър на Wav"
+
+#: src/gripcfg.c:347
+msgid "Disc filter command"
+msgstr "Команда за филтър на Диск"
+
+#: src/gripcfg.c:355 src/gripcfg.c:489
+msgid "Options"
+msgstr "Опции"
+
+#: src/gripcfg.c:377
+msgid "Encoder:"
+msgstr "Кодираща програма:"
+
+#: src/gripcfg.c:412
+msgid "Encoder executable"
+msgstr ""
+
+#: src/gripcfg.c:417
+msgid "Encoder command-line"
+msgstr ""
+
+#: src/gripcfg.c:423
+#, fuzzy
+msgid "Encode file extension"
+msgstr "Файлове формат при кодиране"
+
+#: src/gripcfg.c:428
+msgid "Encode file format"
+msgstr "Файлове формат при кодиране"
+
+#: src/gripcfg.c:436
+msgid "Encoder"
+msgstr "Кодираща програма"
+
+#: src/gripcfg.c:446
+msgid "Delete .wav after encoding"
+msgstr "Изтрива .wav файлът след кодиране"
+
+#: src/gripcfg.c:451
+msgid "Insert info into SQL database"
+msgstr "Вмъква информация в SQL БазаДанни"
+
+#: src/gripcfg.c:455
+msgid "Create .m3u files"
+msgstr "Създава .m3u файлове"
+
+#: src/gripcfg.c:460
+msgid "Use relative paths in .m3u files"
+msgstr "Използва свързани пътища в .m3u файловете"
+
+#: src/gripcfg.c:464
+msgid "M3U file format"
+msgstr "M3U файлов формат"
+
+#: src/gripcfg.c:469
+msgid "Encoding bitrate (kbits/sec)"
+msgstr "Скорост на кодиране (килобита/сек.)"
+
+#: src/gripcfg.c:473
+msgid "Number of CPUs to use"
+msgstr "Процесори в употреба"
+
+#: src/gripcfg.c:477
+msgid "Encode 'nice' value"
+msgstr ""
+
+#: src/gripcfg.c:481
+msgid "Encode filter command"
+msgstr ""
+
+#: src/gripcfg.c:505
+msgid "Add ID3 tags to encoded files"
+msgstr "Добавя ID3 коментари в кодираните файлове"
+
+#: src/gripcfg.c:511
+msgid "Add ID3v2 tags to encoded files"
+msgstr "Добавя ID3v2 коментари в кодираните файлове"
+
+#: src/gripcfg.c:517
+msgid "Only tag files ending in '.mp3'"
+msgstr "Добавя информация само във файлове завършващи с '.mp3'"
+
+#: src/gripcfg.c:521
+msgid "ID3 comment field"
+msgstr "Поле за ID3 коментар"
+
+#: src/gripcfg.c:526
+msgid "ID3v1 Character set encoding"
+msgstr "Кодова таблица на ID3v1"
+
+#: src/gripcfg.c:532
+#, fuzzy
+msgid "ID3v2 Character set encoding"
+msgstr "Кодова таблица на ID3v1"
+
+#: src/gripcfg.c:540
+msgid "ID3"
+msgstr "ID3"
+
+#: src/gripcfg.c:557 src/gripcfg.c:577
+msgid "DB server"
+msgstr "Сървър База Данни"
+
+#: src/gripcfg.c:561 src/gripcfg.c:581
+msgid "CGI path"
+msgstr "Път на CGI"
+
+#: src/gripcfg.c:568
+msgid "Primary Server"
+msgstr "Основен сървър"
+
+#: src/gripcfg.c:588
+msgid "Secondary Server"
+msgstr "Втори сървър"
+
+#: src/gripcfg.c:598
+msgid "DB Submit email"
+msgstr ""
+
+#: src/gripcfg.c:603
+msgid "DB Character set encoding"
+msgstr ""
+
+#: src/gripcfg.c:608
+msgid "Use freedb extensions"
+msgstr "Използва freedb разширения"
+
+#: src/gripcfg.c:613
+msgid "Perform disc lookups automatically"
+msgstr "Изпълнява преглеждане на диск автоматично"
+
+#: src/gripcfg.c:621
+msgid "DiscDB"
+msgstr "ДискБД"
+
+#: src/gripcfg.c:630
+msgid "Use proxy server"
+msgstr "Използва прокси сървър"
+
+#: src/gripcfg.c:637
+msgid "Get server from 'http_proxy' env. var"
+msgstr ""
+
+#: src/gripcfg.c:641
+msgid "Proxy server"
+msgstr "Прокси сървър"
+
+#: src/gripcfg.c:645
+msgid "Proxy port"
+msgstr "Прокси порт"
+
+#: src/gripcfg.c:649
+msgid "Proxy username"
+msgstr "Прокси потребителско име"
+
+#: src/gripcfg.c:655
+msgid "Proxy password"
+msgstr "Прокси парола"
+
+#: src/gripcfg.c:663
+msgid "Proxy"
+msgstr "Прокси"
+
+#: src/gripcfg.c:672
+msgid "Email address"
+msgstr "Електронна поща"
+
+#: src/gripcfg.c:676
+msgid "CD update program"
+msgstr "Програма за осъвременяване на CD"
+
+#: src/gripcfg.c:681
+msgid "Do not lowercase filenames"
+msgstr "Не прави имената на файловете с малки букви"
+
+#: src/gripcfg.c:686
+msgid "Allow high bits in filenames"
+msgstr ""
+
+#: src/gripcfg.c:691
+msgid "Replace incompatible characters by hexadecimal numbers"
+msgstr ""
+
+#: src/gripcfg.c:696
+msgid "Do not change spaces to underscores"
+msgstr "Не променя интервалите в долни черти"
+
+#: src/gripcfg.c:701
+msgid ""
+"Characters to not strip\n"
+"in filenames"
+msgstr ""
+
+#: src/gripcfg.c:706
+msgid "Show tray icon"
+msgstr ""
+
+#: src/gripcfg.c:713
+msgid "Misc"
+msgstr "Допълнителни"
+
+#: src/gripcfg.c:819
+#, fuzzy
+msgid "Error: Unable to save ripper config."
+msgstr "Грешка: Запазването на конфигурационния файл е невъзможно"
+
+#: src/gripcfg.c:890
+#, fuzzy
+msgid "Error: Unable to save encoder config."
+msgstr "Грешка: Запазването на конфигурационния файл е невъзможно"
+
+#: src/cddev.c:174 src/cddev.c:601
+#, c-format
+msgid "Drive status is %d\n"
+msgstr "Статус на устройството %d\n"
+
+#: src/cddev.c:176
+msgid "Drive doesn't support drive status check (assume CDS_NO_INFO)\n"
+msgstr ""
+"Устройството не поддържа проверка на статуса (предполага CDS_NO_INFO)\n"
+
+#: src/cddev.c:179
+msgid "No disc\n"
+msgstr "Няма диск\n"
+
+#: src/cddev.c:281 src/cddev.c:290 src/cddev.c:307 src/cddev.c:334
+msgid "Error: Failed to read disc contents\n"
+msgstr "Грешка: Провал при четене на съдържанието на диска\n"
+
+#: src/cddev.c:604
+msgid "Drive doesn't support drive status check\n"
+msgstr "Устройството не поддържа проверка на статуса\n"
+
+#: src/cddev.c:625 src/cddev.c:629
+#, c-format
+msgid "Unlock failed: %d"
+msgstr "Провал на отключване: %d"
+
+#: src/cddev.c:633
+msgid "CDIOCEJECT"
+msgstr ""
+
+#: src/cdplay.c:83
+#, fuzzy
+msgid "Cannot do lookup while ripping."
+msgstr "Прегледа е невъзможен по време на извличане"
+
+#. "misc"
+#: src/cdplay.c:120
+msgid "Unknown Disc"
+msgstr "Непознат Диск"
+
+#: src/cdplay.c:124
+#, c-format
+msgid "Track %02d"
+msgstr "Песен %02d"
+
+#: src/cdplay.c:184
+#, c-format
+msgid "Querying %s (through %s) for disc %02x.\n"
+msgstr "Запитва·%s·(през·%s)·за диск·%02x.\n"
+
+#: src/cdplay.c:189
+#, c-format
+msgid "Querying %s for disc %02x.\n"
+msgstr "Запитва·%s·за дискт·%02x.\n"
+
+#: src/cdplay.c:206
+#, c-format
+msgid ""
+"Match for \"%s / %s\"\n"
+"Downloading data...\n"
+msgstr ""
+"Намерена информация за·\"%s·/·%s\"\n"
+"Изтегляне на информация...\n"
+
+#: src/cdplay.c:214
+msgid "Done\n"
+msgstr "Готово\n"
+
+#: src/cdplay.c:218
+msgid "Error saving disc data\n"
+msgstr "Грешка при запазване на информацията за диска\n"
+
+#: src/cdplay.c:224
+msgid "No match\n"
+msgstr "Няма съвпадение\n"
+
+#: src/cdplay.c:242 src/cdplay.c:334
+#, fuzzy
+msgid "Length"
+msgstr "Дължина"
+
+#: src/cdplay.c:299
+msgid "Tracks"
+msgstr "Песни"
+
+#: src/cdplay.c:323
+msgid "Track"
+msgstr "Песен"
+
+#: src/cdplay.c:633 src/discedit.c:390
+#, fuzzy
+msgid "Error saving disc data."
+msgstr "Грешка при запазването на информацията за диска"
+
+#: src/cdplay.c:704
+msgid "Rotate play mode"
+msgstr "Режим въртене"
+
+#: src/cdplay.c:724
+msgid "Toggle loop play"
+msgstr "Режим пеобръщане"
+
+#: src/cdplay.c:802 src/rip.c:230
+msgid "Rip status"
+msgstr "Статус на извличането"
+
+#: src/cdplay.c:869
+msgid "Play track / Pause play"
+msgstr "Изпълнява песен / Пауза"
+
+#: src/cdplay.c:880
+msgid "Rewind"
+msgstr "Начало"
+
+#: src/cdplay.c:891
+msgid "FastForward"
+msgstr "Напред"
+
+#: src/cdplay.c:901
+msgid "Go to previous track"
+msgstr "Отива на предишната песен"
+
+#: src/cdplay.c:910
+msgid "Go to next track"
+msgstr "Отива на следващата песен"
+
+#: src/cdplay.c:919
+msgid "Toggle play mode options"
+msgstr "Опции на изпълненията"
+
+#: src/cdplay.c:929
+msgid "Next Disc"
+msgstr "Следващ Диск"
+
+#: src/cdplay.c:943
+msgid "Stop play"
+msgstr "Спира изпълението"
+
+#: src/cdplay.c:953
+msgid "Eject disc"
+msgstr "Изважда диск"
+
+#: src/cdplay.c:962
+msgid "Scan Disc Contents"
+msgstr "Сканира съдържанието на диска"
+
+#: src/cdplay.c:970
+msgid "Toggle Volume Control"
+msgstr "Сила на звука"
+
+#: src/cdplay.c:979
+msgid "Toggle disc editor"
+msgstr "Редактор на дискове"
+
+#: src/cdplay.c:989
+msgid "Initiate/abort DiscDB lookup"
+msgstr "Прави/отказва заявка към БД за дискове"
+
+#: src/cdplay.c:999
+msgid "Toggle track display"
+msgstr "Изобразяване на песните"
+
+#: src/cdplay.c:1006
+msgid "Exit Grip"
+msgstr "Напуска Grip"
+
+#: src/cdplay.c:1173
+#, fuzzy
+msgid "Cannot fast forward while ripping."
+msgstr "Прескачането напред в невъзможно по време на извличане"
+
+#: src/cdplay.c:1204
+#, fuzzy
+msgid "Cannot rewind while ripping."
+msgstr "Връщането в началото е невъзможно по време на извличане"
+
+#: src/cdplay.c:1235
+#, fuzzy
+msgid "Cannot switch discs while ripping."
+msgstr "Смяна на дискове е невъзможна по време на извличане"
+
+#: src/cdplay.c:1253
+msgid "Eject disc\n"
+msgstr "Изважда диск\n"
+
+#: src/cdplay.c:1257
+#, fuzzy
+msgid "Cannot eject while ripping."
+msgstr "Дискът не може да бъде изваден докато се извлича информация"
+
+#: src/cdplay.c:1267
+msgid "Have disc -- ejecting\n"
+msgstr "Изважда диска\n"
+
+#: src/cdplay.c:1334
+#, fuzzy
+msgid "Cannot play while ripping."
+msgstr "Не може да бъде изпълнен докато се извлича информация"
+
+#: src/cdplay.c:1402 src/cdplay.c:1433
+#, fuzzy
+msgid "Cannot switch tracks while ripping."
+msgstr "Не може да се разменят песни по време на извличане"
+
+#: src/cdplay.c:1524
+msgid "Checking for a new disc\n"
+msgstr "Проверява за нов диск\n"
+
+#: src/cdplay.c:1529
+msgid "CDStat found a disc, checking tracks\n"
+msgstr "CDStat намери диск, проверкана песните\n"
+
+#: src/cdplay.c:1532
+msgid "We have a valid disc!\n"
+msgstr "Валиден диск!\n"
+
+#: src/cdplay.c:1559
+msgid "No non-zero length tracks\n"
+msgstr "Песни с дължина над 0\n"
+
+#: src/cdplay.c:1568
+msgid "CDStat said no disc\n"
+msgstr "CDStat докладва че няма диск\n"
+
+#: src/cdplay.c:1717 src/cdplay.c:1739
+#, c-format
+msgid "Current sector: %6d"
+msgstr "Текущ селектор: %6d"
+
+#: src/cdplay.c:1840
+msgid "No Disc"
+msgstr "Няма Диск"
+
+#: src/cdplay.c:1892
+msgid ""
+"This disc has been found on your secondary server,\n"
+"but not on your primary server.\n"
+"\n"
+"Do you wish to submit this disc information?"
+msgstr ""
+"Този диск беше намерен във вашия втори сървър,\n"
+"но не и в основния ви сървър.\n"
+"\n"
+"Искате ли да изпратите информация за диска?"
+
+#: src/cdplay.c:1920 src/cdplay.c:1929
+#, fuzzy
+msgid "Error: Unable to create temporary file."
+msgstr "Грешка: Неуспешно създаване на временен файл"
+
+#: src/cdplay.c:1947
+#, fuzzy
+msgid "Error: Unable to write disc data."
+msgstr "Грешка: Незъвможно записването на информация за диска"
+
+#: src/cdplay.c:1956
+#, c-format
+msgid "Mailing entry to %s\n"
+msgstr "Изпраща запис чрез Ел. Поща към %s\n"
+
+#: src/dialog.c:44
+msgid "System Message"
+msgstr "Системно Съобщение"
+
+#: src/discdb.c:207
+#, c-format
+msgid "URI is %s\n"
+msgstr "Адресът е %s\n"
+
+#: src/discdb.c:287
+#, c-format
+msgid "Query is [%s]\n"
+msgstr "Заявката е [%s]\n"
+
+#: src/discdb.c:788
+#, c-format
+msgid "Stat error %d on %s\n"
+msgstr ""
+
+#: src/discdb.c:792
+#, c-format
+msgid "Creating directory %s\n"
+msgstr "Създава директория %s\n"
+
+#: src/discdb.c:797
+#, c-format
+msgid "Error: %s exists, but is a file\n"
+msgstr "Грешка: %s съществува, но е файл\n"
+
+#: src/discdb.c:804
+#, c-format
+msgid "Error: Unable to open %s for writing\n"
+msgstr "Грешка: Не мога да отворя %s за да записвам\n"
+
+#: src/discedit.c:67
+msgid "Disc title"
+msgstr "Заглавие на диска"
+
+#: src/discedit.c:74 src/discedit.c:176
+msgid "Track name"
+msgstr "Име на песента"
+
+#: src/discedit.c:84
+msgid "W"
+msgstr "W"
+
+#: src/discedit.c:110
+msgid "Disc artist"
+msgstr "Изпълнител"
+
+#: src/discedit.c:127
+msgid "ID3 genre:"
+msgstr "ID3 жанр:"
+
+#: src/discedit.c:158
+msgid "Disc year"
+msgstr "Година"
+
+#: src/discedit.c:196
+msgid "Track artist"
+msgstr "Изпълнител на песента"
+
+#: src/discedit.c:213
+msgid "Split:"
+msgstr "Разделя:"
+
+#: src/discedit.c:217
+msgid "Title/Artist"
+msgstr "Заглавие/Изпълнител"
+
+#: src/discedit.c:224
+msgid "Artist/Title"
+msgstr "Изпълнител/Заглавие"
+
+#: src/discedit.c:232
+msgid "Split chars"
+msgstr ""
+
+#: src/discedit.c:254
+msgid "Multi-artist"
+msgstr "Много-изпълнители"
+
+#: src/discedit.c:265
+msgid "Save disc info"
+msgstr "Запазва информация за диска"
+
+#: src/discedit.c:274
+msgid "Submit disc info"
+msgstr "Изпраща информация за диска"
+
+#: src/discedit.c:393
+#, fuzzy
+msgid "No disc present."
+msgstr "Няма диск"
+
+#: src/discedit.c:543
+#, fuzzy
+msgid "Cannot submit. No disc is present."
+msgstr ""
+"Изпращането невъзможно\n"
+"Няма диск"
+
+#: src/discedit.c:558
+#, fuzzy
+msgid "You must enter a disc title."
+msgstr "Трябва да въведете заглавие на диска"
+
+#: src/discedit.c:565
+#, fuzzy
+msgid "You must enter a disc artist."
+msgstr "Трябва да въведете изпълнител на диска"
+
+#: src/discedit.c:575
+msgid ""
+"You are about to submit this disc information\n"
+"to a commercial CDDB server, which will then\n"
+"own the data that you submit. These servers make\n"
+"a profit out of your effort. We suggest that you\n"
+"support free servers instead.\n"
+"\n"
+"Continue?"
+msgstr ""
+"Искате да изпратите информация за този диск\n"
+"на комерсиален·CDDB·сървър,·който след това\n"
+"ще стане собственик на изпратената от вас информация.·Тези сървъри\n"
+"правят печалба от вашия труд.·Предлагаме ви да поддържате\n"
+"свободните сървъри.\n"
+"\n"
+"Напред?"
+
+#: src/discedit.c:584
+msgid ""
+"You are about to submit this\n"
+"disc information via email.\n"
+"\n"
+"Continue?"
+msgstr ""
+"Искате да изпратите тази информация\n"
+"чрез електронна поюа.\n"
+"\n"
+"Напред?"
+
+#: src/discedit.c:601
+msgid "Genre selection"
+msgstr "Избор на жанр"
+
+#: src/discedit.c:605
+msgid ""
+"Submission requires a genre other than 'unknown'\n"
+"Please select a DiscDB genre below"
+msgstr ""
+"Изпращането изисква жанр различен от·\"непознат\"\n"
+"Моля, изберете жанр"
+
+#: src/discedit.c:615
+msgid "DiscDB genre"
+msgstr "Жанр"
+
+#: src/discedit.c:635
+msgid "Submit"
+msgstr "Изпраща"
+
+#: src/discedit.c:646
+msgid "Cancel"
+msgstr "Отказва"
+
+#. Doh!
+#: src/id3.c:291
+msgid "unknown ID3 field\n"
+msgstr "непознато ID3 поле\n"
+
+#: src/launch.c:121
+#, c-format
+msgid "Error: unable to translate filename. No such user as %s\n"
+msgstr ""
+"Грешка: не мога да преведа името на файла. Потребителят %s не същесвува\n"
+
+#: src/launch.c:315 src/rip.c:1535
+msgid "Exec failed\n"
+msgstr "Стартирането се провали\n"
+
+#: src/parsecfg.c:58
+msgid "Error: Bad entry type\n"
+msgstr "Грешка: Лош тип на записа\n"
+
+#: src/parsecfg.c:84
+msgid "Error: Invalid config file\n"
+msgstr "Грешка: Невалиден конфигурационен файл\n"
+
+#: src/rip.c:104
+msgid "Rip+Encode"
+msgstr "Извлича и кодира"
+
+#: src/rip.c:106
+msgid "Rip and encode selected tracks"
+msgstr "Извлича и кодира избраните песни"
+
+#: src/rip.c:112
+msgid "Rip Only"
+msgstr "Само извлича"
+
+#: src/rip.c:114
+msgid "Rip but do not encode selected tracks"
+msgstr "Извлича но не кодира избраните песни"
+
+#: src/rip.c:120
+msgid "Abort Rip and Encode"
+msgstr "Отказва Извличането и Кодирането"
+
+#: src/rip.c:122
+msgid "Kill all active rip and encode processes"
+msgstr "Прекъсва всички активни процеси по извличане и кодиране"
+
+#: src/rip.c:130
+msgid "Abort Ripping Only"
+msgstr "Отказва само извличането"
+
+#: src/rip.c:132
+msgid "Kill rip process"
+msgstr "Спира всички извличащи процеси"
+
+#: src/rip.c:138
+msgid "DDJ Scan"
+msgstr "DDJ Сканиране"
+
+#: src/rip.c:140
+msgid "Insert disc information into the DigitalDJ database"
+msgstr "Вмъква информация за диска в баздата данни DigitalDJ"
+
+#: src/rip.c:155
+msgid "Rip partial track"
+msgstr "Извлича част от песен"
+
+#: src/rip.c:166
+msgid "Play"
+msgstr "Изпълнява"
+
+#: src/rip.c:173
+msgid "Current sector:      0"
+msgstr "Текущ сектор:······0"
+
+#: src/rip.c:204 src/rip.c:221 src/rip.c:269 src/rip.c:862 src/rip.c:915
+#: src/rip.c:917 src/rip.c:1065 src/rip.c:1066
+msgid "Rip: Idle"
+msgstr "Извличане: Затихнало"
+
+#: src/rip.c:209
+msgid "Enc: Trk 99 (99.9x)"
+msgstr "Код: Песен 99·(99.9x)"
+
+#: src/rip.c:240 src/rip.c:282 src/rip.c:1036 src/rip.c:1050
+msgid "Enc: Idle"
+msgstr "Код.: Затихнало"
+
+#: src/rip.c:264
+msgid "Overall indicators:"
+msgstr "Общи индикатори:"
+
+#: src/rip.c:327
+msgid "Start sector"
+msgstr "Начален сектор"
+
+#: src/rip.c:332
+msgid "End sector"
+msgstr "Краен сектор"
+
+#: src/rip.c:380
+#, fuzzy, c-format
+msgid "Inserting track %d into the ddj database\n"
+msgstr "Вмъква информация в SQL БазаДанни"
+
+#: src/rip.c:602
+#, fuzzy
+msgid "Error: can't open m3u file."
+msgstr "Грешка: m3u·файлът не може да бъде отворен\n"
+
+#: src/rip.c:644
+msgid "In KillRip\n"
+msgstr ""
+
+#: src/rip.c:670
+#, c-format
+msgid "Now total enc size is: %d\n"
+msgstr "Общ размер на код. инфомрация: %d\n"
+
+#: src/rip.c:825
+#, c-format
+msgid "Rip: Trk %d (%3.1fx)"
+msgstr "Извлича: Песен %d·(%3.1fx)"
+
+#: src/rip.c:858
+#, c-format
+msgid "Rip: %6.2f%%"
+msgstr "Извлича: %6.2f%%"
+
+#: src/rip.c:878
+msgid "Rip finished\n"
+msgstr "Извличането приключи\n"
+
+#: src/rip.c:904
+#, c-format
+msgid "Rip partial %d  num wavs %d\n"
+msgstr ""
+
+#: src/rip.c:907
+#, c-format
+msgid "Next track is %d, total is %d\n"
+msgstr "Следващата песен е %d, общо %d\n"
+
+#: src/rip.c:913
+msgid "Check if we need to rip another track\n"
+msgstr "Проверява дали е необходимо да бъде извлечена друга песен\n"
+
+#: src/rip.c:955
+#, c-format
+msgid "Enc: Trk %d (%3.1fx)"
+msgstr "Кодира: Песен %d·(%3.1fx)"
+
+#: src/rip.c:973
+#, c-format
+msgid "Enc: %6.2f%%"
+msgstr "Кодира: %6.2f%%"
+
+#: src/rip.c:983
+#, c-format
+msgid "Finished encoding on cpu %d\n"
+msgstr "Кодирнаето на процесор %d приключи\n"
+
+#: src/rip.c:1001
+#, c-format
+msgid "Deleting [%s]\n"
+msgstr "Изтрива·[%s]\n"
+
+#: src/rip.c:1058
+msgid "Ripping is finished\n"
+msgstr "Извличането приключи\n"
+
+#: src/rip.c:1169 src/rip.c:1175
+msgid "NoArtist"
+msgstr "Няма Изпълнител"
+
+#: src/rip.c:1180
+msgid "NoTitle"
+msgstr "Няма Заглавие"
+
+#: src/rip.c:1270
+msgid ""
+"No disc was detected in the drive. If you have a disc in your drive, please "
+"check your CDRom device setting under Config->CD."
+msgstr ""
+
+#: src/rip.c:1279
+msgid ""
+"Invalid rip executable.\n"
+"Check your rip config, and ensure it specifies the full path to the ripper "
+"executable."
+msgstr ""
+
+#: src/rip.c:1287
+msgid ""
+"Invalid encoder executable.\n"
+"Check your encoder config, and ensure it specifies the full path to the "
+"encoder executable."
+msgstr ""
+
+#: src/rip.c:1323
+msgid ""
+"No tracks selected.\n"
+"Rip whole CD?\n"
+msgstr ""
+"Няма избрани песни.\n"
+"Извличане на целия CD?\n"
+
+#: src/rip.c:1346
+msgid "Ripping whole CD\n"
+msgstr "Извлича цял CD\n"
+
+#: src/rip.c:1385
+msgid "In RipNextTrack\n"
+msgstr ""
+
+#: src/rip.c:1392
+#, c-format
+msgid "First checked track is %d\n"
+msgstr "Първата избрана песен е %d\n"
+
+#: src/rip.c:1402
+msgid "Ripping away!\n"
+msgstr ""
+
+#: src/rip.c:1449
+msgid "No write access to write wav file"
+msgstr "Няма права за писане за да запише wav файлът"
+
+#: src/rip.c:1463
+#, c-format
+msgid "Ripping track %d to %s\n"
+msgstr "Извлича песен %d в %s\n"
+
+#: src/rip.c:1467
+#, c-format
+msgid "Rip: Trk %d (0.0x)"
+msgstr "Извлича: Песен %d·(0.0x)"
+
+#: src/rip.c:1472
+#, c-format
+msgid "File %s has already been ripped. Skipping...\n"
+msgstr "Файлът %s вече е извлечен. Пропуска...\n"
+
+#: src/rip.c:1493 src/rip.c:1745
+msgid "Out of space in output directory"
+msgstr "Няма достатъчно място на твърдия диск"
+
+#: src/rip.c:1569
+msgid "Calling CDPRip\n"
+msgstr "Обръща се към CDPRip\n"
+
+#: src/rip.c:1655
+#, c-format
+msgid "Added track %d to %s list\n"
+msgstr "Песента %d е добавена към списъка %s\n"
+
+#: src/rip.c:1681
+msgid "No free cpus\n"
+msgstr "Няма свободни процесори\n"
+
+#: src/rip.c:1697
+#, c-format
+msgid "Enc track %d\n"
+msgstr "Кодира песен %d\n"
+
+#: src/rip.c:1719
+#, fuzzy
+msgid "No write access to write encoded file."
+msgstr "Няма права за запис на кодирания файл"
+
+#: src/rip.c:1730
+#, c-format
+msgid "%i: Encoding to %s\n"
+msgstr ""
+
+#: src/rip.c:1734
+#, c-format
+msgid "Enc: Trk %d (0.0x)"
+msgstr "Кодира: Песен %d·(0.0x)"
+
+#: src/rip.c:1800
+msgid "In CalculateAll\n"
+msgstr ""
+
+#: src/rip.c:1806
+msgid "We aren't ripping now, so let's zero encoding values\n"
+msgstr ""
+"Не се извлича нищо в момента, нека да занулим стойностите на кодиране\n"
+
+#: src/rip.c:1822
+#, c-format
+msgid "Total rip size is: %d\n"
+msgstr "Общ размер на извлечената информация: %d\n"
+
+#: src/rip.c:1823
+#, c-format
+msgid "Total enc size is: %d\n"
+msgstr "Общ размер на кодираната информация: %d\n"
+
+#~ msgid "Keep application minimum size"
+#~ msgstr "Запазва малък размер на програмата"
+
+#~ msgid "Reply is [%s]\n"
+#~ msgstr "Отговорът е [%s]\n"
+
+#~ msgid "Write tags in unicode"
+#~ msgstr "Записва коментарите в уникод"
+
+#~ msgid "File System Character set encoding"
+#~ msgstr "Кодова таблица на файловата система"
