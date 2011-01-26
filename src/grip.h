@@ -206,6 +206,7 @@ typedef struct _grip_info {
   char force_scsi[256];
   char discdb_submit_email[256];
   char discdb_encoding[16];
+  char submit_email_program[256];
   char id3_encoding[16];
   char id3v2_encoding[16];
   gboolean db_use_freedb;

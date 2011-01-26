@@ -101,6 +101,7 @@ void DoSaveConfig(GripInfo *ginfo);
 {"db_cgi",CFG_ENTRY_STRING,256,ginfo->dbserver.cgi_prog},\
 {"cddb_submit_email",CFG_ENTRY_STRING,256,ginfo->discdb_submit_email},\
 {"discdb_encoding",CFG_ENTRY_STRING,16,ginfo->discdb_encoding},\
+{"submit_email_program",CFG_ENTRY_STRING,255,ginfo->discdb_encoding},\
 {"id3_encoding",CFG_ENTRY_STRING,16,ginfo->id3_encoding},\
 {"id3v2_encoding",CFG_ENTRY_STRING,16,ginfo->id3v2_encoding},\
 {"db_use_freedb",CFG_ENTRY_BOOL,0,&ginfo->db_use_freedb},\
@@ -746,6 +747,7 @@ static void DoLoadConfig(GripInfo *ginfo)
     {"outputdir",CFG_ENTRY_STRING,256,outputdir},
     {"",CFG_ENTRY_LAST,0,NULL}
   };
+  gchar *email_client;
 
   outputdir[0]='\0';
 
@@ -809,6 +811,12 @@ static void DoLoadConfig(GripInfo *ginfo)
   ginfo->dbserver2.proxy=&(ginfo->proxy_server);
 
   strcpy(ginfo->discdb_submit_email,"freedb-submit@freedb.org");
+
+  //load the email client from gconf
+  email_client = GetDefaultEmailClient();
+
+  strcpy(ginfo->submit_email_program, email_client);
+
   ginfo->db_use_freedb=TRUE;
   *ginfo->user_email='\0';
 
@@ -1050,4 +1058,25 @@ void CloseStuff(void *user_data)
   for(fd=3;fd<NOFILE;fd++) {
     close(fd);
   }
+}
+
+gchar *GetDefaultEmailClient()
+{
+  GConfClient *client;
+  gchar *value;
+  GError *error = NULL;
+
+  client = gconf_client_get_default();
+  gconf_client_add_dir(client, 
+		       "/desktop/gnome/url-handlers/mailto",
+		       GCONF_CLIENT_PRELOAD_NONE,
+		       NULL);
+
+  value = gconf_client_get_string(client,
+			  "/desktop/gnome/url-handlers/mailto/command",
+			  &error);
+
+  g_object_unref(client);
+
+  return value;
 }

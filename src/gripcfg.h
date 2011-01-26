@@ -20,6 +20,8 @@
  * USA
  */
 
+#include <gconf/gconf-client.h>
+
 /* Ripper default info structure */
 
 typedef struct _ripper {
@@ -44,3 +46,4 @@ void SaveEncoderConfig(GripInfo *ginfo,int encodecfg);
 char *FindExe(char *exename,char **paths);
 void FindExeInPath(char *exename, char *buf, int bsize);
 gboolean FileExists(char *filename);
+gchar *GetDefaultEmailClient();

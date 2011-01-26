@@ -22,6 +22,7 @@
 
 #include <sys/stat.h>
 #include <unistd.h>
+#include <gconf/gconf-client.h>
 #include "grip.h"
 #include "gripcfg.h"
 #include "dialog.h"
@@ -604,6 +605,18 @@ void MakeConfigPage(GripInfo *ginfo)
   gtk_box_pack_start(GTK_BOX(dbvbox),entry,FALSE,FALSE,0);
   gtk_widget_show(entry);
 
+  entry=MakeStrEntry(NULL,
+		     ginfo->submit_email_program,
+		     _("Email Client"),
+		     255,
+		     TRUE);
+  gtk_box_pack_start(GTK_BOX(dbvbox),
+		     entry,
+		     FALSE,
+		     FALSE,
+		     0);
+  gtk_widget_show(entry);
+
   check=MakeCheckButton(NULL,&ginfo->db_use_freedb,
 			_("Use freedb extensions"));
   gtk_box_pack_start(GTK_BOX(dbvbox),check,FALSE,FALSE,0);
@@ -935,4 +948,3 @@ gboolean FileExists(char *filename)
 
   return (stat(filename,&mystat)>=0);
 }
-
