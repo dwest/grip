@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-06-25 11:23-0700\n"
+"POT-Creation-Date: 2011-01-29 05:15-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -60,444 +61,448 @@ msgstr ""
 msgid "Run in verbose (debug) mode"
 msgstr ""
 
-#: src/grip.c:181
+#: src/grip.c:183
 msgid "Grip"
 msgstr ""
 
-#: src/grip.c:238
+#: src/grip.c:240
 #, c-format
 msgid "Error: Unable to initialize [%s]\n"
 msgstr ""
 
-#: src/grip.c:324
+#: src/grip.c:326
 msgid ""
 "This is a development version of Grip. If you encounter problems, you are "
 "encouraged to revert to the latest stable version."
 msgstr ""
 
-#: src/grip.c:330
+#: src/grip.c:332
 msgid "Grip started successfully\n"
 msgstr ""
 
-#: src/grip.c:344
+#: src/grip.c:346
 msgid ""
 "Work is in progress.\n"
 "Really shut down?"
 msgstr ""
 
-#: src/grip.c:395
+#: src/grip.c:397
 msgid "Status"
 msgstr ""
 
-#: src/grip.c:410
+#: src/grip.c:412
 msgid "General"
 msgstr ""
 
-#: src/grip.c:425 src/gripcfg.c:362 src/cdplay.c:251 src/cdplay.c:345
+#: src/grip.c:427 src/gripcfg.c:363 src/cdplay.c:251 src/cdplay.c:345
 #: src/rip.c:95
 msgid "Rip"
 msgstr ""
 
-#: src/grip.c:440 src/gripcfg.c:496
+#: src/grip.c:442 src/gripcfg.c:497
 msgid "Encode"
 msgstr ""
 
-#: src/grip.c:485
+#: src/grip.c:487
 msgid "Help"
 msgstr ""
 
-#: src/grip.c:490
+#: src/grip.c:492
 msgid "Table Of Contents"
 msgstr ""
 
-#: src/grip.c:496
+#: src/grip.c:498
 msgid "Playing CDs"
 msgstr ""
 
-#: src/grip.c:502
+#: src/grip.c:504
 msgid "Ripping CDs"
 msgstr ""
 
-#: src/grip.c:508
+#: src/grip.c:510
 msgid "Configuring Grip"
 msgstr ""
 
-#: src/grip.c:514
+#: src/grip.c:516
 msgid "FAQ"
 msgstr ""
 
-#: src/grip.c:520
+#: src/grip.c:522
 msgid "Getting More Help"
 msgstr ""
 
-#: src/grip.c:526
+#: src/grip.c:528
 msgid "Reporting Bugs"
 msgstr ""
 
-#: src/grip.c:546
+#: src/grip.c:548
 msgid "About"
 msgstr ""
 
-#: src/grip.c:565
+#: src/grip.c:567
 #, c-format
 msgid "Version %s"
 msgstr ""
 
-#: src/grip.c:905
+#: src/grip.c:942
 msgid "Created by Grip"
 msgstr ""
 
-#: src/grip.c:922
+#: src/grip.c:959
 msgid ""
 "Your config file is out of date -- resetting to defaults.\n"
 "You will need to re-configure Grip.\n"
 "Your old config file has been saved with -old appended."
 msgstr ""
 
-#: src/grip.c:995
+#: src/grip.c:1032
 #, c-format
 msgid "server is %s, port %d\n"
 msgstr ""
 
-#: src/grip.c:1016
+#: src/grip.c:1053
 msgid "Error: Unable to save config file."
 msgstr ""
 
-#: src/gripcfg.c:105
+#: src/gripcfg.c:106
 msgid "Config"
 msgstr ""
 
-#: src/gripcfg.c:113
+#: src/gripcfg.c:114
 msgid "CDRom device"
 msgstr ""
 
-#: src/gripcfg.c:118
+#: src/gripcfg.c:119
 msgid "Don't interrupt playback on exit/startup"
 msgstr ""
 
-#: src/gripcfg.c:122
+#: src/gripcfg.c:123
 msgid "Rewind when stopped"
 msgstr ""
 
-#: src/gripcfg.c:127
+#: src/gripcfg.c:128
 msgid "Startup with first track if not playing"
 msgstr ""
 
-#: src/gripcfg.c:132
+#: src/gripcfg.c:133
 msgid "Auto-play on disc insert"
 msgstr ""
 
-#: src/gripcfg.c:137
+#: src/gripcfg.c:138
 msgid "Reshuffle before each playback"
 msgstr ""
 
-#: src/gripcfg.c:142
+#: src/gripcfg.c:143
 msgid "Work around faulty eject"
 msgstr ""
 
-#: src/gripcfg.c:147
+#: src/gripcfg.c:148
 msgid "Poll disc drive for new disc"
 msgstr ""
 
-#: src/gripcfg.c:151
+#: src/gripcfg.c:152
 msgid "Poll interval (seconds)"
 msgstr ""
 
-#: src/gripcfg.c:159
+#: src/gripcfg.c:160
 msgid "CD"
 msgstr ""
 
-#: src/gripcfg.c:175
+#: src/gripcfg.c:176
 msgid "Ripper:"
 msgstr ""
 
-#: src/gripcfg.c:220
+#: src/gripcfg.c:221
 msgid "Ripping executable"
 msgstr ""
 
-#: src/gripcfg.c:225
+#: src/gripcfg.c:226
 msgid "Rip command-line"
 msgstr ""
 
-#: src/gripcfg.c:236
+#: src/gripcfg.c:237
 msgid "Disable paranoia"
 msgstr ""
 
-#: src/gripcfg.c:241
+#: src/gripcfg.c:242
 msgid "Disable extra paranoia"
 msgstr ""
 
-#: src/gripcfg.c:247
+#: src/gripcfg.c:248
 msgid "Disable scratch"
 msgstr ""
 
-#: src/gripcfg.c:251
+#: src/gripcfg.c:252
 msgid "detection"
 msgstr ""
 
-#: src/gripcfg.c:255
+#: src/gripcfg.c:256
 msgid "repair"
 msgstr ""
 
-#: src/gripcfg.c:263
+#: src/gripcfg.c:264
 msgid "Calculate gain adjustment"
 msgstr ""
 
-#: src/gripcfg.c:271
+#: src/gripcfg.c:272
 msgid "Rip file format"
 msgstr ""
 
-#: src/gripcfg.c:275
+#: src/gripcfg.c:276
 msgid "Generic SCSI device"
 msgstr ""
 
-#: src/gripcfg.c:283
+#: src/gripcfg.c:284
 msgid "Ripper"
 msgstr ""
 
-#: src/gripcfg.c:292
+#: src/gripcfg.c:293
 msgid "Rip 'nice' value"
 msgstr ""
 
-#: src/gripcfg.c:296
+#: src/gripcfg.c:297
 msgid "Max non-encoded .wav's"
 msgstr ""
 
-#: src/gripcfg.c:302
+#: src/gripcfg.c:303
 msgid "Auto-rip on insert"
 msgstr ""
 
-#: src/gripcfg.c:306
+#: src/gripcfg.c:307
 msgid "Beep after rip"
 msgstr ""
 
-#: src/gripcfg.c:316
+#: src/gripcfg.c:317
 msgid "Auto-eject after rip"
 msgstr ""
 
-#: src/gripcfg.c:320
+#: src/gripcfg.c:321
 msgid "Auto-eject delay"
 msgstr ""
 
-#: src/gripcfg.c:328
+#: src/gripcfg.c:329
 msgid "Delay before ripping"
 msgstr ""
 
-#: src/gripcfg.c:333
+#: src/gripcfg.c:334
 msgid "Delay encoding until disc is ripped"
 msgstr ""
 
-#: src/gripcfg.c:338
+#: src/gripcfg.c:339
 msgid "Stop cdrom drive between tracks"
 msgstr ""
 
-#: src/gripcfg.c:342
+#: src/gripcfg.c:343
 msgid "Wav filter command"
 msgstr ""
 
-#: src/gripcfg.c:347
+#: src/gripcfg.c:348
 msgid "Disc filter command"
 msgstr ""
 
-#: src/gripcfg.c:355 src/gripcfg.c:489
+#: src/gripcfg.c:356 src/gripcfg.c:490
 msgid "Options"
 msgstr ""
 
-#: src/gripcfg.c:377
+#: src/gripcfg.c:378
 msgid "Encoder:"
 msgstr ""
 
-#: src/gripcfg.c:412
+#: src/gripcfg.c:413
 msgid "Encoder executable"
 msgstr ""
 
-#: src/gripcfg.c:417
+#: src/gripcfg.c:418
 msgid "Encoder command-line"
 msgstr ""
 
-#: src/gripcfg.c:423
+#: src/gripcfg.c:424
 msgid "Encode file extension"
 msgstr ""
 
-#: src/gripcfg.c:428
+#: src/gripcfg.c:429
 msgid "Encode file format"
 msgstr ""
 
-#: src/gripcfg.c:436
+#: src/gripcfg.c:437
 msgid "Encoder"
 msgstr ""
 
-#: src/gripcfg.c:446
+#: src/gripcfg.c:447
 msgid "Delete .wav after encoding"
 msgstr ""
 
-#: src/gripcfg.c:451
+#: src/gripcfg.c:452
 msgid "Insert info into SQL database"
 msgstr ""
 
-#: src/gripcfg.c:455
+#: src/gripcfg.c:456
 msgid "Create .m3u files"
 msgstr ""
 
-#: src/gripcfg.c:460
+#: src/gripcfg.c:461
 msgid "Use relative paths in .m3u files"
 msgstr ""
 
-#: src/gripcfg.c:464
+#: src/gripcfg.c:465
 msgid "M3U file format"
 msgstr ""
 
-#: src/gripcfg.c:469
+#: src/gripcfg.c:470
 msgid "Encoding bitrate (kbits/sec)"
 msgstr ""
 
-#: src/gripcfg.c:473
+#: src/gripcfg.c:474
 msgid "Number of CPUs to use"
 msgstr ""
 
-#: src/gripcfg.c:477
+#: src/gripcfg.c:478
 msgid "Encode 'nice' value"
 msgstr ""
 
-#: src/gripcfg.c:481
+#: src/gripcfg.c:482
 msgid "Encode filter command"
 msgstr ""
 
-#: src/gripcfg.c:505
+#: src/gripcfg.c:506
 msgid "Add ID3 tags to encoded files"
 msgstr ""
 
-#: src/gripcfg.c:511
+#: src/gripcfg.c:512
 msgid "Add ID3v2 tags to encoded files"
 msgstr ""
 
-#: src/gripcfg.c:517
+#: src/gripcfg.c:518
 msgid "Only tag files ending in '.mp3'"
 msgstr ""
 
-#: src/gripcfg.c:521
+#: src/gripcfg.c:522
 msgid "ID3 comment field"
 msgstr ""
 
-#: src/gripcfg.c:526
+#: src/gripcfg.c:527
 msgid "ID3v1 Character set encoding"
 msgstr ""
 
-#: src/gripcfg.c:532
+#: src/gripcfg.c:533
 msgid "ID3v2 Character set encoding"
 msgstr ""
 
-#: src/gripcfg.c:540
+#: src/gripcfg.c:541
 msgid "ID3"
 msgstr ""
 
-#: src/gripcfg.c:557 src/gripcfg.c:577
+#: src/gripcfg.c:558 src/gripcfg.c:578
 msgid "DB server"
 msgstr ""
 
-#: src/gripcfg.c:561 src/gripcfg.c:581
+#: src/gripcfg.c:562 src/gripcfg.c:582
 msgid "CGI path"
 msgstr ""
 
-#: src/gripcfg.c:568
+#: src/gripcfg.c:569
 msgid "Primary Server"
 msgstr ""
 
-#: src/gripcfg.c:588
+#: src/gripcfg.c:589
 msgid "Secondary Server"
 msgstr ""
 
-#: src/gripcfg.c:598
+#: src/gripcfg.c:599
 msgid "DB Submit email"
 msgstr ""
 
-#: src/gripcfg.c:603
+#: src/gripcfg.c:604
 msgid "DB Character set encoding"
 msgstr ""
 
-#: src/gripcfg.c:608
-msgid "Use freedb extensions"
-msgstr ""
-
-#: src/gripcfg.c:613
-msgid "Perform disc lookups automatically"
+#: src/gripcfg.c:610
+msgid "Email Client"
 msgstr ""
 
 #: src/gripcfg.c:621
+msgid "Use freedb extensions"
+msgstr ""
+
+#: src/gripcfg.c:626
+msgid "Perform disc lookups automatically"
+msgstr ""
+
+#: src/gripcfg.c:634
 msgid "DiscDB"
 msgstr ""
 
-#: src/gripcfg.c:630
+#: src/gripcfg.c:643
 msgid "Use proxy server"
 msgstr ""
 
-#: src/gripcfg.c:637
+#: src/gripcfg.c:650
 msgid "Get server from 'http_proxy' env. var"
 msgstr ""
 
-#: src/gripcfg.c:641
+#: src/gripcfg.c:654
 msgid "Proxy server"
 msgstr ""
 
-#: src/gripcfg.c:645
+#: src/gripcfg.c:658
 msgid "Proxy port"
 msgstr ""
 
-#: src/gripcfg.c:649
+#: src/gripcfg.c:662
 msgid "Proxy username"
 msgstr ""
 
-#: src/gripcfg.c:655
+#: src/gripcfg.c:668
 msgid "Proxy password"
 msgstr ""
 
-#: src/gripcfg.c:663
+#: src/gripcfg.c:676
 msgid "Proxy"
 msgstr ""
 
-#: src/gripcfg.c:672
+#: src/gripcfg.c:685
 msgid "Email address"
 msgstr ""
 
-#: src/gripcfg.c:676
+#: src/gripcfg.c:689
 msgid "CD update program"
 msgstr ""
 
-#: src/gripcfg.c:681
+#: src/gripcfg.c:694
 msgid "Do not lowercase filenames"
 msgstr ""
 
-#: src/gripcfg.c:686
+#: src/gripcfg.c:699
 msgid "Allow high bits in filenames"
 msgstr ""
 
-#: src/gripcfg.c:691
+#: src/gripcfg.c:704
 msgid "Replace incompatible characters by hexadecimal numbers"
 msgstr ""
 
-#: src/gripcfg.c:696
+#: src/gripcfg.c:709
 msgid "Do not change spaces to underscores"
 msgstr ""
 
-#: src/gripcfg.c:701
+#: src/gripcfg.c:714
 msgid ""
 "Characters to not strip\n"
 "in filenames"
 msgstr ""
 
-#: src/gripcfg.c:706
+#: src/gripcfg.c:719
 msgid "Show tray icon"
 msgstr ""
 
-#: src/gripcfg.c:713
+#: src/gripcfg.c:726
 msgid "Misc"
 msgstr ""
 
-#: src/gripcfg.c:819
+#: src/gripcfg.c:832
 msgid "Error: Unable to save ripper config."
 msgstr ""
 
-#: src/gripcfg.c:890
+#: src/gripcfg.c:903
 msgid "Error: Unable to save encoder config."
 msgstr ""
 

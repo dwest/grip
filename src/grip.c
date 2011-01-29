@@ -20,6 +20,7 @@
  * USA
  */
 
+#include <string.h>
 #include <pthread.h>
 #include <config.h>
 #include <fcntl.h>
@@ -626,7 +627,35 @@ static void MakeStyles(GripGUI *uinfo)
 
 static void Homepage(void)
 {
-  system("gnome-moz-remote http://www.nostatic.org/grip");
+    gchar *link         = "http://www.nostatic.org/grip";
+    GConfClient *client = NULL;
+    gchar *browser      = NULL;
+    GError *error       = NULL;
+    gchar *cmd          = NULL;
+
+    // Get default browser from GConf
+    client = gconf_client_get_default();
+    browser = gconf_client_get_string(client,
+                                      "/desktop/gnome/url-handlers/http/command",
+                                      &error);
+
+    if(browser == NULL){
+        if(error != NULL){
+            fprintf(stderr, "%s\n", error->message);
+            g_error_free(error);
+        }else{
+            fprintf(stderr, "Default browser not set in GConf.\n");
+        }
+    }else{
+        // Open link in browser.
+        // Plug link into '%s'.
+        cmd = (gchar *)malloc(sizeof(gchar)*(strlen(browser)+strlen(link)));
+        int x = sprintf(cmd, browser, link);
+        system(cmd);
+    }
+    
+    // Cleanup
+    g_object_unref(client);
 }
 
 static void LoadImages(GripGUI *uinfo)

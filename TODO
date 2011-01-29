@@ -17,7 +17,5 @@
  o size info as tooltip on rip/encode progress bar
  o remember previous position when smart-relocating on expand
  o support multiple cdrom drives?
- o remember Disk Editor toggle status
- o ask if the whole disc should be ripped if no track is selected
  o add an option "CD eject program"
  o allow different file format for multi-artist cds
