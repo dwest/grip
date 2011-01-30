@@ -1,6 +1,5 @@
 *.[oa]
 *~
-.gitignore
 Makefile
 config.h
 config.log
