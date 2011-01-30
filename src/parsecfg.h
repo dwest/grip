@@ -20,6 +20,9 @@
  * USA
  */
 
+#ifndef GRIP_PARSECFG_H
+#define GRIP_PARSECFG_H
+
 /* Config entry types */
 
 typedef enum
@@ -42,3 +45,5 @@ typedef struct _cfg_entry
 int LoadConfig(char *filename,char *name,int ver,int reqver,
 	       CFGEntry *cfg);
 gboolean SaveConfig(char *filename,char *name,int ver,CFGEntry *cfg);
+
+#endif /* GRIP_PARSECFG_H */

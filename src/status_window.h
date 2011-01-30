@@ -20,6 +20,9 @@
  * USA
  */
 
+#ifndef GRIP_STATUS_WINDOW_H
+#define GRIP_STATUS_WINDOW_H
+
 #include <gtk/gtk.h>
 /*#include <zvt/zvtterm.h>*/
 
@@ -33,3 +36,4 @@ StatusWindow *NewStatusWindow(GtkWidget *box);
 void StatusWindowWrite(StatusWindow *sw,char *msg);
 int GetStatusWindowPipe(StatusWindow *sw);
 
+#endif /* GRIP_STATUS_WINDOW_H */

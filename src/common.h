@@ -20,6 +20,9 @@
  * USA
  */
 
+#ifndef GRIP_COMMON_H
+#define GRIP_COMMON_H
+
 #include <gnome.h>
 
 /* Routines from main.c */
@@ -37,3 +40,5 @@ GtkWidget *Loadxpm(GtkWidget *widget,char **xpm);
 void CopyPixmap(GtkPixmap *src,GtkPixmap *dest);
 gint SizeInDubs(GdkFont *font,gint numchars);
 void UpdateGTK(void);
+
+#endif /* GRIP_COMMON_H */

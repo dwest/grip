@@ -31,4 +31,4 @@ void TrayMenuShowPause(GripInfo *ginfo);
 void TrayUnGrayMenu(GripInfo *ginfo);
 void TrayGrayMenu(GripInfo *ginfo);
 
-#endif
+#endif /* GRIP_TRAY_H */

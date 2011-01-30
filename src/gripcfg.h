@@ -20,6 +20,9 @@
  * USA
  */
 
+#ifndef GRIP_GRIPCFG_H
+#define GRIP_GRIPCFG_H
+
 #include <gconf/gconf-client.h>
 
 /* Ripper default info structure */
@@ -47,3 +50,5 @@ char *FindExe(char *exename,char **paths);
 void FindExeInPath(char *exename, char *buf, int bsize);
 gboolean FileExists(char *filename);
 gchar *GetDefaultEmailClient();
+
+#endif /* GRIP_GRIPCFG_H */

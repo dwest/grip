@@ -20,6 +20,9 @@
  * USA
  */
 
+#ifndef GRIP_ID3_H
+#define GRIP_ID3_H
+
 #include <config.h>
 #include "glib.h"
 
@@ -42,3 +45,5 @@ int ID3GenreValue(char *genre);
 int ID3GenrePos(int genre);
 int DiscDB2ID3(int genre);
 int ID32DiscDB(int id3_genre);
+
+#endif /* GRIP_ID3_H */

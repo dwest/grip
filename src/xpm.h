@@ -20,6 +20,9 @@
  * USA
  */
 
+#ifndef GRIP_XPM_H
+#define GRIP_XPM_H
+
 #include "../pixmaps/check.xpm"
 #include "../pixmaps/discdb0.xpm"
 #include "../pixmaps/discdb1.xpm"
@@ -71,3 +74,5 @@
 #else
 #include "../pixmaps/gcd.xpm"
 #endif
+
+#endif /* GRIP_XPM_H */

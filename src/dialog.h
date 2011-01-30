@@ -20,6 +20,9 @@
  * USA
  */
 
+#ifndef GRIP_DIALOG_H
+#define GRIP_DIALOG_H
+
 /* Message routines */
 void DisplayMsg(char *msg);
 void BoolDialog(char *question,char *yes,GtkSignalFunc yesfunc,
@@ -39,3 +42,5 @@ void ChangeDoubleVal(GtkWidget *widget,gpointer data);
 GtkWidget *MakeDoubleEntry(GtkWidget **entry,gdouble *var,char *name);
 void ChangeBoolVal(GtkWidget *widget,gpointer data);
 GtkWidget *MakeCheckButton(GtkWidget **button,gboolean *var,char *name);
+
+#endif /* GRIP_DIALOG_H */

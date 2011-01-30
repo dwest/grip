@@ -20,6 +20,9 @@
  * USA
  */
 
+#ifndef GRIP_CDPAR_H
+#define GRIP_CDPAR_H
+
 #define size16 short
 #define size32 int
 
@@ -30,3 +33,5 @@
 #include <cdda/cdda_interface.h>
 #include <cdda/cdda_paranoia.h>
 #endif
+
+#endif /* GRIP_CDPAR_H */
