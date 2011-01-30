@@ -91,8 +91,8 @@ Grip's usage is:
     --verbose                   Run in verbose (debug) mode
 
 
-Getting Mor Help
-================
+Getting More Help
+=================
 
 For more information, see the online documentation within Grip. It can also
 be accessed locally in the source distribution. Load doc/C/grip/grip.html
