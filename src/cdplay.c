@@ -269,7 +269,6 @@ void ResizeTrackList(GripInfo *ginfo)
   GtkWidget *track_list;
   GtkTreeViewColumn *column;
   int tot_width=0;
-  PangoLayout *layout;
 
   track_list=ginfo->gui_info.track_list;
 
@@ -419,7 +418,6 @@ static void SetCurrentTrack(GripInfo *ginfo,int track)
 {
   char buf[256];
   int tracklen;
-  const gchar *st,*st2;
 
   GripGUI *uinfo;
 

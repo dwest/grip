@@ -1112,8 +1112,6 @@ char *TranslateSwitch(char switch_char,void *data,gboolean *munge)
 {
   static char res[PATH_MAX];
   EncodeTrack *enc_track;
-  gchar *conv_str,*st;
-  gsize rb,wb;
 
   enc_track=(EncodeTrack *)data;
 
