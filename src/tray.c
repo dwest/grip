@@ -51,8 +51,8 @@ static gboolean TrayIconButtonPress(GtkWidget *widget, GdkEventButton *event, gp
 void UpdateTray(GripInfo *ginfo)
 {
 	gchar *text, *riptext = NULL, *enctext = NULL;
-	gchar *artist = (ginfo->ddata.data_artist != "") ? ginfo->ddata.data_artist : _("Artist");
-	gchar *title = (ginfo->ddata.data_title != "") ? ginfo->ddata.data_title : _("Title");
+	gchar *artist = strcmp(ginfo->ddata.data_artist, "") ? ginfo->ddata.data_artist : _("Artist");
+	gchar *title = strcmp(ginfo->ddata.data_title, "") ? ginfo->ddata.data_title : _("Title");
 	GripGUI *uinfo = &(ginfo->gui_info);
 	
 	int tmin, tsec, emin, esec;
