@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-29 05:15-0500\n"
+"POT-Creation-Date: 2011-02-01 00:35-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,106 +61,106 @@ msgstr ""
 msgid "Run in verbose (debug) mode"
 msgstr ""
 
-#: src/grip.c:183
+#: src/grip.c:184
 msgid "Grip"
 msgstr ""
 
-#: src/grip.c:240
+#: src/grip.c:222
 #, c-format
 msgid "Error: Unable to initialize [%s]\n"
 msgstr ""
 
-#: src/grip.c:326
+#: src/grip.c:307
 msgid ""
 "This is a development version of Grip. If you encounter problems, you are "
 "encouraged to revert to the latest stable version."
 msgstr ""
 
-#: src/grip.c:332
+#: src/grip.c:320
 msgid "Grip started successfully\n"
 msgstr ""
 
-#: src/grip.c:346
+#: src/grip.c:334
 msgid ""
 "Work is in progress.\n"
 "Really shut down?"
 msgstr ""
 
-#: src/grip.c:397
+#: src/grip.c:385
 msgid "Status"
 msgstr ""
 
-#: src/grip.c:412
+#: src/grip.c:400
 msgid "General"
 msgstr ""
 
-#: src/grip.c:427 src/gripcfg.c:363 src/cdplay.c:251 src/cdplay.c:345
+#: src/grip.c:415 src/gripcfg.c:363 src/cdplay.c:251 src/cdplay.c:345
 #: src/rip.c:95
 msgid "Rip"
 msgstr ""
 
-#: src/grip.c:442 src/gripcfg.c:497
+#: src/grip.c:430 src/gripcfg.c:497
 msgid "Encode"
 msgstr ""
 
-#: src/grip.c:487
+#: src/grip.c:475
 msgid "Help"
 msgstr ""
 
-#: src/grip.c:492
+#: src/grip.c:480
 msgid "Table Of Contents"
 msgstr ""
 
-#: src/grip.c:498
+#: src/grip.c:486
 msgid "Playing CDs"
 msgstr ""
 
-#: src/grip.c:504
+#: src/grip.c:492
 msgid "Ripping CDs"
 msgstr ""
 
-#: src/grip.c:510
+#: src/grip.c:498
 msgid "Configuring Grip"
 msgstr ""
 
-#: src/grip.c:516
+#: src/grip.c:504
 msgid "FAQ"
 msgstr ""
 
-#: src/grip.c:522
+#: src/grip.c:510
 msgid "Getting More Help"
 msgstr ""
 
-#: src/grip.c:528
+#: src/grip.c:516
 msgid "Reporting Bugs"
 msgstr ""
 
-#: src/grip.c:548
+#: src/grip.c:536
 msgid "About"
 msgstr ""
 
-#: src/grip.c:567
+#: src/grip.c:555
 #, c-format
 msgid "Version %s"
 msgstr ""
 
-#: src/grip.c:942
+#: src/grip.c:930
 msgid "Created by Grip"
 msgstr ""
 
-#: src/grip.c:959
+#: src/grip.c:947
 msgid ""
 "Your config file is out of date -- resetting to defaults.\n"
 "You will need to re-configure Grip.\n"
 "Your old config file has been saved with -old appended."
 msgstr ""
 
-#: src/grip.c:1032
+#: src/grip.c:1020
 #, c-format
 msgid "server is %s, port %d\n"
 msgstr ""
 
-#: src/grip.c:1053
+#: src/grip.c:1041
 msgid "Error: Unable to save config file."
 msgstr ""
 
@@ -506,34 +506,25 @@ msgstr ""
 msgid "Error: Unable to save encoder config."
 msgstr ""
 
-#: src/cddev.c:174 src/cddev.c:601
+#: src/cddev.c:185 src/cddev.c:615
 #, c-format
 msgid "Drive status is %d\n"
 msgstr ""
 
-#: src/cddev.c:176
+#: src/cddev.c:187
 msgid "Drive doesn't support drive status check (assume CDS_NO_INFO)\n"
 msgstr ""
 
-#: src/cddev.c:179
+#: src/cddev.c:190
 msgid "No disc\n"
 msgstr ""
 
-#: src/cddev.c:281 src/cddev.c:290 src/cddev.c:307 src/cddev.c:334
+#: src/cddev.c:292 src/cddev.c:301 src/cddev.c:318 src/cddev.c:345
 msgid "Error: Failed to read disc contents\n"
 msgstr ""
 
-#: src/cddev.c:604
+#: src/cddev.c:618
 msgid "Drive doesn't support drive status check\n"
-msgstr ""
-
-#: src/cddev.c:625 src/cddev.c:629
-#, c-format
-msgid "Unlock failed: %d"
-msgstr ""
-
-#: src/cddev.c:633
-msgid "CDIOCEJECT"
 msgstr ""
 
 #: src/cdplay.c:83
