@@ -27,6 +27,7 @@
 #define GRIP_CDDEV_H
 
 #include <glib.h>
+#include <gio/gio.h>
 
 /* Used with disc_info */
 #define CDAUDIO_PLAYING				0
@@ -57,18 +58,19 @@ typedef struct _track_info {
 
 /* Disc information such as current track, amount played, etc */
 typedef struct _disc_info {
-  int cd_desc;                              /* CD device file desc. */
-  char *devname;                            /* CD device file pathname */
-  gboolean have_info;                       /* Do we have disc info yet? */
-  gboolean disc_present;	            /* Is disc present? */
-  int disc_mode;		            /* Current disc mode */
-  DiscTime track_time;		            /* Current track time */
-  DiscTime disc_time;		            /* Current disc time */
-  DiscTime length;		            /* Total disc length */
-  int curr_frame;			    /* Current frame */
-  int curr_track;		            /* Current track */
-  int num_tracks;		            /* Number of tracks on disc */
-  TrackInfo track[MAX_TRACKS];	            /* Track specific information */
+    GVolume *volume;             /* CD Volume Device */
+  int cd_desc;                   /* CD device file desc. */
+  char *devname;                 /* CD device file pathname */
+  gboolean have_info;            /* Do we have disc info yet? */
+  gboolean disc_present;	     /* Is disc present? */
+  int disc_mode;		         /* Current disc mode */
+  DiscTime track_time;		     /* Current track time */
+  DiscTime disc_time;		     /* Current disc time */
+  DiscTime length;		         /* Total disc length */
+  int curr_frame;			     /* Current frame */
+  int curr_track;		         /* Current track */
+  int num_tracks;		         /* Number of tracks on disc */
+  TrackInfo track[MAX_TRACKS];	 /* Track specific information */
 } DiscInfo;
 
 /* Channle volume structure */
@@ -93,6 +95,7 @@ gboolean CDPlayTrackPos(DiscInfo *disc,int starttrack,
 			int endtrack,int startpos);
 gboolean CDPlayTrack(DiscInfo *disc,int starttrack,int endtrack);
 gboolean CDAdvance(DiscInfo *disc,DiscTime *time);
+gboolean CDStart(DiscInfo *disc);
 gboolean CDStop(DiscInfo *disc);
 gboolean CDPause(DiscInfo *disc);
 gboolean CDResume(DiscInfo *disc);
@@ -103,5 +106,9 @@ gboolean CDGetVolume(DiscInfo *disc,DiscVolume *vol);
 gboolean CDSetVolume(DiscInfo *disc,DiscVolume *vol);
 gboolean CDChangerSelectDisc(DiscInfo *disc,int disc_num);
 int CDChangerSlots(DiscInfo *disc);
+GVolume *GripGetVolumeByPath(gchar *device_name);
+void GripVolumeAdded(GVolumeMonitor *monitor, GVolume *new_volume, gpointer info);
+void GripVolumeRemoved(GVolumeMonitor *monitor, GVolume *old_volume, gpointer info);
+GVolumeMonitor *GripGetVolumeMonitor();
 
 #endif /* GRIP_CDDEV_H */

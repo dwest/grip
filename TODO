@@ -8,7 +8,6 @@
  o slider to move within a track
  o add a timeout for DiscDB lookup
  o check rip/encode result status and repeat if necessary
- o avoid locking of drive
  o update the track time properly when paused and the track is changed
  o update the playtime during ripping/encoding?
  o digital playing of cds (through CDDA)
