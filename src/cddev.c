@@ -808,24 +808,39 @@ int CDChangerSlots(DiscInfo *disc)
  */
 GVolume *GripGetVolumeByPath(gchar *device_name)
 {
-    GVolumeMonitor *monitor = GripGetVolumeMonitor();
+    GVolumeMonitor *monitor;
     GVolume *volume         = NULL;
-    GList *list             = g_volume_monitor_get_volumes(monitor);
+    GList *list;
     gboolean finished       = FALSE;
     gchar *name             = NULL;
+    char *devpath;
+
+    devpath = realpath(device_name, NULL);
+    if (devpath == NULL) {
+        Debug("GripGetVolumeByPath: realpath(%s) failed: %s\n",
+	      device_name, strerror(errno));
+        return NULL;
+    }
+    Debug("GripGetVolumByPath: searching for %s\n", devpath);
+
+    monitor = GripGetVolumeMonitor();
+    list =    g_volume_monitor_get_volumes(monitor);
 
     // Loop over volumes and see if any match out needs.
     while(list != NULL && !finished){
         volume = list->data;
         name = g_volume_get_identifier(volume, G_VOLUME_IDENTIFIER_KIND_UNIX_DEVICE);
-        if(name != NULL && strcmp(name, realpath(device_name, NULL)) == 0){
-            Debug("Found volume.\n");
+        Debug("Considering volume %s\n", name ? name : "<noname>");
+        if(name != NULL && strcmp(name, devpath) == 0){
+            Debug("Found volume %s.\n", name);
             finished = TRUE;
         }else{
             list = list->next;
         }
     }
-    
+
+    free(devpath);
+
     // We didn't find proper volume
     if(!finished){
         Debug("No volume found.\n");
@@ -852,12 +867,35 @@ void GripVolumeAdded(GVolumeMonitor *monitor, GVolume *new_volume, gpointer info
     // TODO: Un-hardcode this when Daniel
     //       finished the GConf stuff.
     gchar *device_name = g_volume_get_identifier(new_volume, G_VOLUME_IDENTIFIER_KIND_UNIX_DEVICE);
-    if(device_name != NULL && strcmp(device_name, realpath("/dev/cdrom", NULL)) == 0){
-        ((DiscInfo *)info)->volume = new_volume;
+    DiscInfo *disc = info;
+    char *devpath;
+
+    if (!disc->devname) {
+        Debug("GripVolumeAdded: we have no devicename\n");
+        return;
+    }
+
+    devpath = realpath(disc->devname, NULL);
+
+    if (devpath == NULL) {
+        Debug("GripVolumeAdded: can't find realpath for %s: %s\n",
+              disc->devname, strerror(errno));
+	devpath = strdup(disc->devname);
+	if (devpath == NULL) {
+	    Debug("and out of memory\n");
+	    return;
+	}
+    }
+
+    Debug("GripVolumeAdded: device is %s notification is for %s\n",
+	  devpath, device_name);
+    if(device_name != NULL && strcmp(device_name, devpath) == 0){
+        disc->volume = new_volume;
         Debug("Volume added. DiscInfo updated.\n");
     }else{
-        Debug("No volume found at /dev/cdrom.\n");
+        Debug("No volume found at %s.\n", devpath);
     }
+    free(devpath);
 }
 
 /**
@@ -867,8 +905,14 @@ void GripVolumeAdded(GVolumeMonitor *monitor, GVolume *new_volume, gpointer info
  */
 void GripVolumeRemoved(GVolumeMonitor *monitor, GVolume *old_volume, gpointer info)
 {
-    ((DiscInfo *)info)->volume = NULL;
-    Debug("Volume removed.\n");
+    DiscInfo *disc = info;
+
+    if (old_volume == disc->volume) {
+        Debug("Our volume was removed\n");
+        disc->volume = NULL;
+    } else {
+        Debug("Some other volume was removed.\n");
+    }
 }
 
 // Singleton....?
