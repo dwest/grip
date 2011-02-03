@@ -850,9 +850,9 @@ GVolume *GripGetVolumeByPath(gchar *device_name)
     }
 
     // Cleanup
-    /* list = g_list_first(list); */
-    /* g_list_foreach(list, g_object_unref, NULL); */
-    /* g_list_free(list); */
+    list = g_list_first(list);
+    g_list_foreach(list, g_object_unref, NULL);
+    g_list_free(list);
 }
 
 /**
@@ -880,15 +880,15 @@ void GripVolumeAdded(GVolumeMonitor *monitor, GVolume *new_volume, gpointer info
     if (devpath == NULL) {
         Debug("GripVolumeAdded: can't find realpath for %s: %s\n",
               disc->devname, strerror(errno));
-	devpath = strdup(disc->devname);
-	if (devpath == NULL) {
-	    Debug("and out of memory\n");
-	    return;
-	}
+        devpath = strdup(disc->devname);
+        if (devpath == NULL) {
+            Debug("and out of memory\n");
+            return;
+        }
     }
 
     Debug("GripVolumeAdded: device is %s notification is for %s\n",
-	  devpath, device_name);
+          devpath, device_name);
     if(device_name != NULL && strcmp(device_name, devpath) == 0){
         disc->volume = new_volume;
         Debug("Volume added. DiscInfo updated.\n");
