@@ -470,7 +470,7 @@ ac_includes_default="\
 # include <unistd.h>
 #endif"
 
-ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO AMTAR install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM AWK SET_MAKE MAINTAINER_MODE_TRUE MAINTAINER_MODE_FALSE MAINT CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE CXX CXXFLAGS ac_ct_CXX CXXDEPMODE CPP EGREP build build_cpu build_vendor build_os host host_cpu host_vendor host_os LN_S ECHO RANLIB ac_ct_RANLIB LIBTOOL PKG_CONFIG GNOME_CFLAGS GNOME_LIBS TERMINAL_WIDGET_CFLAGS TERMINAL_WIDGET_LIBS GETTEXT_PACKAGE USE_NLS MSGFMT GMSGFMT XGETTEXT CATALOGS CATOBJEXT DATADIRNAME GMOFILES INSTOBJEXT INTLLIBS PO_IN_DATADIR_TRUE PO_IN_DATADIR_FALSE POFILES POSUB MKINSTALLDIRS CDPAR_LIBS ID3_LIBS LIBOBJS LTLIBOBJS'
+ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO AMTAR install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM AWK SET_MAKE MAINTAINER_MODE_TRUE MAINTAINER_MODE_FALSE MAINT CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE CXX CXXFLAGS ac_ct_CXX CXXDEPMODE CPP EGREP build build_cpu build_vendor build_os host host_cpu host_vendor host_os LN_S ECHO RANLIB ac_ct_RANLIB LIBTOOL PKG_CONFIG GNOME_CFLAGS GNOME_LIBS TERMINAL_WIDGET_CFLAGS TERMINAL_WIDGET_LIBS GETTEXT_PACKAGE USE_NLS MSGFMT GMSGFMT XGETTEXT CATALOGS CATOBJEXT DATADIRNAME GMOFILES INSTOBJEXT INTLLIBS PO_IN_DATADIR_TRUE PO_IN_DATADIR_FALSE POFILES POSUB MKINSTALLDIRS CDPAR_LIBS ID3_LIBS GETTEXT_LOCATION LIBOBJS LTLIBOBJS'
 ac_subst_files=''
 
 # Initialize some variables set by options.
@@ -1026,6 +1026,7 @@ Optional Features:
   --disable-cdpar         do not compile with cdparanoia
   --disable-id3           do not compile with id3lib
   --disable-shared-id3    use static id3lib
+  --enable-gettext-location generate locations in po/grip*.pot
   --disable-dependency-tracking Speeds up one-time builds
   --enable-dependency-tracking  Do not reject slow dependency extractors
   --enable-shared=PKGS  build shared libraries default=yes
@@ -1944,6 +1945,14 @@ if test "${enable_shared_id3+set}" = set; then
 
 else
   enable_shared_id3=yes
+fi;
+
+# Check whether --enable-gettext-location or --disable-gettext-location was given.
+if test "${enable_gettext_location+set}" = set; then
+  enableval="$enable_gettext_location"
+
+else
+  enable_gettext_location=no
 fi;
 
 ac_ext=c
@@ -11307,6 +11316,13 @@ fi
 
 LIBS=$id3_libs_bak
 
+if test "x$enable_gettext_location" = "xyes"; then
+	echo enabling gettext locations
+	GETTEXT_LOCATION=
+else
+	echo disabling gettext locations
+	GETTEXT_LOCATION=--no-location
+fi
 
 
 
@@ -12034,6 +12050,7 @@ s,@POSUB@,$POSUB,;t t
 s,@MKINSTALLDIRS@,$MKINSTALLDIRS,;t t
 s,@CDPAR_LIBS@,$CDPAR_LIBS,;t t
 s,@ID3_LIBS@,$ID3_LIBS,;t t
+s,@GETTEXT_LOCATION@,$GETTEXT_LOCATION,;t t
 s,@LIBOBJS@,$LIBOBJS,;t t
 s,@LTLIBOBJS@,$LTLIBOBJS,;t t
 CEOF

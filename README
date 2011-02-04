@@ -66,6 +66,9 @@ Grip adds the following options that can be specified to configure:
   --disable-shared-id3    -- This will force Grip to link statically, rather
                              than dynamically with id3lib
 
+  --enable-gettext-location -- This will build po/grip-2.2.pot with filenames
+                               and line numbers for each string
+
 Note that if Gnome is installed in a non-standard place (such as /opt), you
 may need to use the '--with-gnome' configure option for all libraries to be
 found correctly.

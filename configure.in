@@ -23,6 +23,10 @@ AC_ARG_ENABLE(shared_id3,
 	[  --disable-shared-id3    use static id3lib],
         , enable_shared_id3=yes)
 
+AC_ARG_ENABLE(gettext_location,
+	[  --enable-gettext-location generate locations in po/grip*.pot])
+
+
 AC_PROG_CC
 AC_PROG_CXX
 AC_ISC_POSIX
@@ -115,6 +119,15 @@ main ()
 fi
 AC_SUBST(ID3_LIBS)
 LIBS=$id3_libs_bak
+
+if test "x$enable_gettext_location" = "xyes"; then
+	echo enabling gettext locations
+	GETTEXT_LOCATION=
+else
+	echo disabling gettext locations
+	GETTEXT_LOCATION=--no-location
+fi
+AC_SUBST(GETTEXT_LOCATION)
 
 AC_SUBST(CFLAGS)
 AC_SUBST(CPPFLAGS)
