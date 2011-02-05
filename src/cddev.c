@@ -851,7 +851,7 @@ GVolume *GripGetVolumeByPath(gchar *device_name)
 
     // Cleanup
     list = g_list_first(list);
-    g_list_foreach(list, g_object_unref, NULL);
+    g_list_foreach(list, (GFunc)g_object_unref, NULL);
     g_list_free(list);
 }
 

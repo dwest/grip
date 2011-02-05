@@ -26,11 +26,9 @@
 
 #include "grip.h"
 
-static gint KillSession(GnomeClient* client, gpointer client_data);
-static gint SaveSession(GnomeClient *client, gint phase, 
-			GnomeSaveStyle save_style,
-			gint is_shutdown, GnomeInteractStyle interact_style,
-			gint is_fast, gpointer client_data);
+static gint KillSession(GtkWindow *client, gpointer client_data);
+static gint SaveSession(GtkWindow *client, gpointer client_data);
+
 static gint TimeOut(gpointer data);
 
 gboolean do_debug=TRUE;
@@ -150,73 +148,67 @@ void Debug(char *fmt,...)
 
 int Cmain(int argc, char* argv[])
 {
-  GnomeClient *client;
+    GtkWindow *window;
 
-  /* Unbuffer stdout */
-  setvbuf(stdout, 0, _IONBF, 0);
+    /* Unbuffer stdout */
+    setvbuf(stdout, 0, _IONBF, 0);
 
-  /* setup locale, i18n */
-  gtk_set_locale();
-  bindtextdomain(GETTEXT_PACKAGE,GNOMELOCALEDIR);
-  textdomain(GETTEXT_PACKAGE);
+    /* setup locale, i18n */
+    gtk_set_locale();
+    bindtextdomain(GETTEXT_PACKAGE,GNOMELOCALEDIR);
+    textdomain(GETTEXT_PACKAGE);
 
-  gnome_program_init(PACKAGE,VERSION,LIBGNOMEUI_MODULE,argc,argv, 
-		     GNOME_PARAM_POPT_TABLE,options,
-		     GNOME_PROGRAM_STANDARD_PROPERTIES,NULL);
+    gnome_program_init(PACKAGE,VERSION,LIBGNOMEUI_MODULE,argc,argv, 
+                       GNOME_PARAM_POPT_TABLE,options,
+                       GNOME_PROGRAM_STANDARD_PROPERTIES,NULL);
 
-  bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF8");
-  setenv("CHARSET","UTF-8",1);
+    bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF8");
+    setenv("CHARSET","UTF-8",1);
 
-  /* Session Management */
+    /* Session Management */
   
-  client=gnome_master_client();
-  gtk_signal_connect(GTK_OBJECT(client),"save_yourself",
-		     GTK_SIGNAL_FUNC(SaveSession),argv[0]);
-  gtk_signal_connect(GTK_OBJECT(client),"die",
-		     GTK_SIGNAL_FUNC(KillSession),NULL);
-  
+    window = (GtkWindow *)gtk_window_new(GTK_WINDOW_TOPLEVEL);
+    //g_signal_connect(window, "save_yourself", SaveSession, argv[0]);
+    //g_signal_connect(window, "die", KillSession, NULL);
+    g_signal_connect(window, "destroy", KillSession, NULL);
+    do_debug=verbose;
 
-  do_debug=verbose;
+    if(scsi_device) printf("scsi=[%s]\n",scsi_device);
 
-  if(scsi_device) printf("scsi=[%s]\n",scsi_device);
+    /* Start a new Grip app */
+    grip_app=GripNew(geometry,device,scsi_device,config_filename,
+                     force_small,local_mode,
+                     no_redirect);
 
-  /* Start a new Grip app */
-  grip_app=GripNew(geometry,device,scsi_device,config_filename,
-		   force_small,local_mode,
-		   no_redirect);
+    gtk_widget_show(grip_app);
 
-  gtk_widget_show(grip_app);
+    gtk_timeout_add(1000,TimeOut,0);
 
-  gtk_timeout_add(1000,TimeOut,0);
-
-  gtk_main();
+    gtk_main();
 
   return 0;
 }
 
 /* Save the session */
-static gint SaveSession(GnomeClient *client, gint phase,
-			GnomeSaveStyle save_style,
-			gint is_shutdown, GnomeInteractStyle interact_style,
-			gint is_fast, gpointer client_data)
+static gint SaveSession(GtkWindow *window, gpointer client_data)
 {
   gchar** argv;
   guint argc;
-
+  printf("asdfasfasdf\n");
   /* allocate 0-filled, so it will be NULL-terminated */
   argv = g_malloc0(sizeof(gchar*)*4);
   argc = 1;
 
   argv[0] = client_data;
 
-  gnome_client_set_clone_command(client, argc, argv);
-  gnome_client_set_restart_command(client, argc, argv);
+  /* gnome_client_set_clone_command(client, argc, argv); */
+  /* gnome_client_set_restart_command(client, argc, argv); */
 
   return TRUE;
 }
 
 /* Kill Session */
-static gint KillSession(GnomeClient* client, gpointer client_data)
+static gint KillSession(GtkWindow *client, gpointer client_data)
 {
   gtk_main_quit();
 

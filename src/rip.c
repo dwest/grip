@@ -576,6 +576,7 @@ static gboolean AddM3U(GripInfo *ginfo)
   GString *str;
   char *conv_str;
   gsize rb,wb;
+  GtkWidget *dialog;
 
   if(!ginfo->have_disc) return FALSE;
   
@@ -598,9 +599,14 @@ static gboolean AddM3U(GripInfo *ginfo)
 
   fp=fopen(conv_str, "w");
   if(fp==NULL) {
-    gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                      _("Error: can't open m3u file."));
-    return FALSE;
+      dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                      GTK_DIALOG_DESTROY_WITH_PARENT,
+                                      GTK_MESSAGE_WARNING, 
+                                      GTK_BUTTONS_OK, 
+                                      _("Error: can't open m3u file."));
+      gtk_dialog_run(GTK_DIALOG(dialog));
+      gtk_widget_destroy(dialog);
+      return FALSE;
   }
   g_free(conv_str);
   
@@ -1260,32 +1266,46 @@ void DoRip(GtkWidget *widget,gpointer data)
 {
   GripInfo *ginfo;
   gboolean result;
+  GtkWidget *dialog;
 
   ginfo=(GripInfo *)data;
 
   if(!ginfo->have_disc) {
-    gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                      _("No disc was detected in the drive. If you have a disc in your drive, please check your CDRom device setting under Config->CD."));
-    return;
+      dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                      GTK_DIALOG_DESTROY_WITH_PARENT,
+                                      GTK_MESSAGE_WARNING, 
+                                      GTK_BUTTONS_OK, 
+                                      _("No disc was detected in the drive. If you have a disc in your drive, please check your CDRom device setting under Config->CD."));
+      gtk_dialog_run(GTK_DIALOG(dialog));
+      gtk_widget_destroy(dialog);
+      return;
   }
 
   if(widget) ginfo->doencode=FALSE;
   else ginfo->doencode=TRUE;
 
   if(!ginfo->using_builtin_cdp&&!FileExists(ginfo->ripexename)) {
-    gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                      _("Invalid rip executable.\nCheck your rip config, and ensure it specifies the full path to the ripper executable."));
-
-    ginfo->doencode=FALSE;
-    return;
+      dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                      GTK_DIALOG_DESTROY_WITH_PARENT,
+                                      GTK_MESSAGE_WARNING, 
+                                      GTK_BUTTONS_OK, 
+                                      _("Invalid rip executable.\nCheck your rip config, and ensure it specifies the full path to the ripper executable."));
+      gtk_dialog_run(GTK_DIALOG(dialog));
+      gtk_widget_destroy(dialog);
+      ginfo->doencode=FALSE;
+      return;
   }
 
   if(ginfo->doencode&&!FileExists(ginfo->mp3exename)) {
-    gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                      _("Invalid encoder executable.\nCheck your encoder config, and ensure it specifies the full path to the encoder executable."));
-
-    ginfo->doencode=FALSE;
-    return;
+      dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                      GTK_DIALOG_DESTROY_WITH_PARENT,
+                                      GTK_MESSAGE_WARNING, 
+                                      GTK_BUTTONS_OK, 
+                                      _("Invalid encoder executable.\nCheck your encoder config, and ensure it specifies the full path to the encoder executable."));
+      gtk_dialog_run(GTK_DIALOG(dialog));
+      gtk_widget_destroy(dialog);
+      ginfo->doencode=FALSE;
+      return;
   }
 
   CDStop(&(ginfo->disc));

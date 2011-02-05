@@ -178,10 +178,16 @@ GtkWidget *GripNew(const gchar* geometry,char *device,char *scsi_device,
   GripGUI *uinfo;
   int major,minor,point;
   char buf[256];
+  GError *error;
+  gboolean set = TRUE;
 
-  gnome_window_icon_set_default_from_file(GNOME_ICONDIR"/gripicon.png");
+  app = gtk_window_new(GTK_WINDOW_TOPLEVEL);
 
-  app=gnome_app_new(PACKAGE,_("Grip"));
+  set = gtk_window_set_icon_from_file(GTK_WINDOW(app), GNOME_ICONDIR"/gripicon.png", &error);
+  if(!set && error != NULL){
+      // Not fatal error.
+      Debug("GripNew: %s\n", error->message);
+  }
  
   ginfo=g_new0(GripInfo,1);
 
@@ -217,7 +223,7 @@ GtkWidget *GripNew(const gchar* geometry,char *device,char *scsi_device,
   ginfo->local_mode=local_mode;
   ginfo->do_redirect=!no_redirect;
 
-  
+
   if(!CDInitDevice(ginfo->cd_device,&(ginfo->disc))) {
     sprintf(buf,_("Error: Unable to initialize [%s]\n"),ginfo->cd_device);
     DisplayMsg(buf);
@@ -290,7 +296,7 @@ GtkWidget *GripNew(const gchar* geometry,char *device,char *scsi_device,
     gtk_box_pack_start(GTK_BOX(uinfo->winbox),uinfo->controls,FALSE,FALSE,0);
   gtk_widget_show(uinfo->controls);
   
-  gnome_app_set_contents(GNOME_APP(app),uinfo->winbox);
+  gtk_container_add(GTK_CONTAINER(app), uinfo->winbox);
   gtk_widget_show(uinfo->winbox);
 
   CheckNewDisc(ginfo,FALSE);
@@ -300,11 +306,16 @@ GtkWidget *GripNew(const gchar* geometry,char *device,char *scsi_device,
     strcpy(ginfo->version,VERSION);
 
     sscanf(VERSION,"%d.%d.%d",&major,&minor,&point);
-
+    
     /* Check if we have a dev release */
     if(minor%2) {
-      gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                        _("This is a development version of Grip. If you encounter problems, you are encouraged to revert to the latest stable version."));
+        GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                                   GTK_DIALOG_MODAL,
+                                                   GTK_MESSAGE_WARNING, 
+                                                   GTK_BUTTONS_OK, 
+                                                   _("This is a development version of Grip. If you encounter problems, you are encouraged to revert to the latest stable version."));
+        gtk_dialog_run(GTK_DIALOG(dialog));
+        gtk_widget_destroy(dialog);
     }
   }
 
@@ -329,10 +340,11 @@ void GripDie(GtkWidget *widget,gpointer data)
   ginfo=(GripInfo *)gtk_object_get_user_data(GTK_OBJECT(widget));
   
 #ifndef GRIPCD
-  if(ginfo->ripping_a_disc || ginfo->encoding)
-    gnome_app_ok_cancel_modal((GnomeApp *)ginfo->gui_info.app,
-			      _("Work is in progress.\nReally shut down?"),
-			      ReallyDie,(gpointer)ginfo);
+  if(ginfo->ripping_a_disc || ginfo->encoding){
+      gnome_app_ok_cancel_modal((GnomeApp *)ginfo->gui_info.app,
+                                _("Work is in progress.\nReally shut down?"),
+                                ReallyDie,(gpointer)ginfo);
+  }
   else ReallyDie(0,ginfo);
 #else
   ReallyDie(0,ginfo);
@@ -943,11 +955,11 @@ static void DoLoadConfig(GripInfo *ginfo)
   if(confret<0) {
     /* Check if the config is out of date */
     if(confret==-2) {
-      gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                        _("Your config file is out of date -- "
-                          "resetting to defaults.\n"
-                          "You will need to re-configure Grip.\n"
-                          "Your old config file has been saved with -old appended."));
+        gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
+                          _("Your config file is out of date -- "
+                            "resetting to defaults.\n"
+                            "You will need to re-configure Grip.\n"
+                            "Your old config file has been saved with -old appended."));
 
       sprintf(renamefile,"%s-old",filename);
 
