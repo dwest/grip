@@ -64,7 +64,7 @@ static void DoWavFilter(GripInfo *ginfo);
 static void DoDiscFilter(GripInfo *ginfo);
 static void RipIsFinished(GripInfo *ginfo,gboolean aborted);
 static void CheckDupNames(GripInfo *ginfo);
-static void RipWholeCD(gint reply,gpointer data);
+static void RipWholeCD(gpointer data);
 static int NextTrackToRip(GripInfo *ginfo);
 static gboolean RipNextTrack(GripInfo *ginfo);
 #ifdef CDPAR
@@ -1267,6 +1267,7 @@ void DoRip(GtkWidget *widget,gpointer data)
   GripInfo *ginfo;
   gboolean result;
   GtkWidget *dialog;
+  gint response;
 
   ginfo=(GripInfo *)data;
 
@@ -1336,11 +1337,20 @@ void DoRip(GtkWidget *widget,gpointer data)
   }
 
   if(NextTrackToRip(ginfo)==ginfo->disc.num_tracks) {
-    gnome_app_ok_cancel_modal
-      ((GnomeApp *)ginfo->gui_info.app,
-       _("No tracks selected.\nRip whole CD?\n"),
-       RipWholeCD,(gpointer)ginfo);
-    return;
+      Debug(_("No tracks selected.\n"));
+      dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                      GTK_DIALOG_DESTROY_WITH_PARENT,
+                                      GTK_MESSAGE_QUESTION,
+                                      GTK_BUTTONS_YES_NO,
+                                      _("No tracks selected.\nRip whole CD?\n"));
+      response = gtk_dialog_run(GTK_DIALOG(dialog));
+      gtk_widget_destroy(dialog);
+      if(response == GTK_RESPONSE_YES){
+          RipWholeCD(ginfo);
+          return;
+      }else{
+          return;
+      }
   }
   
   ginfo->stop_rip=FALSE;
@@ -1354,12 +1364,10 @@ void DoRip(GtkWidget *widget,gpointer data)
   }
 }
 
-static void RipWholeCD(gint reply,gpointer data)
+static void RipWholeCD(gpointer data)
 {
   int track;
   GripInfo *ginfo;
-
-  if(reply) return;
 
   Debug(_("Ripping whole CD\n"));
 
@@ -1397,6 +1405,7 @@ static gboolean RipNextTrack(GripInfo *ginfo)
   char *conv_str, *utf8_ripfile;
   gsize rb,wb;
   const char *charset;
+  GtkWidget *dialog;
 
   uinfo=&(ginfo->gui_info);
 
@@ -1418,10 +1427,6 @@ static gboolean RipNextTrack(GripInfo *ginfo)
 
   if(ginfo->have_disc&&ginfo->rip_track>=0) {
     Debug(_("Ripping away!\n"));
-
-    /*    if(!ginfo->rip_partial){
-      gtk_clist_select_row(GTK_CLIST(uinfo->trackclist),ginfo->rip_track,0);
-      }*/
 
     CopyPixmap(GTK_PIXMAP(uinfo->rip_pix[0]),GTK_PIXMAP(uinfo->rip_indicator));
 
@@ -1463,9 +1468,15 @@ static gboolean RipNextTrack(GripInfo *ginfo)
 
     MakeDirs(ginfo->ripfile);
     if(!CanWrite(ginfo->ripfile)) {
-      gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                        _("No write access to write wav file"));
-      return FALSE;
+        Debug(_("No write access to write wave file.\n"));
+        dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                        GTK_DIALOG_DESTROY_WITH_PARENT,
+                                        GTK_MESSAGE_ERROR,
+                                        GTK_BUTTONS_OK,
+                                        _("No write access to write wave file.\n"));
+        gtk_dialog_run(GTK_DIALOG(dialog));
+        gtk_widget_destroy(dialog);
+        return FALSE;
     }
 
     /* Workaround for drives that spin up slowly */
@@ -1507,10 +1518,15 @@ static gboolean RipNextTrack(GripInfo *ginfo)
     bytesleft=BytesLeftInFS(ginfo->ripfile);
 
     if(bytesleft<(ginfo->ripsize*1.5)) {
-      gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                        _("Out of space in output directory"));
-
-      return FALSE;
+        Debug(_("Out of space in output directory.\n"));
+        dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                        GTK_DIALOG_DESTROY_WITH_PARENT,
+                                        GTK_MESSAGE_ERROR,
+                                        GTK_BUTTONS_OK,
+                                        _("Out of space in output directory.\n"));
+        gtk_dialog_run(GTK_DIALOG(dialog));
+        gtk_widget_destroy(dialog);
+        return FALSE;
     }
 
 #ifdef CDPAR
@@ -1688,6 +1704,7 @@ static gboolean MP3Encode(GripInfo *ginfo)
   int cpu;
   char *conv_str;
   gsize rb,wb;
+  GtkWidget *dialog;
 
   uinfo=&(ginfo->gui_info);
 
@@ -1733,9 +1750,14 @@ static gboolean MP3Encode(GripInfo *ginfo)
 
   MakeDirs(ginfo->mp3file[cpu]);
   if(!CanWrite(ginfo->mp3file[cpu])) {
-    gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                      _("No write access to write encoded file."));
-    return FALSE;
+      dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                      GTK_DIALOG_DESTROY_WITH_PARENT,
+                                      GTK_MESSAGE_ERROR,
+                                      GTK_BUTTONS_OK,
+                                      _("No write access to write encoded file."));
+      gtk_dialog_run(GTK_DIALOG(dialog));
+      gtk_widget_destroy(dialog);
+      return FALSE;
   }
   
   bytesleft=BytesLeftInFS(ginfo->mp3file[cpu]);
@@ -1759,10 +1781,15 @@ static gboolean MP3Encode(GripInfo *ginfo)
 	  (gfloat)(ginfo->kbits_per_sec*1024)/600.0);
   
   if(bytesleft<(ginfo->mp3size[cpu]*1.5)) {
-    gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                      _("Out of space in output directory"));
-    
-    return FALSE;
+        Debug(_("Out of space in output directory.\n"));
+        dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                        GTK_DIALOG_DESTROY_WITH_PARENT,
+                                        GTK_MESSAGE_ERROR,
+                                        GTK_BUTTONS_OK,
+                                        _("Out of space in output directory.\n"));
+        gtk_dialog_run(GTK_DIALOG(dialog));
+        gtk_widget_destroy(dialog);
+        return FALSE;
   }
   
   strcpy(enc_track->mp3_filename,ginfo->mp3file[cpu]);

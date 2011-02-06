@@ -180,6 +180,7 @@ GtkWidget *GripNew(const gchar* geometry,char *device,char *scsi_device,
   char buf[256];
   GError *error;
   gboolean set = TRUE;
+  GtkWidget *dialog;
 
   app = gtk_window_new(GTK_WINDOW_TOPLEVEL);
 
@@ -212,7 +213,7 @@ GtkWidget *GripNew(const gchar* geometry,char *device,char *scsi_device,
     strcpy(ginfo->config_filename,".grip");
   }
 
-  Debug("Using config file [%s]\n",ginfo->config_filename);
+  Debug(_("Using config file [%s]\n"),ginfo->config_filename);
 
   DoLoadConfig(ginfo);
 
@@ -309,11 +310,11 @@ GtkWidget *GripNew(const gchar* geometry,char *device,char *scsi_device,
     
     /* Check if we have a dev release */
     if(minor%2) {
-        GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
-                                                   GTK_DIALOG_MODAL,
-                                                   GTK_MESSAGE_WARNING, 
-                                                   GTK_BUTTONS_OK, 
-                                                   _("This is a development version of Grip. If you encounter problems, you are encouraged to revert to the latest stable version."));
+        dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                        GTK_DIALOG_MODAL,
+                                        GTK_MESSAGE_WARNING, 
+                                        GTK_BUTTONS_OK, 
+                                        _("This is a development version of Grip. If you encounter problems, you are encouraged to revert to the latest stable version."));
         gtk_dialog_run(GTK_DIALOG(dialog));
         gtk_widget_destroy(dialog);
     }
@@ -336,16 +337,30 @@ GtkWidget *GripNew(const gchar* geometry,char *device,char *scsi_device,
 void GripDie(GtkWidget *widget,gpointer data)
 {
   GripInfo *ginfo;
+  GtkWidget *dialog;
+  gint response;
 
   ginfo=(GripInfo *)gtk_object_get_user_data(GTK_OBJECT(widget));
   
 #ifndef GRIPCD
   if(ginfo->ripping_a_disc || ginfo->encoding){
-      gnome_app_ok_cancel_modal((GnomeApp *)ginfo->gui_info.app,
-                                _("Work is in progress.\nReally shut down?"),
-                                ReallyDie,(gpointer)ginfo);
+      dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                      GTK_DIALOG_DESTROY_WITH_PARENT,
+                                      GTK_MESSAGE_QUESTION,
+                                      GTK_BUTTONS_YES_NO,
+                                      _("Work is in progress.\nReally shut down?"));
+      response = gtk_dialog_run(GTK_DIALOG(dialog));
+      gtk_widget_destroy(dialog);
+      if(response == GTK_RESPONSE_YES){
+          Debug(_("GripDie: Exiting Grip.\n"));
+          ReallyDie(0, ginfo);
+          return;
+      }else{
+          return;
+      }
+  }else{
+      ReallyDie(0,ginfo);
   }
-  else ReallyDie(0,ginfo);
 #else
   ReallyDie(0,ginfo);
 #endif
@@ -441,8 +456,6 @@ static void MakeStatusPage(GripInfo *ginfo)
 
   label=gtk_label_new(_("Encode"));
   gtk_notebook_append_page(GTK_NOTEBOOK(notebook),page,label);
-  /*  gtk_widget_show(page);*/
-
 
   gtk_box_pack_start(GTK_BOX(vbox2),notebook,TRUE,TRUE,0);
   gtk_widget_show(notebook);
@@ -644,7 +657,7 @@ static void Homepage(void)
             fprintf(stderr, "%s\n", error->message);
             g_error_free(error);
         }else{
-            fprintf(stderr, "Default browser not set in GConf.\n");
+            fprintf(stderr, _("Default browser not set in GConf.\n"));
         }
     }else{
         // Open link in browser.
@@ -953,20 +966,23 @@ static void DoLoadConfig(GripInfo *ginfo)
   confret=LoadConfig(filename,"GRIP",2,2,cfg_entries);
 
   if(confret<0) {
-    /* Check if the config is out of date */
-    if(confret==-2) {
-        gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                          _("Your config file is out of date -- "
-                            "resetting to defaults.\n"
-                            "You will need to re-configure Grip.\n"
-                            "Your old config file has been saved with -old appended."));
-
-      sprintf(renamefile,"%s-old",filename);
-
-      rename(filename,renamefile);
-    }
-
-    DoSaveConfig(ginfo);
+      /* Check if the config is out of date */
+      if(confret==-2) {
+          Debug(_("DoLoadConfig: Dialog out of date.\n"));
+          GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(uinfo->app),
+                                                     GTK_DIALOG_DESTROY_WITH_PARENT,
+                                                     GTK_MESSAGE_WARNING,
+                                                     GTK_BUTTONS_OK,
+                                                     _("Your config file is out of date -- "
+                                                       "resetting to defaults.\n"
+                                                       "You will need to re-configure Grip.\n"
+                                                       "Your old config file has been saved with -old appended."));
+          gtk_dialog_run(GTK_DIALOG(dialog));
+          gtk_widget_destroy(dialog);
+          sprintf(renamefile,"%s-old",filename);
+          rename(filename,renamefile);
+      }
+      DoSaveConfig(ginfo);
   }
 
   LoadRipperConfig(ginfo,ginfo->selected_ripper);
@@ -1043,15 +1059,22 @@ void DoSaveConfig(GripInfo *ginfo)
     CFG_ENTRIES
     {"",CFG_ENTRY_LAST,0,NULL}
   };
+  GtkWidget *dialog;
 
   if(ginfo->edit_num_cpu>MAX_NUM_CPU) ginfo->edit_num_cpu=MAX_NUM_CPU;
 
   g_snprintf(filename,256,"%s/%s",getenv("HOME"),ginfo->config_filename);
 
-  if(!SaveConfig(filename,"GRIP",2,cfg_entries))
-    gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                      _("Error: Unable to save config file."));
-
+  if(!SaveConfig(filename,"GRIP",2,cfg_entries)){
+      Debug(_("DoSaveConfig: Cannot save config file.\n"));
+      dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                      GTK_DIALOG_DESTROY_WITH_PARENT,
+                                      GTK_MESSAGE_ERROR,
+                                      GTK_BUTTONS_OK,
+                                      _("Error: Unable to save config file."));
+      gtk_dialog_run(GTK_DIALOG(dialog));
+      gtk_widget_destroy(dialog);
+  }
   SaveRipperConfig(ginfo,ginfo->selected_ripper);
   SaveEncoderConfig(ginfo,ginfo->selected_encoder);
 }
