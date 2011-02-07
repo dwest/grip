@@ -26,59 +26,6 @@
 #include <gnome.h>
 #include "dialog.h"
 
-void DisplayMsg(char *msg)
-{
-  gnome_ok_dialog(msg);
-}
-
-void BoolDialog(char *question,char *yes,GtkSignalFunc yesfunc,
-		gpointer yesdata,
-		char *no,GtkSignalFunc nofunc,gpointer nodata)
-{
-  GtkWidget *dialog;
-  GtkWidget *label;
-  GtkWidget *yesbutton;
-  GtkWidget *nobutton;
-
-  dialog=gtk_dialog_new();
-  gtk_window_set_title(GTK_WINDOW(dialog),_("System Message"));
-
-  gtk_container_border_width(GTK_CONTAINER(GTK_DIALOG(dialog)->vbox),5);
-
-  label=gtk_label_new(question);
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dialog)->vbox),label,TRUE,TRUE,0);
-  gtk_widget_show(label);
-
-  yesbutton=gtk_button_new_with_label(yes);
-  if(yesfunc)
-    gtk_signal_connect(GTK_OBJECT(yesbutton),"clicked",
-		       yesfunc,yesdata);
-  gtk_signal_connect_object(GTK_OBJECT(yesbutton),"clicked",
-			    GTK_SIGNAL_FUNC(gtk_widget_destroy),
-			    GTK_OBJECT(dialog));
-  gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dialog)->action_area),yesbutton,
-		     TRUE,TRUE,0);
-  gtk_widget_show(yesbutton);
-
-  if(no) {
-    nobutton=gtk_button_new_with_label(no);
-    if(nofunc)
-      gtk_signal_connect(GTK_OBJECT(nobutton),"clicked",
-			 nofunc,nodata);
-    gtk_signal_connect_object(GTK_OBJECT(nobutton),"clicked",
-			      GTK_SIGNAL_FUNC(gtk_widget_destroy),
-			      GTK_OBJECT(dialog));
-    gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dialog)->action_area),nobutton,
-		       TRUE,TRUE,0);
-    gtk_widget_show(nobutton);
-  }
-
-  gtk_widget_show(dialog);
-
-  gtk_grab_add(dialog);
-}
-
-
 void InputDialog(char *prompt,char *default_str,int len,char *doit,
 		 GtkSignalFunc doitfunc,
 		 char *cancel,GtkSignalFunc cancelfunc)

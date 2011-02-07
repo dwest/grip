@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-06 22:15-0500\n"
+"POT-Creation-Date: 2011-02-06 22:30-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -71,106 +71,106 @@ msgstr ""
 msgid "Error: Unable to initialize [%s]\n"
 msgstr ""
 
-#: src/grip.c:316
+#: src/grip.c:322
 msgid ""
 "This is a development version of Grip. If you encounter problems, you are "
 "encouraged to revert to the latest stable version."
 msgstr ""
 
-#: src/grip.c:331
+#: src/grip.c:337
 msgid "Grip started successfully\n"
 msgstr ""
 
-#: src/grip.c:350
+#: src/grip.c:356
 msgid ""
 "Work is in progress.\n"
 "Really shut down?"
 msgstr ""
 
-#: src/grip.c:354
+#: src/grip.c:360
 msgid "GripDie: Exiting Grip.\n"
 msgstr ""
 
-#: src/grip.c:411
+#: src/grip.c:417
 msgid "Status"
 msgstr ""
 
-#: src/grip.c:426
+#: src/grip.c:432
 msgid "General"
 msgstr ""
 
-#: src/grip.c:441 src/gripcfg.c:363 src/cdplay.c:256 src/cdplay.c:349
+#: src/grip.c:447 src/gripcfg.c:363 src/cdplay.c:256 src/cdplay.c:349
 #: src/rip.c:95
 msgid "Rip"
 msgstr ""
 
-#: src/grip.c:456 src/gripcfg.c:497
+#: src/grip.c:462 src/gripcfg.c:497
 msgid "Encode"
 msgstr ""
 
-#: src/grip.c:499
+#: src/grip.c:505
 msgid "Help"
 msgstr ""
 
-#: src/grip.c:504
+#: src/grip.c:510
 msgid "Table Of Contents"
 msgstr ""
 
-#: src/grip.c:510
+#: src/grip.c:516
 msgid "Playing CDs"
 msgstr ""
 
-#: src/grip.c:516
+#: src/grip.c:522
 msgid "Ripping CDs"
 msgstr ""
 
-#: src/grip.c:522
+#: src/grip.c:528
 msgid "Configuring Grip"
 msgstr ""
 
-#: src/grip.c:528
+#: src/grip.c:534
 msgid "FAQ"
 msgstr ""
 
-#: src/grip.c:534
+#: src/grip.c:540
 msgid "Getting More Help"
 msgstr ""
 
-#: src/grip.c:540
+#: src/grip.c:546
 msgid "Reporting Bugs"
 msgstr ""
 
-#: src/grip.c:560
+#: src/grip.c:566
 msgid "About"
 msgstr ""
 
-#: src/grip.c:579
+#: src/grip.c:585
 #, c-format
 msgid "Version %s"
 msgstr ""
 
-#: src/grip.c:659
+#: src/grip.c:665
 #, c-format
 msgid "Default browser not set in GConf.\n"
 msgstr ""
 
-#: src/grip.c:954
+#: src/grip.c:960
 msgid "Created by Grip"
 msgstr ""
 
-#: src/grip.c:974
+#: src/grip.c:980
 msgid ""
 "Your config file is out of date -- resetting to defaults.\n"
 "You will need to re-configure Grip.\n"
 "Your old config file has been saved with -old appended."
 msgstr ""
 
-#: src/grip.c:1046
+#: src/grip.c:1052
 #, c-format
 msgid "server is %s, port %d\n"
 msgstr ""
 
-#: src/grip.c:1071
+#: src/grip.c:1077
 msgid "Error: Unable to save config file."
 msgstr ""
 
@@ -748,10 +748,6 @@ msgstr ""
 #: src/cdplay.c:2027
 #, c-format
 msgid "Mailing entry to %s\n"
-msgstr ""
-
-#: src/dialog.c:44
-msgid "System Message"
 msgstr ""
 
 #: src/discdb.c:207

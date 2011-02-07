@@ -23,12 +23,6 @@
 #ifndef GRIP_DIALOG_H
 #define GRIP_DIALOG_H
 
-/* Message routines */
-void DisplayMsg(char *msg);
-void BoolDialog(char *question,char *yes,GtkSignalFunc yesfunc,
-		gpointer yesdata,
-		char *no,GtkSignalFunc nofunc,gpointer nodata);
-
 /* Input routines */
 void InputDialog(char *prompt,char *default_str,int len,char *doit,
 		 GtkSignalFunc doitfunc,
