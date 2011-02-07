@@ -71,6 +71,7 @@ static void ShutDownCB(GtkWidget *widget,gpointer data)
 static void DiscDBToggle(GtkWidget *widget,gpointer data)
 {
   GripInfo *ginfo;
+  GtkWidget *dialog;
 
   ginfo=(GripInfo *)data;
   
@@ -79,10 +80,14 @@ static void DiscDBToggle(GtkWidget *widget,gpointer data)
   }
   else {
     if(ginfo->ripping_a_disc) {
-      gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                        _("Cannot do lookup while ripping."));
-
-      return;
+        dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                        GTK_DIALOG_DESTROY_WITH_PARENT,
+                                        GTK_MESSAGE_ERROR, 
+                                        GTK_BUTTONS_OK, 
+                                        _("Cannot do lookup while ripping."));
+        gtk_dialog_run(GTK_DIALOG(dialog));
+        gtk_widget_destroy(dialog);
+        return;
     }
  
     if(ginfo->have_disc)
@@ -617,6 +622,7 @@ static void SelectionChanged(GtkTreeSelection *selection,gpointer data)
 static void PlaylistChanged(GtkWindow *window,GtkWidget *widget,gpointer data)
 {
   GripInfo *ginfo;
+  GtkWidget *dialog;
 
   ginfo=(GripInfo *)data;
 
@@ -626,9 +632,15 @@ static void PlaylistChanged(GtkWindow *window,GtkWidget *widget,gpointer data)
   InitProgram(ginfo);
 
   if(DiscDBWriteDiscData(&(ginfo->disc),&(ginfo->ddata),NULL,TRUE,FALSE,
-                         "utf-8")<0)
-    gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                      _("Error saving disc data."));
+                         "utf-8")<0){
+        dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                        GTK_DIALOG_DESTROY_WITH_PARENT,
+                                        GTK_MESSAGE_ERROR,
+                                        GTK_BUTTONS_OK, 
+                                        _("Error saving disc data."));
+        gtk_dialog_run(GTK_DIALOG(dialog));
+        gtk_widget_destroy(dialog);
+  }
 }
 
 static void ToggleLoop(GtkWidget *widget,gpointer data)
@@ -1163,14 +1175,19 @@ static void SetVolume(GtkWidget *widget,gpointer data)
 static void FastFwdCB(GtkWidget *widget,gpointer data)
 {
   GripInfo *ginfo;
+  GtkWidget *dialog;
 
   ginfo=(GripInfo *)data;
 
   if(ginfo->ripping_a_disc) {
-    gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                      _("Cannot fast forward while ripping."));
-
-    return;
+      dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                      GTK_DIALOG_DESTROY_WITH_PARENT,
+                                      GTK_MESSAGE_ERROR,
+                                      GTK_BUTTONS_OK,
+                                      _("Cannot fast forward while ripping."));
+      gtk_dialog_run(GTK_DIALOG(dialog));
+      gtk_widget_destroy(dialog);
+      return;
   }
 
   ginfo->ffwding=!ginfo->ffwding;
@@ -1194,14 +1211,19 @@ void FastFwd(GripInfo *ginfo)
 static void RewindCB(GtkWidget *widget,gpointer data)
 {
   GripInfo *ginfo;
+  GtkWidget *dialog;
 
   ginfo=(GripInfo *)data;
 
   if(ginfo->ripping_a_disc) {
-    gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                      _("Cannot rewind while ripping."));
-
-    return;
+      dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                      GTK_DIALOG_DESTROY_WITH_PARENT,
+                                      GTK_MESSAGE_ERROR,
+                                      GTK_BUTTONS_OK,
+                                      _("Cannot rewind while ripping."));
+      gtk_dialog_run(GTK_DIALOG(dialog));
+      gtk_widget_destroy(dialog);
+      return;
   }
 
   ginfo->rewinding=!ginfo->rewinding;
@@ -1225,14 +1247,19 @@ void Rewind(GripInfo *ginfo)
 static void NextDisc(GtkWidget *widget,gpointer data)
 {
   GripInfo *ginfo;
+  GtkWidget *dialog;
 
   ginfo=(GripInfo *)data;
 
   if(ginfo->ripping_a_disc) {
-    gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                      _("Cannot switch discs while ripping."));
-
-    return;
+      dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                      GTK_DIALOG_DESTROY_WITH_PARENT,
+                                      GTK_MESSAGE_ERROR,
+                                      GTK_BUTTONS_OK,
+                                      _("Cannot switch discs while ripping."));
+      gtk_dialog_run(GTK_DIALOG(dialog));
+      gtk_widget_destroy(dialog);
+      return;
   }
 
   if(ginfo->changer_slots>1) {
@@ -1245,16 +1272,21 @@ static void NextDisc(GtkWidget *widget,gpointer data)
 void EjectDisc(GtkWidget *widget,gpointer data)
 {
   GripInfo *ginfo;
+  GtkWidget *dialog;
 
   ginfo=(GripInfo *)data;
 
   LogStatus(ginfo,_("Eject disc\n"));
 
   if(ginfo->ripping_a_disc) {
-    gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                      _("Cannot eject while ripping."));
-
-    return;
+      dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                      GTK_DIALOG_DESTROY_WITH_PARENT,
+                                      GTK_MESSAGE_ERROR,
+                                      GTK_BUTTONS_OK,
+                                      _("Cannot eject while ripping."));
+      gtk_dialog_run(GTK_DIALOG(dialog));
+      gtk_widget_destroy(dialog);
+      return;
   }
 
   if(ginfo->auto_eject_countdown) return;
@@ -1323,15 +1355,20 @@ void PlayTrackCB(GtkWidget *widget,gpointer data)
   int track;
   GripInfo *ginfo;
   DiscInfo *disc;
+  GtkWidget *dialog;
 
   ginfo=(GripInfo *)data;
   disc=&(ginfo->disc);
 
   if(ginfo->ripping_a_disc) {
-    gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                      _("Cannot play while ripping."));
-   
-    return;
+      dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                      GTK_DIALOG_DESTROY_WITH_PARENT,
+                                      GTK_MESSAGE_ERROR,
+                                      GTK_BUTTONS_OK,
+                                      _("Cannot play while ripping."));
+      gtk_dialog_run(GTK_DIALOG(dialog));
+      gtk_widget_destroy(dialog);
+      return;
   }
 
   CDStat(disc,FALSE);
@@ -1395,10 +1432,17 @@ void NextTrackCB(GtkWidget *widget,gpointer data)
 
 void NextTrack(GripInfo *ginfo)
 {
+  GtkWidget *dialog;
+
   if(ginfo->ripping_a_disc) {
-    gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                      _("Cannot switch tracks while ripping."));
-    return;
+      dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                      GTK_DIALOG_DESTROY_WITH_PARENT,
+                                      GTK_MESSAGE_ERROR,
+                                      GTK_BUTTONS_OK,
+                                      _("Cannot switch tracks while ripping."));
+      gtk_dialog_run(GTK_DIALOG(dialog));
+      gtk_widget_destroy(dialog);
+      return;
   }
   
   CDStat(&(ginfo->disc),FALSE);
@@ -1426,10 +1470,17 @@ void PrevTrackCB(GtkWidget *widget,gpointer data)
 
 static void PrevTrack(GripInfo *ginfo)
 {
+  GtkWidget *dialog;
+
   if(ginfo->ripping_a_disc) {
-    gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                      _("Cannot switch tracks while ripping."));
-    return;
+      dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                      GTK_DIALOG_DESTROY_WITH_PARENT,
+                                      GTK_MESSAGE_ERROR,
+                                      GTK_BUTTONS_OK,
+                                      _("Cannot switch tracks while ripping."));
+      gtk_dialog_run(GTK_DIALOG(dialog));
+      gtk_widget_destroy(dialog);
+      return;
   }
 
   CDStat(&(ginfo->disc),FALSE);
@@ -1803,6 +1854,8 @@ void UpdateTracks(GripInfo *ginfo)
   DiscData *ddata;
   EncodeTrack enc_track;
   GtkTreeIter iter;
+  GtkWidget *dialog;
+  gint response;
 
   uinfo=&(ginfo->gui_info);
   disc=&(ginfo->disc);
@@ -1885,28 +1938,32 @@ void UpdateTracks(GripInfo *ginfo)
   }
 
   if(ginfo->ask_submit) {
-    gnome_app_ok_cancel_modal
-      ((GnomeApp *)uinfo->app,
-       _("This disc has been found on your secondary server,\n"
-       "but not on your primary server.\n\n"
-       "Do you wish to submit this disc information?"),
-       SubmitEntry,(gpointer)ginfo);
-    
-    ginfo->ask_submit=FALSE;
+      dialog = gtk_message_dialog_new(GTK_WINDOW(uinfo->app),
+                                      GTK_DIALOG_DESTROY_WITH_PARENT,
+                                      GTK_MESSAGE_QUESTION,
+                                      GTK_BUTTONS_YES_NO,
+                                      _("This disc has been found on your secondary server,\n"
+                                        "but not on your primary server.\n\n"
+                                        "Do you wish to submit this disc information?"));
+      response = gtk_dialog_run(GTK_DIALOG(dialog));
+      gtk_widget_destroy(dialog);
+      if(response == GTK_RESPONSE_YES){
+          SubmitEntry(ginfo);
+      }
+      ginfo->ask_submit=FALSE;
   }
 
   ginfo->first_time=0;
 }
 
-void SubmitEntry(gint reply,gpointer data)
+void SubmitEntry(gpointer data)
 {
   GripInfo *ginfo;
   int fd;
   FILE *efp;
   char mailcmd[256];
   char filename[256];
-
-  if(reply) return;
+  GtkWidget *dialog;
 
   ginfo=(GripInfo *)data;
 
@@ -1914,17 +1971,27 @@ void SubmitEntry(gint reply,gpointer data)
   fd = mkstemp(filename);
 
   if(fd == -1) {
-    gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                      _("Error: Unable to create temporary file."));
-    return;
+      dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                      GTK_DIALOG_DESTROY_WITH_PARENT,
+                                      GTK_MESSAGE_ERROR,
+                                      GTK_BUTTONS_OK,
+                                            _("Unable to create temporary file."));
+      gtk_dialog_run(GTK_DIALOG(dialog));
+      gtk_widget_destroy(dialog);
+      return;
   }
 
   efp=fdopen(fd,"w");
 
   if(!efp) {
-    close(fd);
-    gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                      _("Error: Unable to create temporary file."));
+      close(fd);
+      dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                      GTK_DIALOG_DESTROY_WITH_PARENT,
+                                      GTK_MESSAGE_ERROR,
+                                      GTK_BUTTONS_OK,
+                                      _("Unable to create temporary file."));
+      gtk_dialog_run(GTK_DIALOG(dialog));
+      gtk_widget_destroy(dialog);
   }
   else {
     fprintf(efp,"To: %s\nFrom: %s\nSubject: cddb %s %02x\n",
@@ -1939,11 +2006,17 @@ void SubmitEntry(gint reply,gpointer data)
     }
 
     if(DiscDBWriteDiscData(&(ginfo->disc),&(ginfo->ddata),efp,FALSE,
-			   ginfo->db_use_freedb,ginfo->db_use_freedb?
-			   "UTF-8":ginfo->discdb_encoding)<0) {
-      gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                        _("Error: Unable to write disc data."));
-      fclose(efp);
+                           ginfo->db_use_freedb,ginfo->db_use_freedb?
+                           "UTF-8":ginfo->discdb_encoding)<0) {
+
+        dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                        GTK_DIALOG_DESTROY_WITH_PARENT,
+                                        GTK_MESSAGE_ERROR,
+                                        GTK_BUTTONS_OK,
+                                        _("Unable to write disc data."));
+        gtk_dialog_run(GTK_DIALOG(dialog));
+        gtk_widget_destroy(dialog);
+        fclose(efp);
     }
     else {
       fclose(efp);

@@ -31,7 +31,6 @@
 #include <X11/Xlib.h>
 #include <time.h>
 #include "grip.h"
-#include <libgnomeui/gnome-window-icon.h>
 #include <gio/gio.h>
 #include "discdb.h"
 #include "cdplay.h"
@@ -311,7 +310,7 @@ GtkWidget *GripNew(const gchar* geometry,char *device,char *scsi_device,
     /* Check if we have a dev release */
     if(minor%2) {
         dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
-                                        GTK_DIALOG_MODAL,
+                                        GTK_DIALOG_DESTROY_WITH_PARENT,
                                         GTK_MESSAGE_WARNING, 
                                         GTK_BUTTONS_OK, 
                                         _("This is a development version of Grip. If you encounter problems, you are encouraged to revert to the latest stable version."));
@@ -968,7 +967,6 @@ static void DoLoadConfig(GripInfo *ginfo)
   if(confret<0) {
       /* Check if the config is out of date */
       if(confret==-2) {
-          Debug(_("DoLoadConfig: Dialog out of date.\n"));
           GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(uinfo->app),
                                                      GTK_DIALOG_DESTROY_WITH_PARENT,
                                                      GTK_MESSAGE_WARNING,
@@ -1066,7 +1064,6 @@ void DoSaveConfig(GripInfo *ginfo)
   g_snprintf(filename,256,"%s/%s",getenv("HOME"),ginfo->config_filename);
 
   if(!SaveConfig(filename,"GRIP",2,cfg_entries)){
-      Debug(_("DoSaveConfig: Cannot save config file.\n"));
       dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
                                       GTK_DIALOG_DESTROY_WITH_PARENT,
                                       GTK_MESSAGE_ERROR,

@@ -603,7 +603,7 @@ static gboolean AddM3U(GripInfo *ginfo)
                                       GTK_DIALOG_DESTROY_WITH_PARENT,
                                       GTK_MESSAGE_WARNING, 
                                       GTK_BUTTONS_OK, 
-                                      _("Error: can't open m3u file."));
+                                      _("can't open m3u file."));
       gtk_dialog_run(GTK_DIALOG(dialog));
       gtk_widget_destroy(dialog);
       return FALSE;
@@ -1337,7 +1337,6 @@ void DoRip(GtkWidget *widget,gpointer data)
   }
 
   if(NextTrackToRip(ginfo)==ginfo->disc.num_tracks) {
-      Debug(_("No tracks selected.\n"));
       dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
                                       GTK_DIALOG_DESTROY_WITH_PARENT,
                                       GTK_MESSAGE_QUESTION,
@@ -1468,7 +1467,6 @@ static gboolean RipNextTrack(GripInfo *ginfo)
 
     MakeDirs(ginfo->ripfile);
     if(!CanWrite(ginfo->ripfile)) {
-        Debug(_("No write access to write wave file.\n"));
         dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
                                         GTK_DIALOG_DESTROY_WITH_PARENT,
                                         GTK_MESSAGE_ERROR,
@@ -1518,7 +1516,6 @@ static gboolean RipNextTrack(GripInfo *ginfo)
     bytesleft=BytesLeftInFS(ginfo->ripfile);
 
     if(bytesleft<(ginfo->ripsize*1.5)) {
-        Debug(_("Out of space in output directory.\n"));
         dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
                                         GTK_DIALOG_DESTROY_WITH_PARENT,
                                         GTK_MESSAGE_ERROR,
@@ -1781,7 +1778,6 @@ static gboolean MP3Encode(GripInfo *ginfo)
 	  (gfloat)(ginfo->kbits_per_sec*1024)/600.0);
   
   if(bytesleft<(ginfo->mp3size[cpu]*1.5)) {
-        Debug(_("Out of space in output directory.\n"));
         dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
                                         GTK_DIALOG_DESTROY_WITH_PARENT,
                                         GTK_MESSAGE_ERROR,

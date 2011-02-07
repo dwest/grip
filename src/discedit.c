@@ -379,18 +379,34 @@ void SetID3Genre(GripInfo *ginfo,int id3_genre)
 
 static void SaveDiscInfo(GtkWidget *widget,gpointer data)
 {
-  GripInfo *ginfo;
+    GripInfo *ginfo;
+    GtkWidget *dialog;
 
-  ginfo=(GripInfo *)data;
+    ginfo=(GripInfo *)data;
 
-  if(ginfo->have_disc) {
-    if(DiscDBWriteDiscData(&(ginfo->disc),&(ginfo->ddata),NULL,TRUE,FALSE,
-                           "utf-8")<0)
-      gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                        _("Error saving disc data."));
-  }
-  else gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                         _("No disc present."));
+    // Check that we actually have a disc to save.
+    if(ginfo->have_disc) {
+        if(DiscDBWriteDiscData(&(ginfo->disc),&(ginfo->ddata),NULL,TRUE,FALSE,
+                               "utf-8")<0){
+            dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                            GTK_DIALOG_DESTROY_WITH_PARENT,
+                                            GTK_MESSAGE_ERROR,
+                                            GTK_BUTTONS_OK,
+                                            _("Error saving disc data."));
+            gtk_dialog_run(GTK_DIALOG(dialog));
+            gtk_widget_destroy(dialog);
+        }
+    }else{
+        // No disc
+        dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                        GTK_DIALOG_DESTROY_WITH_PARENT,
+                                        GTK_MESSAGE_WARNING,
+                                        GTK_BUTTONS_OK,
+                                        _("No disc present."));
+        gtk_dialog_run(GTK_DIALOG(dialog));
+        gtk_widget_destroy(dialog);
+    }
+
 }
 
 static void TitleEditChanged(GtkWidget *widget,gpointer data)
@@ -482,7 +498,6 @@ static void ID3GenreChanged(GtkWidget *widget,gpointer data)
   ginfo=(GripInfo *)data;
 
   ginfo->ddata.data_id3genre=(int)gtk_object_get_user_data(GTK_OBJECT(widget));
-  /*  ginfo->ddata.data_genre=ID32DiscDB(ginfo->ddata.data_id3genre);*/
 }
 
 static void SeparateFields(char *buf,char *field1,char *field2,char *sep)
@@ -535,54 +550,93 @@ static void SubmitEntryCB(GtkWidget *widget,gpointer data)
 {
   GripInfo *ginfo;
   int len;
+  GtkWidget *dialog;
+  gint response;
 
   ginfo=(GripInfo *)data;
 
   if(!ginfo->have_disc) {
-    gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                      _("Cannot submit. No disc is present."));
-
-    return;
+      dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                      GTK_DIALOG_DESTROY_WITH_PARENT,
+                                      GTK_MESSAGE_WARNING,
+                                      GTK_BUTTONS_OK,
+                                      _("Cannot submit. No disc is present."));
+      gtk_dialog_run(GTK_DIALOG(dialog));
+      gtk_widget_destroy(dialog);
+      return;
   }
 
   if(!ginfo->ddata.data_genre) {
-    /*    gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-          _("Submission requires a genre other than 'unknown'."));*/
-    GetDiscDBGenre(ginfo);
+      dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                      GTK_DIALOG_DESTROY_WITH_PARENT,
+                                      GTK_MESSAGE_WARNING,
+                                      GTK_BUTTONS_OK,
+                                      _("Submission requires a genre other than 'unknown'."));
+      gtk_dialog_run(GTK_DIALOG(dialog));
+      gtk_widget_destroy(dialog);
 
-    return;
+      GetDiscDBGenre(ginfo);
+
+      return;
   }
 
   if(!*ginfo->ddata.data_title) {
-    gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                      _("You must enter a disc title."));
-
-    return;
+      dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                      GTK_DIALOG_DESTROY_WITH_PARENT,
+                                      GTK_MESSAGE_WARNING,
+                                      GTK_BUTTONS_OK,
+                                      _("You must enter a disc title."));
+      gtk_dialog_run(GTK_DIALOG(dialog));
+      gtk_widget_destroy(dialog);
+      return;
   }
 
   if(!*ginfo->ddata.data_artist) {
-    gnome_app_warning((GnomeApp *)ginfo->gui_info.app,
-                      _("You must enter a disc artist."));
-    
-    return;
+      dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                      GTK_DIALOG_DESTROY_WITH_PARENT,
+                                      GTK_MESSAGE_WARNING,
+                                      GTK_BUTTONS_OK,
+                                      _("You must enter a disc artist."));
+      gtk_dialog_run(GTK_DIALOG(dialog));
+      gtk_widget_destroy(dialog);
+      return;
   }
 
   len=strlen(ginfo->discdb_submit_email);
 
-  if(!strncasecmp(ginfo->discdb_submit_email+(len-9),".cddb.com",9))
-    gnome_app_ok_cancel_modal
-      ((GnomeApp *)ginfo->gui_info.app,
-       _("You are about to submit this disc information\n"
-       "to a commercial CDDB server, which will then\n"
-       "own the data that you submit. These servers make\n"
-       "a profit out of your effort. We suggest that you\n"
-       "support free servers instead.\n\nContinue?"),
-       (GnomeReplyCallback)SubmitEntry,(gpointer)ginfo);
-  else
-    gnome_app_ok_cancel_modal
-      ((GnomeApp *)ginfo->gui_info.app,
-       _("You are about to submit this\ndisc information via email.\n\n"
-       "Continue?"),(GnomeReplyCallback)SubmitEntry,(gpointer)ginfo);
+  if(!strncasecmp(ginfo->discdb_submit_email+(len-9),".cddb.com",9)){
+      // Send to commercial CDDB server.
+      dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                      GTK_DIALOG_DESTROY_WITH_PARENT,
+                                      GTK_MESSAGE_QUESTION,
+                                      GTK_BUTTONS_YES_NO,
+                                      _("You are about to submit this disc information\n"
+                                        "to a commercial CDDB server, which will then\n"
+                                        "own the data that you submit. These servers make\n"
+                                        "a profit out of your effort. We suggest that you\n"
+                                        "support free servers instead.\n\nContinue?"));
+      response = gtk_dialog_run(GTK_DIALOG(dialog));
+      gtk_widget_destroy(dialog);
+
+      if(response == GTK_RESPONSE_YES){
+          SubmitEntry(ginfo);
+          Debug(_("SubmitEntryCB: Commercial server chosen.\n"));
+      }
+  }else{
+      // Send to free CDDB server.
+      dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
+                                      GTK_DIALOG_DESTROY_WITH_PARENT,
+                                      GTK_MESSAGE_QUESTION,
+                                      GTK_BUTTONS_YES_NO,
+                                      _("You are about to submit this\ndisc information via email.\n\n"
+                                        "Continue?"));
+      response = gtk_dialog_run(GTK_DIALOG(dialog));
+      gtk_widget_destroy(dialog);
+
+      if(response == GTK_RESPONSE_YES){
+          SubmitEntry(ginfo);
+      }
+  }
 }
 
 /* Make the user pick a DiscDB genre on submit*/

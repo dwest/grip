@@ -70,7 +70,7 @@ void CheckNewDisc(GripInfo *ginfo,gboolean force);
 void ScanDisc(GtkWidget *widget,gpointer data);
 void UpdateDisplay(GripInfo *ginfo);
 void UpdateTracks(GripInfo *ginfo);
-void SubmitEntry(gint reply,gpointer data);
+void SubmitEntry(gpointer data);
 
 void PlayTrackCB(GtkWidget *widget,gpointer data);
 void StopPlayCB(GtkWidget *widget,gpointer data);

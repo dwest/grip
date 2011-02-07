@@ -879,6 +879,6 @@ int DiscDBWriteDiscData(DiscInfo *disc,DiscData *ddata,FILE *outfile,
     fprintf(discdb_data,"PLAYORDER=%s\n",ddata->data_playlist);
     fclose(discdb_data);
   }
-  
+  Debug(_("DiscDBWriteDiscData: Disc data written to %s\n"), file);
   return 0;
 }
