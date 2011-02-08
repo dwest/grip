@@ -23,6 +23,11 @@
 #ifndef GRIP_DIALOG_H
 #define GRIP_DIALOG_H
 
+/* Dialogs */
+void GripWarnDialog(GtkWidget *parent, gchar *message);
+void GripErrorDialog(GtkWidget *parent, gchar *message);
+gboolean GripConfirmDialog(GtkWidget *parent, gchar *message);
+
 /* Input routines */
 void InputDialog(char *prompt,char *default_str,int len,char *doit,
 		 GtkSignalFunc doitfunc,

@@ -26,6 +26,57 @@
 #include <gnome.h>
 #include "dialog.h"
 
+/*
+ * Display a gtk message dialog with warning icon, OK button,
+ * and the message passed in.
+ */
+void GripWarnDialog(GtkWidget *parent, gchar *message)
+{
+    GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(parent),
+                                               GTK_DIALOG_DESTROY_WITH_PARENT,
+                                               GTK_MESSAGE_WARNING,
+                                               GTK_BUTTONS_OK,
+                                               _(message));
+    gtk_dialog_run(GTK_DIALOG(dialog));
+    gtk_widget_destroy(dialog);
+}
+
+/*
+ * Display a gtk message dialog with error icon, OK button,
+ * and the message passed in.
+ */
+void GripErrorDialog(GtkWidget *parent, gchar *message)
+{
+    GtkWidget *dialog = gtk_message_dialog_new(GTK_WINDOW(parent),
+                                               GTK_DIALOG_DESTROY_WITH_PARENT,
+                                               GTK_MESSAGE_ERROR,
+                                               GTK_BUTTONS_OK,
+                                               _(message));
+    gtk_dialog_run(GTK_DIALOG(dialog));
+    gtk_widget_destroy(dialog);
+}
+
+/*
+ * Display a gtk message dialog asking user a question.
+ * User can press 'No' or 'Yes'. Return TRUE if 'Yes' is 
+ * pressed, otherwise return FALSE.
+ */
+gboolean GripConfirmDialog(GtkWidget *parent, gchar *message)
+{
+    GtkWidget *dialog;
+    gint response;
+
+    dialog = gtk_message_dialog_new(GTK_WINDOW(parent),
+                                    GTK_DIALOG_DESTROY_WITH_PARENT,
+                                    GTK_MESSAGE_QUESTION,
+                                    GTK_BUTTONS_YES_NO,
+                                    _(message));
+    response = gtk_dialog_run(GTK_DIALOG(dialog));
+    gtk_widget_destroy(dialog);
+    
+    return response == GTK_RESPONSE_YES ? TRUE : FALSE;
+}
+
 void InputDialog(char *prompt,char *default_str,int len,char *doit,
 		 GtkSignalFunc doitfunc,
 		 char *cancel,GtkSignalFunc cancelfunc)

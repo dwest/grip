@@ -380,7 +380,6 @@ void SetID3Genre(GripInfo *ginfo,int id3_genre)
 static void SaveDiscInfo(GtkWidget *widget,gpointer data)
 {
     GripInfo *ginfo;
-    GtkWidget *dialog;
 
     ginfo=(GripInfo *)data;
 
@@ -388,23 +387,11 @@ static void SaveDiscInfo(GtkWidget *widget,gpointer data)
     if(ginfo->have_disc) {
         if(DiscDBWriteDiscData(&(ginfo->disc),&(ginfo->ddata),NULL,TRUE,FALSE,
                                "utf-8")<0){
-            dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
-                                            GTK_DIALOG_DESTROY_WITH_PARENT,
-                                            GTK_MESSAGE_ERROR,
-                                            GTK_BUTTONS_OK,
-                                            _("Error saving disc data."));
-            gtk_dialog_run(GTK_DIALOG(dialog));
-            gtk_widget_destroy(dialog);
+            GripErrorDialog(ginfo->gui_info.app, "Error saving disc data.");
         }
     }else{
         // No disc
-        dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
-                                        GTK_DIALOG_DESTROY_WITH_PARENT,
-                                        GTK_MESSAGE_WARNING,
-                                        GTK_BUTTONS_OK,
-                                        _("No disc present."));
-        gtk_dialog_run(GTK_DIALOG(dialog));
-        gtk_widget_destroy(dialog);
+        GripWarnDialog(ginfo->gui_info.app, "No disc present.");
     }
 
 }
@@ -550,55 +537,27 @@ static void SubmitEntryCB(GtkWidget *widget,gpointer data)
 {
     GripInfo *ginfo;
     int len;
-    GtkWidget *dialog;
-    gint response;
 
     ginfo=(GripInfo *)data;
 
     if(!ginfo->have_disc) {
-        dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
-                                        GTK_DIALOG_DESTROY_WITH_PARENT,
-                                        GTK_MESSAGE_WARNING,
-                                        GTK_BUTTONS_OK,
-                                        _("Cannot submit. No disc is present."));
-        gtk_dialog_run(GTK_DIALOG(dialog));
-        gtk_widget_destroy(dialog);
+        GripErrorDialog(ginfo->gui_info.app, "Cannot submit. No disc is present.");
         return;
     }
 
-    if(!ginfo->ddata.data_genre) {
-        dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
-                                        GTK_DIALOG_DESTROY_WITH_PARENT,
-                                        GTK_MESSAGE_WARNING,
-                                        GTK_BUTTONS_OK,
-                                        _("Submission requires a genre other than 'unknown'."));
-        gtk_dialog_run(GTK_DIALOG(dialog));
-        gtk_widget_destroy(dialog);
-
+    if(!ginfo->ddata.data_genre || TRUE) {
+        GripErrorDialog(ginfo->gui_info.app, "Submission requires a genre other than 'unknown'\n");
         GetDiscDBGenre(ginfo);
-
         return;
     }
 
     if(!*ginfo->ddata.data_title) {
-        dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
-                                        GTK_DIALOG_DESTROY_WITH_PARENT,
-                                        GTK_MESSAGE_WARNING,
-                                        GTK_BUTTONS_OK,
-                                        _("You must enter a disc title."));
-        gtk_dialog_run(GTK_DIALOG(dialog));
-        gtk_widget_destroy(dialog);
+        GripErrorDialog(ginfo->gui_info.app, "You must enter a disc title.");
         return;
     }
 
     if(!*ginfo->ddata.data_artist) {
-        dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
-                                        GTK_DIALOG_DESTROY_WITH_PARENT,
-                                        GTK_MESSAGE_WARNING,
-                                        GTK_BUTTONS_OK,
-                                        _("You must enter a disc artist."));
-        gtk_dialog_run(GTK_DIALOG(dialog));
-        gtk_widget_destroy(dialog);
+        GripErrorDialog(ginfo->gui_info.app, "You must enter a disc artist.");
         return;
     }
 
@@ -606,36 +565,23 @@ static void SubmitEntryCB(GtkWidget *widget,gpointer data)
 
     if(!strncasecmp(ginfo->discdb_submit_email+(len-9),".cddb.com",9)){
         // Send to commercial CDDB server.
-        dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
-                                        GTK_DIALOG_DESTROY_WITH_PARENT,
-                                        GTK_MESSAGE_QUESTION,
-                                        GTK_BUTTONS_YES_NO,
-                                        _("You are about to submit this disc information\n"
-                                          "to a commercial CDDB server, which will then\n"
-                                          "own the data that you submit. These servers make\n"
-                                          "a profit out of your effort. We suggest that you\n"
-                                          "support free servers instead.\n\nContinue?"));
-        response = gtk_dialog_run(GTK_DIALOG(dialog));
-        gtk_widget_destroy(dialog);
-
-        if(response == GTK_RESPONSE_YES){
-            SubmitEntry(ginfo);
-            Debug(_("SubmitEntryCB: Commercial server chosen.\n"));
-        }
+        if(GripConfirmDialog(ginfo->gui_info.app, "You are about to submit this"
+                             " disc information\n"
+                             "to a commercial CDDB server, which will then\n"
+                             "own the data that you submit. These servers make\n"
+                             "a profit out of your effort. We suggest that you\n"
+                             "support free servers instead.\n\nContinue?"))
+            {
+                SubmitEntry(ginfo);
+                Debug(_("SubmitEntryCB: Commercial server chosen.\n"));
+            }
     }else{
         // Send to free CDDB server.
-        dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
-                                        GTK_DIALOG_DESTROY_WITH_PARENT,
-                                        GTK_MESSAGE_QUESTION,
-                                        GTK_BUTTONS_YES_NO,
-                                        _("You are about to submit this\ndisc information via email.\n\n"
-                                          "Continue?"));
-        response = gtk_dialog_run(GTK_DIALOG(dialog));
-        gtk_widget_destroy(dialog);
-
-        if(response == GTK_RESPONSE_YES){
-            SubmitEntry(ginfo);
-        }
+        if(GripConfirmDialog(ginfo->gui_info.app, "You are about to submit this\n"
+                             "disc information via email.\n\nContinue?"))
+            {
+                SubmitEntry(ginfo);
+            }
     }
 }
 

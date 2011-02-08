@@ -819,7 +819,6 @@ void SaveRipperConfig(GripInfo *ginfo,int ripcfg)
     CFGEntry rip_cfg_entries[]={
         RIP_CFG_ENTRIES
     };
-    GtkWidget *dialog;
 
 #ifdef CDPAR
     if(ripcfg==0) return;
@@ -829,13 +828,7 @@ void SaveRipperConfig(GripInfo *ginfo,int ripcfg)
             ripper_defaults[ripcfg].name);
 
     if(!SaveConfig(buf,"GRIP",2,rip_cfg_entries)){
-        dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
-                                        GTK_DIALOG_DESTROY_WITH_PARENT,
-                                        GTK_MESSAGE_ERROR,
-                                        GTK_BUTTONS_OK,
-                                        _("Unable to save ripper config."));
-        gtk_dialog_run(GTK_DIALOG(dialog));
-        gtk_widget_destroy(dialog);
+        GripErrorDialog(ginfo->gui_info.app, "Unable to save ripper config.");
     }
 }
 
@@ -901,19 +894,12 @@ void SaveEncoderConfig(GripInfo *ginfo,int encodecfg)
     CFGEntry encode_cfg_entries[]={
         ENCODE_CFG_ENTRIES
     };
-    GtkWidget *dialog;
 
     sprintf(buf,"%s/%s-%s",getenv("HOME"),ginfo->config_filename,
             encoder_defaults[encodecfg].name);
 
     if(!SaveConfig(buf,"GRIP",2,encode_cfg_entries)){
-        dialog = gtk_message_dialog_new(GTK_WINDOW(ginfo->gui_info.app),
-                                        GTK_DIALOG_DESTROY_WITH_PARENT,
-                                        GTK_MESSAGE_ERROR,
-                                        GTK_BUTTONS_OK,
-                                        _("Unable to save encoder config."));
-        gtk_dialog_run(GTK_DIALOG(dialog));
-        gtk_widget_destroy(dialog);
+        GripErrorDialog(ginfo->gui_info.app, "Unable to save encoder config.");
     }
                       
 }
