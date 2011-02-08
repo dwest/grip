@@ -545,7 +545,7 @@ static void SubmitEntryCB(GtkWidget *widget,gpointer data)
         return;
     }
 
-    if(!ginfo->ddata.data_genre || TRUE) {
+    if(!ginfo->ddata.data_genre) {
         GripErrorDialog(ginfo->gui_info.app, "Submission requires a genre other than 'unknown'\n");
         GetDiscDBGenre(ginfo);
         return;
