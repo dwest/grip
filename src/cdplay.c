@@ -29,6 +29,7 @@
 #include "discedit.h"
 #include "dialog.h"
 #include "rip.h"
+#include "tray.h"
 #include "grip_id3.h"
 
 static void ShutDownCB(GtkWidget *widget,gpointer data);
