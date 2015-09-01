@@ -131,7 +131,7 @@ void TrayMenuShowPause(GripInfo *ginfo)
 
 static void ToggleMenuItemSensitive(GtkWidget *widget, gpointer data)
 {
-	gtk_widget_set_sensitive(GTK_WIDGET(widget), (gboolean)data);
+	gtk_widget_set_sensitive(GTK_WIDGET(widget), (data != NULL));
 }
 
 void TrayGrayMenu(GripInfo *ginfo)
