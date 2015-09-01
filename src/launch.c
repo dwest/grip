@@ -204,7 +204,7 @@ char *MungeString(char *str,StrTransPrefs *prefs)
     utf8_char[utf8_char_len]='\0';
     filename_char=g_filename_from_utf8(utf8_char,-1,&rb,&wb,NULL);
     g_free(filename_char);
-    if (!filename_char || !prefs->allow_high_bits && *c >> 7) {
+    if (!filename_char || (!prefs->allow_high_bits && *c >> 7)) {
       if (prefs->escape) {
 	g_snprintf(escape,11,"(%x)",*c);
 	dst=ReallocStrcat(dst,escape);
