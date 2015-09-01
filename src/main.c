@@ -140,7 +140,7 @@ void Debug(char *fmt,...)
 
     msg=g_strdup_vprintf(fmt,args);
     if(msg) {
-      g_printerr(msg);
+      g_printerr("%s", msg);
       g_free(msg);
     }
   }
