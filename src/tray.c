@@ -84,8 +84,8 @@ void UpdateTray(GripInfo *ginfo)
 		} else if (!ginfo->playing) {
 			if (ginfo->ripping || ginfo->encoding) {
 				TrayGrayMenu(ginfo);
-				riptext = (ginfo->ripping) ? g_strdup_printf(_("Ripping  Track %02d:\t%6.2f%% (%6.2f%% )"), ginfo->rip_track + 1, ginfo->rip_percent * 100, ginfo->rip_tot_percent * 100) : g_strdup_printf("");
-			    enctext = (ginfo->encoding) ? g_strdup_printf(_("Encoding Track %02d:\t%6.2f%% (%6.2f%% )"), ginfo->mp3_enc_track[0] + 1, ginfo->enc_percent * 100, ginfo->enc_tot_percent * 100) : g_strdup_printf("");
+				riptext = (ginfo->ripping) ? g_strdup_printf(_("Ripping  Track %02d:\t%6.2f%% (%6.2f%% )"), ginfo->rip_track + 1, ginfo->rip_percent * 100, ginfo->rip_tot_percent * 100) : g_strdup("");
+			    enctext = (ginfo->encoding) ? g_strdup_printf(_("Encoding Track %02d:\t%6.2f%% (%6.2f%% )"), ginfo->mp3_enc_track[0] + 1, ginfo->enc_percent * 100, ginfo->enc_tot_percent * 100) : g_strdup("");
 				text = g_strdup_printf(_("%s - %s\n%s%s%s"), artist, title, riptext, (ginfo->ripping && ginfo->encoding) ? "\n" : "", enctext);
 			} else {
 				TrayUnGrayMenu(ginfo);
