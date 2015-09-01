@@ -21,6 +21,7 @@
  */
 
 #include "tray.h"
+#include "common.h"
 #include "../pixmaps/rip1.xpm"
 #include "../pixmaps/menuplay.xpm"
 #include "../pixmaps/menupause.xpm"
