@@ -804,7 +804,7 @@ gboolean LoadRipperConfig(GripInfo *ginfo,int ripcfg)
   };
 
 #ifdef CDPAR
-  if(ripcfg==0) return;
+  if(ripcfg==0) return 0;
 #endif
 
   sprintf(buf,"%s/%s-%s",getenv("HOME"),ginfo->config_filename,
