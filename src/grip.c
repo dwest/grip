@@ -638,7 +638,7 @@ static void Homepage(void)
         // Open link in browser.
         // Plug link into '%s'.
         cmd = (gchar *)malloc(sizeof(gchar)*(strlen(browser)+strlen(link)));
-        int x = sprintf(cmd, browser, link);
+        sprintf(cmd, browser, link);
         system(cmd);
     }
     

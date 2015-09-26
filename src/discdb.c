@@ -45,10 +45,10 @@
 #include "config.h"
 
 extern char *Program;
-static char *StrConvertEncoding(char *str,char *from,char *to,int max_len);
+static char *StrConvertEncoding(char *str,const char *from,const char *to,int max_len);
 gboolean DiscDBUTF8Validate(const DiscInfo *disc,const DiscData *data);
 static void DiscDBConvertEncoding(DiscInfo *disc,DiscData *data,
-                                  char *from,char *to);
+                                  const char *from,const char *to);
 static int DiscDBSum(int val);
 static char *DiscDBReadLine(char **dataptr);
 static GString *DiscDBMakeURI(DiscDBServer *server,DiscDBHello *hello,
@@ -496,7 +496,7 @@ static void DiscDBProcessLine(char *inbuffer,DiscData *data,
   }
 }
 
-static char *StrConvertEncoding(char *str,char *from,char *to,int max_len)
+static char *StrConvertEncoding(char *str,const char *from,const char *to,int max_len)
 {
   char *conv_str;
   gsize rb,wb;
@@ -541,7 +541,7 @@ gboolean DiscDBUTF8Validate(const DiscInfo *disc,const DiscData *data)
 
 
 static void DiscDBConvertEncoding(DiscInfo *disc,DiscData *data,
-                                  char *from,char *to)
+                                  const char *from,const char *to)
 {
   int track;
 

@@ -107,12 +107,10 @@ static void WriteWav(int f,long bytes)
 
 static void CDPCallback(long inpos,int function)
 {
-  static long c_sector=0,v_sector=0;
-  static int last=0;
+  static long c_sector=0;
   static long lasttime=0;
   long sector,osector=0;
   struct timeval thistime;
-  static char heartbeat=' ';
   static int overlap=0;
   static int slevel=0;
   static int slast=0;
@@ -123,15 +121,11 @@ static void CDPCallback(long inpos,int function)
   sector=inpos/CD_FRAMEWORDS;
     
   if(function==-2){
-    v_sector=sector;
     return;
   }
 
   if(function==-1){
-    last=8;
-    heartbeat='*';
     slevel=0;
-    v_sector=sector;
   } else
     switch(function){
     case PARANOIA_CB_VERIFY:
@@ -184,30 +178,8 @@ static void CDPCallback(long inpos,int function)
   
   if(lasttime!=test || function==-1 || slast!=slevel){
     if(lasttime!=test || function==-1){
-      last++;
       lasttime=test;
-      if(last>7)last=0;
       stimeout++;
-      switch(last){
-      case 0:
-	heartbeat=' ';
-	break;
-      case 1:case 7:
-	heartbeat='.';
-	break;
-      case 2:case 6:
-	heartbeat='o';
-	break;
-      case 3:case 5:  
-	heartbeat='0';
-	break;
-      case 4:
-	heartbeat='O';
-	break;
-      }
-
-      if(function==-1)
-	heartbeat='*';
       
     }
     if(slast!=slevel){
