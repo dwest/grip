@@ -63,13 +63,6 @@ static MP3Encoder encoder_defaults[]={{"bladeenc","-%b -QUIT %w %m","mp3"},
 				      {"",""}
 };
 
-static CFGEntry encoder_cfg_entries[]={
-  {"name",CFG_ENTRY_STRING,256,NULL},
-  {"cmdline",CFG_ENTRY_STRING,256,NULL},
-  {"exe",CFG_ENTRY_STRING,256,NULL},
-  {"extension",CFG_ENTRY_STRING,10,NULL}
-};
-
 static void UseProxyChanged(GtkWidget *widget,gpointer data)
 {
   GripInfo *ginfo;
